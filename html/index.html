@@ -1,865 +1,1482 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Dr. Your Name - Best Orthopedic Surgeon in Your City | Your Clinic Name</title>
-  <meta name="description" content="Dr. Your Name, 15+ years experienced Orthopedic Surgeon at Your Clinic Name, Your City. Expert in Knee Replacement, Spine Surgery, Sports Injury &amp; Fracture Care.">
-  <meta name="keywords" content="orthopedic surgeon Your City, knee replacement Your City, spine surgery Your City, Dr. Your Name, Your Clinic Name, best orthopedic doctor Your City">
-  <meta name="geo.region" content="IN">
-  <meta name="geo.placename" content="Your City">
-  <meta name="theme-color" content="#1e40af">
-  <link rel="canonical" href="https://yourclinicname.com">
+  
+  <!-- SEO Meta Tags -->
+  <title>Dr. Arjun Mehta - Best Interventional Cardiologist in Jaipur | HeartCare Centre</title>
+  <meta name="description" content="Dr. Arjun Mehta is a premier AIIMS-trained Interventional Cardiologist in Jaipur with 18+ years of experience. Specializing in radial angioplasty, pacemaker implantation, and heart failure care at HeartCare Advanced Cardiac Centre.">
+  <meta name="keywords" content="cardiologist jaipur, heart doctor jaipur, angioplasty jaipur, pacemaker doctor jaipur, Dr. Arjun Mehta, HeartCare Jaipur, best cardiologist rajasthan, radial angioplasty jaipur">
+  <meta name="geo.region" content="IN-RJ">
+  <meta name="geo.placename" content="Jaipur">
+  <meta name="theme-color" content="#0a0f18">
+  <link rel="canonical" href="https://heartcarejaipur.com">
 
-  <meta property="og:title" content="Dr. Your Name - Best Orthopedic Surgeon in Your City | Your Clinic Name">
-  <meta property="og:description" content="Expert orthopedic care with 15+ years experience. Knee Replacement, Spine Surgery &amp; Sports Injury treatment.">
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Dr. Arjun Mehta - Best Interventional Cardiologist in Jaipur | HeartCare Centre">
+  <meta property="og:description" content="AIIMS-trained cardiologist with 18+ years of experience. Expert in radial angioplasty, pacemaker implantations, and advanced cardiac care next to SMS Hospital, Jaipur.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourclinicname.com">
-  <meta property="og:site_name" content="Your Clinic Name">
+  <meta property="og:url" content="https://heartcarejaipur.com">
+  <meta property="og:site_name" content="HeartCare Advanced Cardiac Centre">
 
-  <!-- Fonts -->
+  <!-- Fonts (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
+  <!-- Icons (Font Awesome & Phosphor Icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/cta-bar.css">
-  <link rel="stylesheet" href="../css/premium-sections.css">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              50: '#f4f6fa',
+              100: '#e7ecf4',
+              200: '#c5d2e5',
+              300: '#94adcd',
+              400: '#5c80ae',
+              500: '#3e5f8f',
+              600: '#304b73',
+              700: '#283e5f',
+              800: '#1d2a42',
+              900: '#131c2d',
+              950: '#0a0f18',
+            },
+            crimson: {
+              50: '#fef2f2',
+              100: '#fee2e2',
+              200: '#fecaca',
+              300: '#fca5a5',
+              400: '#f87171',
+              500: '#ef4444',
+              600: '#dc2626',
+              700: '#b91c1c',
+              800: '#991b1b',
+              900: '#7f1d1d',
+            }
+          },
+          fontFamily: {
+            playfair: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
 
-  <!-- Structured Data -->
+  <!-- Custom Embedded Styles for premium feel, mesh background, scroll spy and animations -->
+  <style>
+    /* Heartbeat animation for logo and key elements */
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      14% { transform: scale(1.1); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.1); }
+      70% { transform: scale(1); }
+    }
+    .animate-heartbeat {
+      animation: heartbeat 1.5s infinite ease-in-out;
+    }
+
+    /* Mesh Gradients for background */
+    .bg-mesh {
+      background-color: #0a0f18; /* Navy 950 */
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(220, 38, 38, 0.12) 0px, transparent 50%), 
+        radial-gradient(at 100% 0%, rgba(30, 58, 138, 0.25) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(220, 38, 38, 0.08) 0px, transparent 50%);
+    }
+
+    /* Smooth scrolling marquee style */
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Hide scrollbar utility */
+    .scrollbar-none::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-none {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Typing cursor */
+    .cursor {
+      animation: blink 0.8s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Custom Glassmorphism styles */
+    .glass-card {
+      background: rgba(19, 28, 45, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .glass-nav {
+      background: rgba(10, 15, 24, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+  </style>
+
+  <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalClinic",
-    "name": "Your Clinic Name",
-    "description": "Premium orthopedic care clinic in Your City specializing in knee replacement, spine surgery, sports injury, and fracture care.",
-    "url": "https://yourclinicname.com",
-    "telephone": "+91-XXXXXXXXXX",
-    "email": "contact@yourclinicname.com",
+    "@type": "MedicalBusiness",
+    "name": "HeartCare Advanced Cardiac Centre",
+    "description": "Premium interventional cardiology clinic in Jaipur, Rajasthan, offering advanced diagnostic, therapeutic, and preventive care.",
+    "url": "https://heartcarejaipur.com",
+    "telephone": "+91-9829012345",
+    "email": "contact@heartcarejaipur.com",
+    "image": "https://heartcarejaipur.com/img/dr_arjun_mehta.png",
+    "priceRange": "₹₹₹",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123, Hazratganj",
-      "addressLocality": "Your City",
-      "addressRegion": "Your State",
-      "postalCode": "XXXXXX",
+      "streetAddress": "102, Tonk Road, Near SMS Hospital",
+      "addressLocality": "Jaipur",
+      "addressRegion": "Rajasthan",
+      "postalCode": "302015",
       "addressCountry": "IN"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 26.8467,
-      "longitude": 80.9462
+      "latitude": 26.8928,
+      "longitude": 75.8156
     },
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "14:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "17:00", "closes": "20:00" }
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "13:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "16:00",
+        "closes": "19:00"
+      }
     ],
-    "medicalSpecialty": "Orthopedic",
+    "medicalSpecialty": "CardiovascularDiseases",
     "founder": {
-      "@type": "Person", "name": "Dr. Your Name", "honorificPrefix": "Dr.",
-      "medicalSpecialty": "Orthopedic Surgery", "alumniOf": "AIIMS Delhi",
-      "hasCredential": ["MBBS","MS Ortho"]
+      "@type": "Person",
+      "name": "Dr. Arjun Mehta",
+      "honorificPrefix": "Dr.",
+      "jobTitle": "Senior Consultant & Interventional Cardiologist",
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "AIIMS New Delhi"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "SMS Medical College Jaipur"
+        }
+      ],
+      "hasCredential": [
+        {"@type": "EducationalOccupationalCredential", "credentialCategory": "MBBS"},
+        {"@type": "EducationalOccupationalCredential", "credentialCategory": "MD Medicine"},
+        {"@type": "EducationalOccupationalCredential", "credentialCategory": "DM Cardiology"},
+        {"@type": "EducationalOccupationalCredential", "credentialCategory": "FACC"}
+      ]
     },
     "aggregateRating": {
-      "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "500", "bestRating": "5"
-    },
-    "priceRange": "\u20b9\u20b9"
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1200",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   }
   </script>
 </head>
-<body>
+<body class="font-sans bg-navy-950 text-slate-300 antialiased overflow-x-hidden">
 
-  <!-- Nav Overlay -->
-  <div class="nav-overlay" id="navOverlay"></div>
+  <!-- Mobile Nav Overlay -->
+  <div class="fixed inset-0 bg-black/50 z-[98] hidden backdrop-blur-sm transition-opacity duration-300" id="navOverlay"></div>
 
   <!-- ===== NAVBAR ===== -->
-  <nav class="navbar" id="navbar">
-    <div class="navbar-inner">
-      <a href="#hero" class="navbar-brand" id="navbar-brand">
-        <div class="brand-icon">Y</div>
-        <div class="brand-text">
-          Your Clinic Name
-          <span class="brand-subtitle">Dr. Your Name</span>
-        </div>
-      </a>
-
-      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul class="nav-links" id="navLinks" aria-label="Primary navigation">
-        <li class="nav-menu-header">
-          <div class="nav-menu-brand">
-            <div class="nav-menu-icon">Y</div>
-            <div class="nav-menu-text">
-              <span class="nav-menu-title">Your Clinic Name</span>
-              <span class="nav-menu-subtitle">Dr. Your Name</span>
-            </div>
+  <nav class="fixed top-0 left-0 w-full z-[99] glass-nav border-b border-navy-800/40 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-2 group shrink-0">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-crimson-600 to-crimson-800 flex items-center justify-center text-white shadow-lg shadow-crimson-600/20">
+            <i class="ph-bold ph-heartbeat text-2xl animate-heartbeat"></i>
           </div>
-          <button class="nav-menu-close" aria-label="Close menu">
-            <i class="fas fa-xmark"></i>
-          </button>
-        </li>
-        <li><a href="#hero" class="nav-link active" id="nav-home"><i class="fas fa-house"></i> Home</a></li>
-        <li><a href="#about" class="nav-link" id="nav-about"><i class="fas fa-user-md"></i> About</a></li>
-        <li><a href="#services" class="nav-link" id="nav-services"><i class="fas fa-bone"></i> Services</a></li>
-        <li><a href="#reviews" class="nav-link" id="nav-reviews"><i class="fas fa-star"></i> Reviews</a></li>
-        <li><a href="#contact" class="nav-link" id="nav-contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        <li class="nav-menu-cta-wrap">
-          <a href="#appointment" class="nav-cta" id="nav-book">
-            <i class="fas fa-calendar-check"></i> Book Appointment
+          <div class="leading-tight">
+            <span class="block text-white font-extrabold text-base lg:text-lg font-playfair tracking-wide group-hover:text-crimson-400 transition-colors">HeartCare</span>
+            <span class="block font-sans font-semibold text-[10px] lg:text-[11px] text-crimson-500 tracking-[0.5px] uppercase">Dr. Arjun Mehta</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center gap-8">
+          <ul class="flex items-center gap-6 text-sm font-medium">
+            <li><a href="#hero" class="nav-link text-white hover:text-crimson-500 transition-colors duration-200">Home</a></li>
+            <li><a href="#about" class="nav-link text-slate-300 hover:text-crimson-500 transition-colors duration-200">About</a></li>
+            <li><a href="#services" class="nav-link text-slate-300 hover:text-crimson-500 transition-colors duration-200">Services</a></li>
+            <li><a href="#whychoose" class="nav-link text-slate-300 hover:text-crimson-500 transition-colors duration-200">Why Us</a></li>
+            <li><a href="#testimonials" class="nav-link text-slate-300 hover:text-crimson-500 transition-colors duration-200">Reviews</a></li>
+            <li><a href="#faqs" class="nav-link text-slate-300 hover:text-crimson-500 transition-colors duration-200">FAQs</a></li>
+            <li><a href="#contact" class="nav-link text-slate-300 hover:text-crimson-500 transition-colors duration-200">Contact</a></li>
+          </ul>
+          <a href="https://wa.me/919829012345?text=Hi%20Dr.%20Arjun%20Mehta%2C%20I%20want%20to%20book%20a%20cardiac%20consultation%20appointment." target="_blank" rel="noopener" class="bg-crimson-600 hover:bg-crimson-700 text-white font-bold text-sm px-6 py-2.5 rounded-full shadow-lg shadow-crimson-600/30 hover:shadow-crimson-600/40 transition-all duration-300 transform hover:-translate-y-0.5">
+            <i class="fa-regular fa-calendar-check mr-2"></i> Book Appointment
           </a>
-        </li>
-      </ul>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button class="lg:hidden text-white hover:text-crimson-500 focus:outline-none p-2" id="navToggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars-staggered text-2xl" id="toggleIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="fixed top-16 right-0 w-[280px] h-[calc(100vh-4rem)] bg-navy-900 border-l border-navy-800/80 z-[100] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden" id="mobileDrawer">
+      <div class="flex flex-col p-6 h-full justify-between">
+        <ul class="flex flex-col gap-4 text-base font-semibold">
+          <li><a href="#hero" class="mobile-nav-link block py-2 border-b border-navy-800/60 text-white hover:text-crimson-500">Home</a></li>
+          <li><a href="#about" class="mobile-nav-link block py-2 border-b border-navy-800/60 text-slate-300 hover:text-crimson-500">About Doctor</a></li>
+          <li><a href="#services" class="mobile-nav-link block py-2 border-b border-navy-800/60 text-slate-300 hover:text-crimson-500">Key Services</a></li>
+          <li><a href="#whychoose" class="mobile-nav-link block py-2 border-b border-navy-800/60 text-slate-300 hover:text-crimson-500">Why Choose Us</a></li>
+          <li><a href="#testimonials" class="mobile-nav-link block py-2 border-b border-navy-800/60 text-slate-300 hover:text-crimson-500">Patient Reviews</a></li>
+          <li><a href="#faqs" class="mobile-nav-link block py-2 border-b border-navy-800/60 text-slate-300 hover:text-crimson-500">FAQs</a></li>
+          <li><a href="#contact" class="mobile-nav-link block py-2 text-slate-300 hover:text-crimson-500">Contact Us</a></li>
+        </ul>
+        <div class="flex flex-col gap-3">
+          <a href="tel:+919829012345" class="flex items-center justify-center gap-2 bg-navy-800 border border-navy-700 hover:bg-navy-700 text-white font-bold py-3 rounded-xl transition-all duration-300 text-sm">
+            <i class="fa-solid fa-phone"></i> Call Now
+          </a>
+          <a href="https://wa.me/919829012345?text=Hi%20Dr.%20Arjun%20Mehta%2C%20I%20want%20to%20book%20a%20cardiac%20consultation%20appointment." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-crimson-600 hover:bg-crimson-700 text-white font-bold py-3 rounded-xl transition-all duration-300 text-sm shadow-md shadow-crimson-600/25">
+            <i class="fa-regular fa-calendar-check"></i> Book Appointment
+          </a>
+        </div>
+      </div>
     </div>
   </nav>
 
   <!-- ===== HERO SECTION ===== -->
-  <section class="hero" id="hero">
-    <!-- Background Effects -->
-    <div class="hero-bg-effects">
-      <div class="hero-gradient-orb hero-gradient-orb-1"></div>
-      <div class="hero-gradient-orb hero-gradient-orb-2"></div>
-      <div class="hero-gradient-orb hero-gradient-orb-3"></div>
-      <div class="hero-grid-pattern"></div>
-    </div>
+  <section class="relative pt-28 pb-16 lg:pt-36 lg:pb-24 bg-mesh overflow-hidden" id="hero">
+    <!-- Grid decorative overlay -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
 
-    <div class="container hero-container">
-      <div class="hero-grid">
-        <!-- Left Content -->
-        <div class="hero-content">
-          <div class="hero-badges">
-            <div class="hero-badge" id="hero-badge-cert">
-              <i class="fas fa-star"></i>
-              <span>NABH Certified Clinic</span>
-            </div>
-            <div class="hero-badge hero-badge-green" id="hero-badge-exp">
-              <i class="fas fa-shield-alt"></i>
-              <span>15+ Years Experience</span>
-            </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <!-- Hero Details -->
+        <div class="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
+          
+          <!-- Badges -->
+          <div class="flex flex-wrap justify-center lg:justify-start gap-2.5 mb-6">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-crimson-900/30 text-crimson-400 border border-crimson-800/40">
+              <i class="fa-solid fa-hospital-user text-xs"></i> NABH Certified Centre
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-navy-800/80 text-navy-200 border border-navy-700/60">
+              <i class="fa-solid fa-graduation-cap text-xs"></i> AIIMS Delhi Alumni
+            </span>
           </div>
 
-          <h1 class="hero-title">
-            Dr. Your Name
-            <span class="hero-title-gradient">Orthopedic Surgeon</span>
+          <h1 class="font-playfair text-white font-extrabold text-[clamp(2.2rem,5vw,3.5rem)] leading-[1.15] mb-4">
+            Dr. Arjun Mehta
+            <span class="block bg-gradient-to-r from-crimson-500 to-red-400 bg-clip-text text-transparent font-sans font-black text-2xl sm:text-3xl lg:text-4xl mt-2 tracking-wide uppercase">
+              Senior Interventional Cardiologist
+            </span>
           </h1>
 
-          <p class="hero-credentials">MBBS, MS Ortho - AIIMS Delhi <span class="hero-sep">|</span> 15+ Years Experience</p>
-
-          <p class="hero-tagline">
-            <span id="typingText"></span><span class="cursor">|</span>
+          <p class="text-slate-400 font-bold text-sm sm:text-base mb-4 tracking-wide uppercase border-b border-navy-800 pb-3 w-full lg:w-fit">
+            MBBS, MD (Medicine), DM (Cardiology) - AIIMS New Delhi <span class="text-crimson-500 mx-1.5">|</span> FACC (USA)
           </p>
 
-          <p class="hero-description">
-            Specializing in knee replacement, spine surgery, sports injuries, and fracture care with a patient-first approach and 15+ years of surgical excellence.
+          <!-- Typing USP tagline -->
+          <div class="h-8 mb-6">
+            <p class="text-crimson-400 font-semibold text-base sm:text-lg tracking-wide">
+              <i class="fa-solid fa-heart-pulse mr-2 animate-heartbeat text-crimson-500 inline-block"></i>
+              <span id="typingText"></span><span class="cursor text-white">|</span>
+            </p>
+          </div>
+
+          <p class="text-slate-300 text-sm sm:text-base lg:text-lg mb-8 leading-relaxed max-w-[620px]">
+            Providing advanced, patient-first cardiac therapies next to SMS Hospital, Jaipur. Expert in radial artery angioplasty, complex stenting, pacemakers, and comprehensive heart fail recovery plans.
           </p>
 
-          <div class="hero-buttons">
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Doctor%2C%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener" class="btn btn-whatsapp" id="hero-cta-whatsapp">
-              <i class="fab fa-whatsapp"></i> Book Appointment
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-8">
+            <a href="https://wa.me/919829012345?text=Hi%20Dr.%20Arjun%20Mehta%2C%20I%20want%20to%20book%20a%20cardiac%20consultation%20appointment." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#20ba56] text-white font-extrabold text-sm sm:text-base rounded-full shadow-lg shadow-[#25D366]/20 transition-all duration-300 transform hover:-translate-y-0.5 min-h-[56px] w-full sm:w-auto">
+              <i class="fa-brands fa-whatsapp text-xl"></i> Book Appointment
             </a>
-            <a href="tel:+91XXXXXXXXXX" class="btn btn-outline" id="hero-cta-call">
-              <i class="fas fa-phone-alt"></i> Call Now
+            <a href="tel:+919829012345" class="flex items-center justify-center gap-2 px-8 py-4 bg-navy-800 border border-navy-700 hover:bg-navy-700 text-white font-extrabold text-sm sm:text-base rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 min-h-[56px] w-full sm:w-auto">
+              <i class="fa-solid fa-phone-alt"></i> Call Now: +91 98290 12345
             </a>
           </div>
 
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <div class="hero-stat-number">500+</div>
-              <div class="hero-stat-label">Happy Patients</div>
-            </div>
-            <div class="hero-stat-divider"></div>
-            <div class="hero-stat">
-              <div class="hero-stat-number">15+</div>
-              <div class="hero-stat-label">Years Exp.</div>
-            </div>
-            <div class="hero-stat-divider"></div>
-            <div class="hero-stat">
-              <div class="hero-stat-number">3000+</div>
-              <div class="hero-stat-label">Surgeries</div>
+          <!-- Trust badging (Insurance) -->
+          <div class="border-t border-navy-800/80 pt-6 w-full text-center lg:text-left">
+            <span class="block text-slate-500 text-xs font-bold uppercase tracking-wider mb-3">Cashless Insurance Accepted</span>
+            <div class="flex flex-wrap justify-center lg:justify-start items-center gap-4 text-xs font-bold text-slate-400">
+              <span class="bg-navy-900 border border-navy-800/60 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-circle-check text-crimson-500 mr-1"></i> RGHS (Govt of Rajasthan)</span>
+              <span class="bg-navy-900 border border-navy-800/60 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-circle-check text-crimson-500 mr-1"></i> CGHS Cashless</span>
+              <span class="bg-navy-900 border border-navy-800/60 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-circle-check text-crimson-500 mr-1"></i> Major Private TPAs</span>
             </div>
           </div>
         </div>
 
-        <!-- Right Image -->
-        <div class="hero-image">
-          <!-- Floating Cards -->
-          <div class="hero-float-card hero-float-rating animate-float-slow" style="animation-delay: -2s;">
-            <div class="hero-float-icon hero-float-icon-amber">
-              <i class="fas fa-star"></i>
+        <!-- Hero Graphic (Dr image + Floating Cards) -->
+        <div class="lg:col-span-5 flex justify-center relative mt-8 lg:mt-0">
+          
+          <!-- Decorative glowing backplates -->
+          <div class="absolute w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] bg-crimson-600/10 rounded-full blur-[60px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+          <div class="absolute w-[200px] h-[200px] bg-blue-600/10 rounded-full blur-[60px] top-0 right-0 pointer-events-none"></div>
+
+          <!-- Floating Stats Cards -->
+          <!-- Card 1: Procedures -->
+          <div class="absolute top-10 -left-6 sm:-left-12 glass-card rounded-2xl p-4 flex items-center gap-3 shadow-2xl border border-navy-800 max-w-[210px] animate-bounce" style="animation-duration: 8s;">
+            <div class="w-10 h-10 rounded-xl bg-crimson-600/20 text-crimson-400 flex items-center justify-center shrink-0">
+              <i class="ph-bold ph-activity text-xl"></i>
             </div>
             <div>
-              <div class="hero-float-title">4.9 / 5 Rating</div>
-              <div class="hero-float-subtitle">500+ Verified Reviews</div>
+              <div class="text-white font-extrabold text-sm sm:text-base">8,500+</div>
+              <div class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.5px]">Cardiac Procedures</div>
             </div>
           </div>
 
-          <div class="hero-float-card hero-float-experience animate-float-slow" style="animation-delay: -4s;">
-            <div class="hero-float-exp-number">15+ Years</div>
-            <div class="hero-float-exp-label">Surgical Excellence</div>
-          </div>
-
-          <div class="hero-float-card hero-float-alumni animate-float-slow" style="animation-delay: -6s;">
-            <div class="hero-float-icon hero-float-icon-blue">A</div>
+          <!-- Card 2: Patients -->
+          <div class="absolute bottom-16 -right-4 sm:-right-8 glass-card rounded-2xl p-4 flex items-center gap-3 shadow-2xl border border-navy-800 max-w-[210px] animate-bounce" style="animation-duration: 9s; animation-delay: -3s;">
+            <div class="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center shrink-0">
+              <i class="ph-bold ph-users text-xl"></i>
+            </div>
             <div>
-              <div class="hero-float-title">AIIMS Delhi</div>
-              <div class="hero-float-subtitle">Alumni</div>
+              <div class="text-white font-extrabold text-sm sm:text-base">15,000+</div>
+              <div class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.5px]">Happy Patients</div>
             </div>
           </div>
 
-          <!-- Doctor Image -->
-          <div class="hero-image-frame">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=450&h=600&fit=crop&crop=face&auto=format" alt="Dr. Your Name - Orthopedic Surgeon" loading="eager">
-            <div class="hero-image-overlay"></div>
+          <!-- Card 3: Rating -->
+          <div class="absolute -bottom-6 left-6 sm:left-12 glass-card rounded-2xl p-3 px-4 flex items-center gap-3 shadow-2xl border border-navy-800 max-w-[220px] animate-bounce" style="animation-duration: 7s; animation-delay: -5s;">
+            <div class="text-amber-500 shrink-0 text-lg flex gap-0.5">
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <div class="text-white font-extrabold text-xs sm:text-sm">4.9 / 5 Rating</div>
+              <div class="text-slate-400 text-[9px] font-bold uppercase tracking-[0.5px]">1,200+ Google Reviews</div>
+            </div>
+          </div>
+
+          <!-- Main Image Frame -->
+          <div class="w-[300px] h-[400px] sm:w-[355px] sm:h-[465px] rounded-[2.5rem] p-1.5 bg-gradient-to-b from-navy-700 via-navy-800 to-crimson-600/40 shadow-2xl overflow-hidden group">
+            <div class="w-full h-full rounded-[2.3rem] overflow-hidden bg-navy-900 relative">
+              <img src="../img/dr_arjun_mehta.png" alt="Dr. Arjun Mehta - Interventional Cardiologist in Jaipur" class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500" loading="eager">
+              <!-- Dark overlay at base -->
+              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy-950/80 to-transparent pointer-events-none"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-      <div class="scroll-mouse">
-        <div class="scroll-wheel"></div>
-      </div>
-      <span>Scroll</span>
     </div>
   </section>
 
-  <!-- ===== TRUST BAR ===== -->
-  <section class="trust-bar">
+  <!-- ===== TRUST MARQUEE BAR ===== -->
+  <section class="py-5 bg-navy-900 border-y border-navy-800/80 overflow-hidden select-none">
     <div class="trust-marquee">
-      <div class="trust-track">
-        <div class="trust-item"><div class="trust-icon-box">Y</div><span>AIIMS Delhi Alumni</span></div>
-        <div class="trust-item"><i class="fas fa-shield-alt trust-icon-blue"></i><span>NABH Certified</span></div>
-        <div class="trust-item"><i class="fas fa-user-md trust-icon-blue"></i><span>Indian Orthopedic Association</span></div>
-        <div class="trust-item"><i class="fas fa-star trust-icon-amber"></i><span>4.9 Google Rating</span></div>
-        <div class="trust-item"><i class="fas fa-certificate trust-icon-blue"></i><span>ISO Certified Process</span></div>
-        <!-- Duplicated for seamless loop -->
-        <div class="trust-item"><div class="trust-icon-box">Y</div><span>AIIMS Delhi Alumni</span></div>
-        <div class="trust-item"><i class="fas fa-shield-alt trust-icon-blue"></i><span>NABH Certified</span></div>
-        <div class="trust-item"><i class="fas fa-user-md trust-icon-blue"></i><span>Indian Orthopedic Association</span></div>
-        <div class="trust-item"><i class="fas fa-star trust-icon-amber"></i><span>4.9 Google Rating</span></div>
-        <div class="trust-item"><i class="fas fa-certificate trust-icon-blue"></i><span>ISO Certified Process</span></div>
+      <div class="marquee-track flex gap-12 text-slate-400 text-xs sm:text-sm font-semibold uppercase tracking-wider items-center">
+        <!-- Marquee items -->
+        <div class="flex items-center gap-2"><i class="fa-solid fa-award text-crimson-500"></i> AIIMS Delhi Alumni</div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-crimson-500"></i> NABH Accredited Centre</div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-medal text-crimson-500"></i> American College of Cardiology Fellow</div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-heart-circle-check text-crimson-500"></i> SMS Medical College Alumni</div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-star text-amber-500"></i> Rajasthan Healthcare Excellence Awardee</div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-file-medical text-crimson-500"></i> Cashless RGHS & CGHS Accepted</div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-clock text-crimson-500"></i> 24/7 Golden Hour Support</div>
+        
+        <!-- Duplicated items for seamless loop -->
+        <div class="flex items-center gap-2"><i class="fa-solid fa-award text-crimson-500"></i> AIIMS Delhi Alumni</div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-crimson-500"></i> NABH Accredited Centre</div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-medal text-crimson-500"></i> American College of Cardiology Fellow</div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-heart-circle-check text-crimson-500"></i> SMS Medical College Alumni</div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-star text-amber-500"></i> Rajasthan Healthcare Excellence Awardee</div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-file-medical text-crimson-500"></i> Cashless RGHS & CGHS Accepted</div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-clock text-crimson-500"></i> 24/7 Golden Hour Support</div>
       </div>
     </div>
   </section>
 
-  <!-- ===== STATS BAR ===== -->
-  <section class="stats-bar">
-    <div class="stats-bar-glow"></div>
-    <div class="container stats-grid">
-      <div class="stat-item" data-delay="0">
-        <div class="stat-icon"><i class="fas fa-smile"></i></div>
-        <div class="stat-number counter" data-target="500">0</div>
-        <div class="stat-label">Happy Patients</div>
-      </div>
-      <div class="stat-item" data-delay="200">
-        <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
-        <div class="stat-number counter" data-target="15">0</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat-item" data-delay="400">
-        <div class="stat-icon"><i class="fas fa-procedures"></i></div>
-        <div class="stat-number counter" data-target="3000">0</div>
-        <div class="stat-label">Surgeries Performed</div>
-      </div>
-      <div class="stat-item" data-delay="600">
-        <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
-        <div class="stat-number counter" data-target="98">0</div>
-        <div class="stat-label">Success Rate (%)</div>
+  <!-- ===== STATS COUNT BAR ===== -->
+  <section class="py-12 bg-gradient-to-b from-navy-950 to-navy-900/60 relative overflow-hidden" id="stats-counter">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="text-center flex flex-col items-center">
+          <div class="w-12 h-12 rounded-2xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center mb-4">
+            <i class="ph-bold ph-heart text-2xl"></i>
+          </div>
+          <div class="font-sans font-black text-white text-3xl sm:text-4xl lg:text-5xl leading-none flex mb-2">
+            <span class="counter" data-target="15000">0</span><span>+</span>
+          </div>
+          <p class="text-slate-400 text-xs sm:text-sm font-bold uppercase tracking-wider">Happy Hearts Healed</p>
+        </div>
+
+        <div class="text-center flex flex-col items-center">
+          <div class="w-12 h-12 rounded-2xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center mb-4">
+            <i class="ph-bold ph-calendar text-2xl"></i>
+          </div>
+          <div class="font-sans font-black text-white text-3xl sm:text-4xl lg:text-5xl leading-none flex mb-2">
+            <span class="counter" data-target="18">0</span><span>+</span>
+          </div>
+          <p class="text-slate-400 text-xs sm:text-sm font-bold uppercase tracking-wider">Years Experience</p>
+        </div>
+
+        <div class="text-center flex flex-col items-center">
+          <div class="w-12 h-12 rounded-2xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center mb-4">
+            <i class="ph-bold ph-heartbeat text-2xl"></i>
+          </div>
+          <div class="font-sans font-black text-white text-3xl sm:text-4xl lg:text-5xl leading-none flex mb-2">
+            <span class="counter" data-target="8500">0</span><span>+</span>
+          </div>
+          <p class="text-slate-400 text-xs sm:text-sm font-bold uppercase tracking-wider">Cardiac Procedures</p>
+        </div>
+
+        <div class="text-center flex flex-col items-center">
+          <div class="w-12 h-12 rounded-2xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center mb-4">
+            <i class="ph-bold ph-chart-line text-2xl"></i>
+          </div>
+          <div class="font-sans font-black text-white text-3xl sm:text-4xl lg:text-5xl leading-none flex mb-2">
+            <span class="counter" data-target="99">0</span><span>.2%</span>
+          </div>
+          <p class="text-slate-400 text-xs sm:text-sm font-bold uppercase tracking-wider">Angioplasty Success</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
-  <section class="about" id="about">
-    <div class="about-top-line"></div>
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-image">
-          <div class="about-image-frame">
-            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=450&h=560&fit=crop&crop=face&auto=format" alt="Dr. Your Name - Orthopedic Surgeon Your City" loading="lazy">
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="py-16 lg:py-24 bg-navy-950 border-t border-navy-900/60" id="about">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Column: Story Graphic -->
+        <div class="lg:col-span-5 flex flex-col items-center relative">
+          <!-- Frame -->
+          <div class="w-full max-w-[380px] rounded-3xl p-1 bg-gradient-to-tr from-navy-800 to-navy-700/80 shadow-2xl relative z-10 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=450&h=560&fit=crop&crop=face&auto=format" alt="Dr. Arjun Mehta Consulting" class="rounded-[22px] w-full h-[460px] object-cover grayscale-[15%] brightness-95" loading="lazy">
           </div>
-          <div class="about-badge-years">
-            <i class="fas fa-calendar-check"></i> 15+ Years
-            <small>Of Surgical Excellence</small>
-          </div>
-          <div class="about-badge-alumni">
-            <i class="fas fa-award"></i> AIIMS Delhi Alumni
+          
+          <!-- Experiences tags -->
+          <div class="absolute -bottom-6 bg-crimson-600 text-white font-extrabold text-sm sm:text-base px-6 py-3 rounded-2xl shadow-xl shadow-crimson-600/30 flex items-center gap-2 z-20">
+            <i class="fa-solid fa-stethoscope"></i> 18+ Years Sparing Lives
           </div>
         </div>
 
-        <div class="about-content">
-          <span class="section-tag"><i class="fas fa-user-md"></i> About Your Doctor</span>
-          <h2 class="section-title">Meet Dr. Your Name</h2>
-          <p class="about-quote">
-            <i class="fas fa-quote-left about-quote-icon"></i>
-            Every bone I heal, every joint I restore — it's a life I help rebuild.
-          </p>
-          <p class="about-text">
-            Dr. Your Name is a leading orthopedic surgeon based in Your City with over 15 years of dedicated experience in diagnosing, treating, and managing complex musculoskeletal conditions. After completing credentials from the prestigious AIIMS Delhi, they pursued advanced fellowships in joint replacement and spine surgery.
-          </p>
-          <p class="about-text">
-            At Your Clinic Name, Dr. Your Name combines cutting-edge surgical techniques with compassionate, patient-centered care, performing over 3,000 surgeries ranging from minimally invasive arthroscopy to complex total joint replacements.
-          </p>
+        <!-- Right Column: Story Copy -->
+        <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold text-crimson-500 uppercase tracking-widest mb-3">
+            <i class="fa-solid fa-user-doctor"></i> Meet Your Doctor
+          </span>
+          <h2 class="font-playfair text-white font-extrabold text-3xl sm:text-4xl mb-6">
+            Healing Hearts, Enriching Lives
+          </h2>
 
-          <div class="credential-grid">
-            <div class="credential-card">
-              <i class="fas fa-graduation-cap"></i> MBBS - AIIMS Delhi
+          <div class="w-20 h-1 bg-crimson-600 rounded-full mb-6"></div>
+
+          <!-- Doctor Quote -->
+          <div class="border-l-4 border-crimson-600 pl-4 py-1.5 mb-6 text-left">
+            <p class="text-white italic text-base sm:text-lg leading-relaxed font-playfair">
+              "A heart is not just a pump; it holds the dreams, smiles, and futures of a family. Every procedure we perform is a trust we must honor."
+            </p>
+          </div>
+
+          <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+            <p>
+              Growing up in Rajasthan, <strong class="text-white">Dr. Arjun Mehta</strong> witnessed the gap in timely cardiac interventions in non-metropolitan regions. Determined to bridge this, he dedicated himself to medical excellence, securing his medical qualifications and senior specialization from the prestigious <strong class="text-white">AIIMS New Delhi</strong>.
+            </p>
+            <p>
+              After completing his DM in Cardiology at SMS Medical College, Jaipur, and a coveted Fellowship in Interventional Cardiology at <strong class="text-white">Mount Sinai Hospital, New York</strong>, he returned to his home state. He established <strong class="text-white">HeartCare Advanced Cardiac Centre</strong> on Tonk Road, right next to SMS Hospital, bringing global interventional standards closer to the citizens of Rajasthan.
+            </p>
+            <p>
+              Dr. Mehta specializes in radial approach angiography and angioplasty—a patient-preferred technique that minimizes bleeding, eliminates the need for groin cuts, and enables same-day discharge.
+            </p>
+          </div>
+
+          <!-- Grid Credentials -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full mb-8 text-left">
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-navy-900 border border-navy-800/80">
+              <div class="w-8 h-8 rounded-lg bg-crimson-900/30 text-crimson-500 flex items-center justify-center shrink-0"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div>
+                <p class="text-white font-extrabold text-xs uppercase tracking-wide">MBBS &amp; MD Medicine</p>
+                <p class="text-slate-400 text-xs mt-0.5">AIIMS New Delhi (Alumni)</p>
+              </div>
             </div>
-            <div class="credential-card">
-              <i class="fas fa-graduation-cap"></i> MS Ortho - AIIMS Delhi
+            
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-navy-900 border border-navy-800/80">
+              <div class="w-8 h-8 rounded-lg bg-crimson-900/30 text-crimson-500 flex items-center justify-center shrink-0"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div>
+                <p class="text-white font-extrabold text-xs uppercase tracking-wide">DM Cardiology</p>
+                <p class="text-slate-400 text-xs mt-0.5">SMS Medical College, Jaipur</p>
+              </div>
             </div>
-            <div class="credential-card">
-              <i class="fas fa-certificate"></i> Fellow in Joint Replacement
+
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-navy-900 border border-navy-800/80">
+              <div class="w-8 h-8 rounded-lg bg-crimson-900/30 text-crimson-500 flex items-center justify-center shrink-0"><i class="fa-solid fa-award"></i></div>
+              <div>
+                <p class="text-white font-extrabold text-xs uppercase tracking-wide">Interventional Fellowship</p>
+                <p class="text-slate-400 text-xs mt-0.5">Mount Sinai Hospital, New York</p>
+              </div>
             </div>
-            <div class="credential-card">
-              <i class="fas fa-certificate"></i> Fellow in Spine Surgery
+
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-navy-900 border border-navy-800/80">
+              <div class="w-8 h-8 rounded-lg bg-crimson-900/30 text-crimson-500 flex items-center justify-center shrink-0"><i class="fa-solid fa-certificate"></i></div>
+              <div>
+                <p class="text-white font-extrabold text-xs uppercase tracking-wide">Professional Fellow</p>
+                <p class="text-slate-400 text-xs mt-0.5">Fellow American College of Cardiology</p>
+              </div>
             </div>
           </div>
 
-          <a href="#appointment" class="btn btn-primary" id="about-cta">
-            Book Consultation <i class="fas fa-arrow-right"></i>
+          <a href="#contact" class="px-8 py-4 bg-crimson-600 hover:bg-crimson-700 text-white font-extrabold text-sm sm:text-base rounded-full shadow-lg shadow-crimson-600/30 transition-all duration-300 transform hover:-translate-y-0.5">
+            Book Consultation Now <i class="fa-solid fa-arrow-right ml-1"></i>
           </a>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ===== SERVICES ===== -->
-  <section class="section-services" id="services">
-    <div class="container">
-      <div class="section-header">
-        <span class="premium-badge">
-          <span class="premium-badge-dot"></span>
-          <span>Our Expertise</span>
+  <!-- ===== SERVICES SECTION ===== -->
+  <section class="py-16 lg:py-24 bg-navy-900/60 border-t border-navy-900/60 relative" id="services">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold text-crimson-500 uppercase tracking-widest mb-3">
+          <i class="fa-solid fa-heart-pulse"></i> Our Core Specialties
         </span>
-        <h2 class="section-title">Comprehensive Orthopedic Care</h2>
-        <div class="premium-heading-decor-center"></div>
-        <p class="section-subtitle">World-class surgical expertise combined with compassionate, personalized care — from diagnosis through recovery.</p>
+        <h2 class="font-playfair text-white font-extrabold text-3xl sm:text-4xl mb-4">
+          World-Class Cardiac Procedures
+        </h2>
+        <div class="w-16 h-1 bg-crimson-600 rounded-full mx-auto mb-4"></div>
+        <p class="text-slate-400 text-sm sm:text-base">
+          From life-saving radial artery interventions to cardiac device implants and comprehensive risk diagnostics, we offer cutting-edge heart care solutions.
+        </p>
       </div>
 
-      <div class="services-grid">
-
-        <!-- Card 1: Knee Replacement -->
-        <div class="service-card-premium" id="service-knee">
-          <div class="service-card-top">
-            <div class="service-icon-wrap gradient-blue">
-              <i class="fas fa-bone"></i>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Angioplasty -->
+        <div class="bg-navy-950 border border-navy-800 rounded-3xl p-6 hover:border-crimson-600/40 transition-all duration-300 flex flex-col justify-between group shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center group-hover:bg-crimson-600 group-hover:text-white transition-all duration-300">
+                <i class="ph-bold ph-activity text-2xl"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-navy-900 border border-navy-800 text-slate-400">
+                5,000+ Done
+              </span>
             </div>
-            <span class="service-count-badge blue"><i class="fas fa-chart-line"></i> 1200+</span>
+            <h3 class="text-white font-bold text-lg sm:text-xl mb-3 group-hover:text-crimson-400 transition-colors">Angioplasty &amp; Stenting (PCI)</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+              Advanced coronary dilation and drug-eluting stent placement utilizing premium radial artery access (wrist), minimizing bleeding and ensuring rapid healing.
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-400 mb-6">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> Radial artery approach (Groin-free)</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> 48-Hour clinical recovery</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> 99.2% success rate</li>
+            </ul>
           </div>
-          <h3 class="service-card-title">Knee Replacement</h3>
-          <p class="service-card-desc">Robotic-assisted total and partial knee replacement for precise implant alignment, minimal tissue damage, and faster return to daily life.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check-circle"></i> Robotic-assisted precision surgery</li>
-            <li><i class="fas fa-check-circle"></i> 4-6 week recovery · 2-3 day stay</li>
-            <li><i class="fas fa-check-circle"></i> 98% patient satisfaction rate</li>
-          </ul>
-          <div class="service-card-actions">
-            <a href="#appointment" class="service-learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Doctor%2C%20I%20want%20to%20know%20about%20Knee%20Replacement" target="_blank" rel="noopener" class="service-cta"><i class="fab fa-whatsapp"></i> Book Now</a>
+          <div class="flex items-center justify-between border-t border-navy-800/80 pt-4 mt-2">
+            <a href="#faqs" class="text-xs font-bold text-slate-500 hover:text-white transition-colors">Learn Procedure</a>
+            <a href="https://wa.me/919829012345?text=Hello%20Dr.%20Arjun%20Mehta%2C%20I%20have%20a%20query%20regarding%20Coronary%20Angioplasty%2FStenting." target="_blank" rel="noopener" class="text-xs font-bold text-crimson-500 hover:text-crimson-400 flex items-center gap-1.5">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Inquire Now
+            </a>
           </div>
         </div>
 
-        <!-- Card 2: Spine Surgery -->
-        <div class="service-card-premium" id="service-spine">
-          <div class="service-card-top">
-            <div class="service-icon-wrap gradient-indigo">
-              <i class="fas fa-arrow-up"></i>
+        <!-- Card 2: Pacemaker -->
+        <div class="bg-navy-950 border border-navy-800 rounded-3xl p-6 hover:border-crimson-600/40 transition-all duration-300 flex flex-col justify-between group shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center group-hover:bg-crimson-600 group-hover:text-white transition-all duration-300">
+                <i class="ph-bold ph-heartbeat text-2xl"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-navy-900 border border-navy-800 text-slate-400">
+                1,200+ Done
+              </span>
             </div>
-            <span class="service-count-badge emerald"><i class="fas fa-chart-line"></i> 800+</span>
+            <h3 class="text-white font-bold text-lg sm:text-xl mb-3 group-hover:text-crimson-400 transition-colors">Pacemaker &amp; ICD</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+              Surgical implantation of single/dual chamber pacemakers and Implantable Cardioverter-Defibrillators (ICD) to correct bradycardia and prevent sudden cardiac arrest.
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-400 mb-6">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> MRI-compatible smart implants</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> 3-4 week recovery time</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> 98.7% device performance</li>
+            </ul>
           </div>
-          <h3 class="service-card-title">Spine Surgery</h3>
-          <p class="service-card-desc">Minimally invasive spine surgeries including microdiscectomy, laminectomy, and fusion for herniated discs, stenosis, and deformities.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check-circle"></i> Minimally invasive keyhole approach</li>
-            <li><i class="fas fa-check-circle"></i> 6-8 week recovery · 1-2 day stay</li>
-            <li><i class="fas fa-check-circle"></i> Advanced intraoperative navigation</li>
-          </ul>
-          <div class="service-card-actions">
-            <a href="#appointment" class="service-learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Doctor%2C%20I%20want%20to%20know%20about%20Spine%20Surgery" target="_blank" rel="noopener" class="service-cta"><i class="fab fa-whatsapp"></i> Book Now</a>
+          <div class="flex items-center justify-between border-t border-navy-800/80 pt-4 mt-2">
+            <a href="#faqs" class="text-xs font-bold text-slate-500 hover:text-white transition-colors">Learn Procedure</a>
+            <a href="https://wa.me/919829012345?text=Hello%20Dr.%20Arjun%20Mehta%2C%20I%20have%20a%20query%20regarding%20Pacemaker%20or%20ICD%20Implantation." target="_blank" rel="noopener" class="text-xs font-bold text-crimson-500 hover:text-crimson-400 flex items-center gap-1.5">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Inquire Now
+            </a>
           </div>
         </div>
 
-        <!-- Card 3: Sports Injury -->
-        <div class="service-card-premium" id="service-sports">
-          <div class="service-card-top">
-            <div class="service-icon-wrap gradient-emerald">
-              <i class="fas fa-running"></i>
+        <!-- Card 3: Heart Failure -->
+        <div class="bg-navy-950 border border-navy-800 rounded-3xl p-6 hover:border-crimson-600/40 transition-all duration-300 flex flex-col justify-between group shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center group-hover:bg-crimson-600 group-hover:text-white transition-all duration-300">
+                <i class="ph-bold ph-heart text-2xl"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-navy-900 border border-navy-800 text-slate-400">
+                4,000+ Cared
+              </span>
             </div>
-            <span class="service-count-badge amber"><i class="fas fa-chart-line"></i> 600+</span>
+            <h3 class="text-white font-bold text-lg sm:text-xl mb-3 group-hover:text-crimson-400 transition-colors">Heart Failure Management</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+              Comprehensive protocol-based medical optimization, device-based interventions (CRT-D), and fluid management to improve life quality and longevity.
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-400 mb-6">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> Evidence-backed drug titrations</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> Continuous remote heart monitoring</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> 96% symptom relief rate</li>
+            </ul>
           </div>
-          <h3 class="service-card-title">Sports Injury</h3>
-          <p class="service-card-desc">Expert management of ACL tears, meniscus injuries, rotator cuff repairs, and ligament reconstructions with structured rehabilitation protocols.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check-circle"></i> Comprehensive rehab programs</li>
-            <li><i class="fas fa-check-circle"></i> 4-8 month recovery · Day care</li>
-            <li><i class="fas fa-check-circle"></i> Return-to-sport protocols</li>
-          </ul>
-          <div class="service-card-actions">
-            <a href="#appointment" class="service-learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Doctor%2C%20I%20want%20to%20know%20about%20Sports%20Injury%20treatment" target="_blank" rel="noopener" class="service-cta"><i class="fab fa-whatsapp"></i> Book Now</a>
+          <div class="flex items-center justify-between border-t border-navy-800/80 pt-4 mt-2">
+            <a href="#faqs" class="text-xs font-bold text-slate-500 hover:text-white transition-colors">Learn More</a>
+            <a href="https://wa.me/919829012345?text=Hello%20Dr.%20Arjun%20Mehta%2C%20I%20have%20a%20query%20regarding%20Heart%20Failure%20Therapies." target="_blank" rel="noopener" class="text-xs font-bold text-crimson-500 hover:text-crimson-400 flex items-center gap-1.5">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Inquire Now
+            </a>
           </div>
         </div>
 
-        <!-- Card 4: Fracture Care -->
-        <div class="service-card-premium" id="service-fracture">
-          <div class="service-card-top">
-            <div class="service-icon-wrap gradient-amber">
-              <i class="fas fa-hand-holding-heart"></i>
+        <!-- Card 4: Angiography -->
+        <div class="bg-navy-950 border border-navy-800 rounded-3xl p-6 hover:border-crimson-600/40 transition-all duration-300 flex flex-col justify-between group shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center group-hover:bg-crimson-600 group-hover:text-white transition-all duration-300">
+                <i class="ph-bold ph-microscope text-2xl"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-navy-900 border border-navy-800 text-slate-400">
+                10k+ Done
+              </span>
             </div>
-            <span class="service-count-badge rose"><i class="fas fa-chart-line"></i> 2000+</span>
+            <h3 class="text-white font-bold text-lg sm:text-xl mb-3 group-hover:text-crimson-400 transition-colors">Coronary Angiography</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+              High-definition imaging of heart blood vessels. Performed via the radial artery in the wrist as a 15-minute diagnostic outpatient procedure.
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-400 mb-6">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> Radial technique (Walk-in, Walk-out)</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> Same-day clinic discharge</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> 100% safety record</li>
+            </ul>
           </div>
-          <h3 class="service-card-title">Fracture Care</h3>
-          <p class="service-card-desc">Complete fracture management from simple casts to complex multi-fragmentary fixation using advanced plating, nailing, and external fixation.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check-circle"></i> Emergency &amp; planned fixation</li>
-            <li><i class="fas fa-check-circle"></i> 6-12 week recovery</li>
-            <li><i class="fas fa-check-circle"></i> Pediatric &amp; geriatric expertise</li>
-          </ul>
-          <div class="service-card-actions">
-            <a href="#appointment" class="service-learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Doctor%2C%20I%20have%20a%20fracture%20and%20need%20consultation" target="_blank" rel="noopener" class="service-cta"><i class="fab fa-whatsapp"></i> Book Now</a>
+          <div class="flex items-center justify-between border-t border-navy-800/80 pt-4 mt-2">
+            <a href="#faqs" class="text-xs font-bold text-slate-500 hover:text-white transition-colors">Learn Procedure</a>
+            <a href="https://wa.me/919829012345?text=Hello%20Dr.%20Arjun%20Mehta%2C%20I%20have%20a%20query%20regarding%20Coronary%20Angiography." target="_blank" rel="noopener" class="text-xs font-bold text-crimson-500 hover:text-crimson-400 flex items-center gap-1.5">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Inquire Now
+            </a>
           </div>
         </div>
 
-        <!-- Card 5: Hip Replacement -->
-        <div class="service-card-premium" id="service-hip">
-          <div class="service-card-top">
-            <div class="service-icon-wrap gradient-rose">
-              <i class="fas fa-walking"></i>
+        <!-- Card 5: Preventive Cardiology -->
+        <div class="bg-navy-950 border border-navy-800 rounded-3xl p-6 hover:border-crimson-600/40 transition-all duration-300 flex flex-col justify-between group shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center group-hover:bg-crimson-600 group-hover:text-white transition-all duration-300">
+                <i class="ph-bold ph-shield-check text-2xl"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-navy-900 border border-navy-800 text-slate-400">
+                10k+ Screened
+              </span>
             </div>
-            <span class="service-count-badge cyan"><i class="fas fa-chart-line"></i> 500+</span>
+            <h3 class="text-white font-bold text-lg sm:text-xl mb-3 group-hover:text-crimson-400 transition-colors">Preventive Cardiology</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+              Risk assessment models, custom diet plans, lipids management, stress markers diagnostics, and custom lifestyle counseling to stop plaque buildup early.
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-400 mb-6">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> Cardiac genetic risk screening</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> Lipoprotein (a) diagnostics</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> Custom heart rehab plans</li>
+            </ul>
           </div>
-          <h3 class="service-card-title">Hip Replacement</h3>
-          <p class="service-card-desc">Primary and revision hip arthroplasty using minimally invasive approaches with ceramic-on-ceramic bearings for durability and rapid recovery.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check-circle"></i> Minimally invasive techniques</li>
-            <li><i class="fas fa-check-circle"></i> 4-6 week recovery · 2-3 day stay</li>
-            <li><i class="fas fa-check-circle"></i> Ceramic bearings for longevity</li>
-          </ul>
-          <div class="service-card-actions">
-            <a href="#appointment" class="service-learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Doctor%2C%20I%20want%20to%20know%20about%20Hip%20Replacement" target="_blank" rel="noopener" class="service-cta"><i class="fab fa-whatsapp"></i> Book Now</a>
+          <div class="flex items-center justify-between border-t border-navy-800/80 pt-4 mt-2">
+            <a href="#faqs" class="text-xs font-bold text-slate-500 hover:text-white transition-colors">Learn More</a>
+            <a href="https://wa.me/919829012345?text=Hello%20Dr.%20Arjun%20Mehta%2C%20I%20want%20to%20know%20about%20Preventive%20Cardiac%20Screenings." target="_blank" rel="noopener" class="text-xs font-bold text-crimson-500 hover:text-crimson-400 flex items-center gap-1.5">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Inquire Now
+            </a>
           </div>
         </div>
 
-        <!-- Card 6: Arthroscopy -->
-        <div class="service-card-premium" id="service-arthroscopy">
-          <div class="service-card-top">
-            <div class="service-icon-wrap gradient-cyan">
-              <i class="fas fa-microscope"></i>
+        <!-- Card 6: 3D Echocardiography -->
+        <div class="bg-navy-950 border border-navy-800 rounded-3xl p-6 hover:border-crimson-600/40 transition-all duration-300 flex flex-col justify-between group shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center group-hover:bg-crimson-600 group-hover:text-white transition-all duration-300">
+                <i class="ph-bold ph-heart-break text-2xl"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-navy-900 border border-navy-800 text-slate-400">
+                15k+ Scans
+              </span>
             </div>
-            <span class="service-count-badge blue"><i class="fas fa-chart-line"></i> 1000+</span>
+            <h3 class="text-white font-bold text-lg sm:text-xl mb-3 group-hover:text-crimson-400 transition-colors">3D Echo &amp; Diagnostics</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+              In-house cardiac diagnostics: 3D Echocardiography, Treadmill Test (TMT), 24-hr Holter ECG, and strain imaging for precise heart chamber validation.
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-400 mb-6">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> Next-gen strain imaging</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> Same-day detailed reports</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500"></i> 100% non-invasive &amp; safe</li>
+            </ul>
           </div>
-          <h3 class="service-card-title">Arthroscopy</h3>
-          <p class="service-card-desc">Keyhole surgery for shoulder, knee, and ankle joint problems including cartilage repair, ligament reconstruction, and diagnostic evaluation.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check-circle"></i> Same-day discharge possible</li>
-            <li><i class="fas fa-check-circle"></i> 2-4 week recovery · Day care</li>
-            <li><i class="fas fa-check-circle"></i> Minimal scarring, less pain</li>
-          </ul>
-          <div class="service-card-actions">
-            <a href="#appointment" class="service-learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Doctor%2C%20I%20want%20to%20know%20about%20Arthroscopy" target="_blank" rel="noopener" class="service-cta"><i class="fab fa-whatsapp"></i> Book Now</a>
+          <div class="flex items-center justify-between border-t border-navy-800/80 pt-4 mt-2">
+            <a href="#faqs" class="text-xs font-bold text-slate-500 hover:text-white transition-colors">Learn More</a>
+            <a href="https://wa.me/919829012345?text=Hello%20Dr.%20Arjun%20Mehta%2C%20I%20need%20to%20book%20a%203D%20Echocardiography%20or%20TMT%20test." target="_blank" rel="noopener" class="text-xs font-bold text-crimson-500 hover:text-crimson-400 flex items-center gap-1.5">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Inquire Now
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Consultation Info Banner -->
+      <div class="mt-16 bg-gradient-to-r from-navy-900 to-navy-800/60 rounded-3xl p-6 sm:p-10 border border-navy-800 relative overflow-hidden shadow-2xl">
+        <div class="absolute -right-16 -bottom-16 w-48 h-48 bg-crimson-600/10 rounded-full blur-[40px] pointer-events-none"></div>
+        <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+          <div>
+            <h3 class="text-white font-playfair font-extrabold text-xl sm:text-2xl mb-2">Need a Cardiac Second Opinion?</h3>
+            <p class="text-slate-400 text-sm sm:text-base max-w-[640px]">
+              If you have been advised to undergo bypass surgery or angioplasty, consult Dr. Arjun Mehta for a detailed review of your angiogram and a comprehensive clinical evaluation.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+            <a href="tel:+919829012345" class="px-6 py-3.5 bg-navy-950 border border-navy-700 hover:bg-navy-900 text-white font-bold text-sm sm:text-base rounded-xl transition-all duration-300 text-center flex items-center justify-center gap-2">
+              <i class="fa-solid fa-phone"></i> Call Clinic
+            </a>
+            <a href="https://wa.me/919829012345?text=Hi%20Dr.%20Arjun%20Mehta%2C%20I%20need%20a%20second%20opinion%20on%20my%20cardiac%20condition.%20I%20have%20my%20reports." target="_blank" rel="noopener" class="px-6 py-3.5 bg-crimson-600 hover:bg-crimson-700 text-white font-extrabold text-sm sm:text-base rounded-xl shadow-md shadow-crimson-600/20 transition-all duration-300 text-center flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp text-lg"></i> Share Reports
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- CTA Banner -->
-      <div class="services-cta-banner">
-        <div class="cta-banner-inner">
-          <div class="cta-banner-text">
-            <h3>Not sure which treatment you need?</h3>
-            <p>Our team will help you find the right care path. Schedule a consultation or reach out on WhatsApp for a quick discussion.</p>
-          </div>
-          <div class="cta-banner-btns">
-            <a href="tel:+91XXXXXXXXXX" class="cta-banner-btn secondary"><i class="fas fa-phone-alt"></i> Call Clinic</a>
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Doctor%2C%20I%20need%20help%20choosing%20the%20right%20orthopedic%20treatment" target="_blank" rel="noopener" class="cta-banner-btn primary"><i class="fab fa-whatsapp"></i> Ask on WhatsApp</a>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- ===== WHY CHOOSE US ===== -->
-  <section class="why-choose" id="why-choose">
-    <div class="why-choose-bg-1"></div>
-    <div class="why-choose-bg-2"></div>
-    <div class="container why-choose-container">
-      <span class="section-tag section-tag-dark"><i class="fas fa-trophy"></i> Why Choose Us</span>
-      <h2 class="section-title section-title-white">Why Choose Our Clinic?</h2>
-      <div class="section-divider"></div>
-      <p class="section-subtitle section-subtitle-muted">We combine world-class expertise with genuine care to deliver outcomes that truly matter.</p>
+  <section class="py-16 lg:py-24 bg-navy-950 border-t border-navy-900/60" id="whychoose">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left: Details -->
+        <div class="lg:col-span-6">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold text-crimson-500 uppercase tracking-widest mb-3">
+            <i class="fa-solid fa-trophy"></i> Why Choose Us
+          </span>
+          <h2 class="font-playfair text-white font-extrabold text-3xl sm:text-4xl mb-6">
+            Pioneering Patient-Centric Heart Care
+          </h2>
+          <div class="w-16 h-1 bg-crimson-600 rounded-full mb-6"></div>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+            At HeartCare Advanced Cardiac Centre, we combine world-class expertise with advanced tech frameworks to deliver precise diagnostics and life-saving treatments. Every procedure is customized to ensure patients return home with healthier hearts and smiles.
+          </p>
 
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-card-icon"><i class="fas fa-user-graduate"></i></div>
-          <h3 class="why-card-title">AIIMS-Trained Specialist</h3>
-          <p class="why-card-text">Dr. Your Name brings the gold standard of orthopedic training from India's premier medical institute, AIIMS Delhi.</p>
+          <div class="space-y-6">
+            
+            <!-- Pillar 1 -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="ph-bold ph-graduation-cap text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-base sm:text-lg mb-1">AIIMS-Trained Senior Expert</h3>
+                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                  Dr. Arjun Mehta brings over 18 years of cardiology expertise from AIIMS New Delhi and Mount Sinai, USA.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="ph-bold ph-cpu text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-base sm:text-lg mb-1">Radial-First Advanced Cath Lab</h3>
+                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                  Equipped with high-definition digital fluoroscopy, advanced physiological tracking, and a dedicated radial recovery lounge.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="ph-bold ph-hand-heart text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-base sm:text-lg mb-1">Empathy-Driven Recovery</h3>
+                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                  Personalized cardiac medication regimens, post-angioplasty rehabilitation counseling, and 24/7 direct family support.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="ph-bold ph-certificate text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-base sm:text-lg mb-1">NABH Certification &amp; Government Approval</h3>
+                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                  Adhering to strict patient safety standards, infection control, and fully empanelled for cashless RGHS and private corporate insurances.
+                </p>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <div class="why-card">
-          <div class="why-card-icon"><i class="fas fa-microchip"></i></div>
-          <h3 class="why-card-title">Advanced Technology</h3>
-          <p class="why-card-text">We use state-of-the-art diagnostic and surgical equipment including C-arm imaging, arthroscopy systems, and robotic-assisted tools.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-card-icon"><i class="fas fa-hand-holding-heart"></i></div>
-          <h3 class="why-card-title">Patient-First Care</h3>
-          <p class="why-card-text">Every treatment plan is personalized. We take time to explain, involve you in decisions, and support you through recovery.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-card-icon"><i class="fas fa-shield-alt"></i></div>
-          <h3 class="why-card-title">NABH Certified</h3>
-          <p class="why-card-text">Our clinic meets the highest national standards for patient safety, infection control, and quality of care.</p>
+
+        <!-- Right: Graphic Card -->
+        <div class="lg:col-span-6 flex justify-center relative mt-8 lg:mt-0">
+          <div class="absolute w-[250px] h-[250px] bg-crimson-600/10 rounded-full blur-[50px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+          
+          <div class="glass-card rounded-[2.5rem] p-8 sm:p-10 border border-navy-800 shadow-2xl relative z-10 w-full max-w-[450px]">
+            <div class="w-14 h-14 rounded-2xl bg-crimson-600 flex items-center justify-center text-white mb-6 shadow-lg shadow-crimson-600/20">
+              <i class="ph-bold ph-heartbeat text-3xl"></i>
+            </div>
+            <h3 class="font-playfair text-white font-extrabold text-2xl sm:text-3xl mb-4">Patient-First Philosophy</h3>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+              "We understand that a heart ailment brings stress to the entire family. Our mission is to combine cutting-edge technology with warm, human communication so that you feel cared for, from screening to healthy recovery."
+            </p>
+            <div class="flex items-center gap-3">
+              <img src="../img/dr_arjun_mehta.png" alt="Dr Arjun Mehta" class="w-12 h-12 rounded-xl object-cover border border-navy-700">
+              <div>
+                <h4 class="text-white font-bold text-sm">Dr. Arjun Mehta</h4>
+                <p class="text-slate-400 text-xs uppercase tracking-wide font-semibold">Founder, HeartCare Centre</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ===== REVIEWS / TESTIMONIALS ===== -->
-  <section class="section-reviews" id="reviews">
-    <div class="container">
-      <div class="section-header">
-        <span class="premium-badge">
-          <span class="premium-badge-dot"></span>
-          <span>Patient Testimonials</span>
+  <!-- ===== PATIENT REVIEWS ===== -->
+  <section class="py-16 lg:py-24 bg-navy-900/60 border-t border-navy-900/60" id="testimonials">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold text-crimson-500 uppercase tracking-widest mb-3">
+          <i class="fa-solid fa-star text-amber-500"></i> Patient Testimonials
         </span>
-        <h2 class="section-title">What Our Patients Say</h2>
-        <div class="premium-heading-decor-center"></div>
-        <p class="section-subtitle">Real stories of healing from patients who trusted us with their mobility and quality of life.</p>
+        <h2 class="font-playfair text-white font-extrabold text-3xl sm:text-4xl mb-4">
+          Heartwarming Recovery Stories
+        </h2>
+        <div class="w-16 h-1 bg-crimson-600 rounded-full mx-auto mb-4"></div>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Read real experiences shared by patients from Jaipur and surrounding cities who regained their lives and vitality under Dr. Mehta's care.
+        </p>
       </div>
 
-      <!-- Stats Row -->
-      <div class="review-stats-grid">
-        <div class="review-stat-card">
-          <div class="review-stat-icon emerald"><i class="fas fa-smile"></i></div>
-          <div class="review-stat-number" data-target="10k">0</div>
-          <div class="review-stat-label">Happy Patients</div>
-        </div>
-        <div class="review-stat-card">
-          <div class="review-stat-icon amber"><i class="fas fa-star"></i></div>
-          <div class="review-stat-number" data-target="4.9+">0</div>
-          <div class="review-stat-label">Average Rating</div>
-        </div>
-        <div class="review-stat-card">
-          <div class="review-stat-icon blue"><i class="fas fa-award"></i></div>
-          <div class="review-stat-number" data-target="15+">0</div>
-          <div class="review-stat-label">Years Experience</div>
-        </div>
-      </div>
-
-      <!-- Review Cards Grid -->
-      <div class="reviews-premium-grid reviews-premium-grid-scroll">
-
+      <!-- Testimonial Slider Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        
         <!-- Review 1 -->
-        <div class="review-card-premium">
-          <i class="fas fa-quote-right review-quote-icon"></i>
-          <div class="review-card-header">
-            <div class="review-avatar blue">RP</div>
-            <div class="review-author-info">
-              <div class="review-author-name">Ravi Prakash</div>
-              <div class="review-author-location">Gomti Nagar · Patient's Son</div>
+        <div class="bg-navy-950 border border-navy-800 rounded-3xl p-6 relative hover:border-navy-700 transition-all duration-300 shadow-xl flex flex-col justify-between">
+          <div>
+            <i class="fa-solid fa-quote-right absolute top-6 right-6 text-navy-800 text-4xl pointer-events-none"></i>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-xl bg-crimson-900/20 text-crimson-400 flex items-center justify-center font-black text-sm shrink-0">
+                RS
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-sm">Rajesh Sharma</h4>
+                <p class="text-slate-500 text-xs font-semibold">54 Yrs · Jaipur</p>
+              </div>
             </div>
-            <span class="review-verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+            <div class="flex gap-0.5 text-amber-500 text-xs mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic mb-6">
+              "Dr. Mehta diagnosed my blocked artery in time and performed an angioplasty immediately. He literally saved my life during a sudden heart attack. The wrist-approach surgery made it very easy, and I walked out of the hospital in 2 days. We are forever grateful to him and his caring staff."
+            </p>
           </div>
-          <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="review-text">"Dr. Your Name performed my mother's knee replacement surgery last year. From the first consultation to the final follow-up, the care was exceptional. She is now walking without pain for the first time in a decade."</p>
-          <div class="review-card-footer">
-            <span class="review-date">March 2026</span>
-            <button class="review-helpful-btn" type="button"><i class="far fa-thumbs-up"></i> Helpful</button>
+          <div class="flex items-center justify-between border-t border-navy-800/80 pt-4 mt-2">
+            <span class="inline-flex items-center gap-1 text-[10px] font-bold text-[#25D366] bg-[#25D366]/10 px-2.5 py-1 rounded-full"><i class="fa-brands fa-google text-red-500 text-[8px]"></i> Verified Review</span>
+            <span class="text-slate-500 text-[10px] font-medium">April 2026</span>
           </div>
         </div>
 
         <!-- Review 2 -->
-        <div class="review-card-premium">
-          <i class="fas fa-quote-right review-quote-icon"></i>
-          <div class="review-card-header">
-            <div class="review-avatar indigo">AK</div>
-            <div class="review-author-info">
-              <div class="review-author-name">Arjun Kapoor</div>
-              <div class="review-author-location">Hazratganj · Football Player</div>
+        <div class="bg-navy-950 border border-navy-800 rounded-3xl p-6 relative hover:border-navy-700 transition-all duration-300 shadow-xl flex flex-col justify-between">
+          <div>
+            <i class="fa-solid fa-quote-right absolute top-6 right-6 text-navy-800 text-4xl pointer-events-none"></i>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-xl bg-blue-900/20 text-blue-400 flex items-center justify-center font-black text-sm shrink-0">
+                PK
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-sm">Priya Kanwar</h4>
+                <p class="text-slate-500 text-xs font-semibold">32 Yrs · Jodhpur</p>
+              </div>
             </div>
-            <span class="review-verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+            <div class="flex gap-0.5 text-amber-500 text-xs mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic mb-6">
+              "After consulting multiple doctors across three cities, Dr. Arjun Mehta adjusted my father's complex heart failure medications. Within 2 weeks, my father was able to walk in the garden without breathlessness. His detailed explanations and humble approach gave us immense confidence."
+            </p>
           </div>
-          <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="review-text">"I had a severe ACL tear from a football accident. Dr. Your Name not only performed the reconstruction flawlessly but guided me through a structured rehab program. I was back on the field in 7 months."</p>
-          <div class="review-card-footer">
-            <span class="review-date">January 2026</span>
-            <button class="review-helpful-btn" type="button"><i class="far fa-thumbs-up"></i> Helpful</button>
+          <div class="flex items-center justify-between border-t border-navy-800/80 pt-4 mt-2">
+            <span class="inline-flex items-center gap-1 text-[10px] font-bold text-[#25D366] bg-[#25D366]/10 px-2.5 py-1 rounded-full"><i class="fa-brands fa-google text-red-500 text-[8px]"></i> Verified Review</span>
+            <span class="text-slate-500 text-[10px] font-medium">May 2026</span>
           </div>
         </div>
 
         <!-- Review 3 -->
-        <div class="review-card-premium">
-          <i class="fas fa-quote-right review-quote-icon"></i>
-          <div class="review-card-header">
-            <div class="review-avatar emerald">SM</div>
-            <div class="review-author-info">
-              <div class="review-author-name">Sunita Mehra</div>
-              <div class="review-author-location">Aliganj · Caregiver</div>
+        <div class="bg-navy-950 border border-navy-800 rounded-3xl p-6 relative hover:border-navy-700 transition-all duration-300 shadow-xl flex flex-col justify-between">
+          <div>
+            <i class="fa-solid fa-quote-right absolute top-6 right-6 text-navy-800 text-4xl pointer-events-none"></i>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-xl bg-purple-900/20 text-purple-400 flex items-center justify-center font-black text-sm shrink-0">
+                VS
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-sm">Vijay Singh (Retd.)</h4>
+                <p class="text-slate-500 text-xs font-semibold">67 Yrs · Ajmer</p>
+              </div>
             </div>
-            <span class="review-verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+            <div class="flex gap-0.5 text-amber-500 text-xs mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic mb-6">
+              "Got my single-chamber pacemaker implanted by Dr. Arjun Mehta. The entire procedure at HeartCare Centre was extremely smooth and painless. Dr. Arjun's calming words right inside the Cath Lab dissolved all my fear. Post-op follow-ups have been equally reassuring. Highly recommended!"
+            </p>
           </div>
-          <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="review-text">"My father had a complex hip fracture after a fall. Dr. Your Name operated urgently and the recovery was remarkable. His calm demeanor and clear explanations made a stressful time so much easier."</p>
-          <div class="review-card-footer">
-            <span class="review-date">November 2025</span>
-            <button class="review-helpful-btn" type="button"><i class="far fa-thumbs-up"></i> Helpful</button>
+          <div class="flex items-center justify-between border-t border-navy-800/80 pt-4 mt-2">
+            <span class="inline-flex items-center gap-1 text-[10px] font-bold text-[#25D366] bg-[#25D366]/10 px-2.5 py-1 rounded-full"><i class="fa-brands fa-google text-red-500 text-[8px]"></i> Verified Review</span>
+            <span class="text-slate-500 text-[10px] font-medium">March 2026</span>
           </div>
         </div>
+
       </div>
 
-      <!-- Carousel Dots (mobile) -->
-      <div class="review-dots" aria-label="Review carousel navigation">
-        <button class="review-dot active" type="button" data-index="0" aria-label="Review 1"></button>
-        <button class="review-dot" type="button" data-index="1" aria-label="Review 2"></button>
-        <button class="review-dot" type="button" data-index="2" aria-label="Review 3"></button>
+      <!-- Trust highlights -->
+      <div class="flex flex-wrap justify-center items-center gap-6 text-xs text-slate-500 border-t border-navy-800/60 pt-8">
+        <span class="flex items-center gap-1"><i class="fa-solid fa-shield text-crimson-500"></i> HIPAA Compliant Patient Records</span>
+        <span class="flex items-center gap-1"><i class="fa-solid fa-clipboard-check text-crimson-500"></i> 100% Genuine Medical Stories</span>
+        <span class="flex items-center gap-1"><i class="fa-solid fa-star text-amber-500"></i> Google Rating 4.9 out of 5</span>
       </div>
 
-      <!-- Trust Indicators -->
-      <div class="review-trust-row">
-        <span class="review-trust-item"><i class="fas fa-check-circle"></i> Verified Reviews</span>
-        <span class="review-trust-item"><i class="fas fa-shield-alt"></i> 100% Patient Confidentiality</span>
-        <span class="review-trust-item"><i class="fas fa-clipboard-check"></i> Genuine Patient Stories</span>
-        <span class="review-trust-item"><i class="fas fa-star"></i> Rated 4.9 / 5 on Google</span>
-      </div>
-
-      <!-- CTA -->
-      <div class="reviews-cta-wrap">
-        <a href="reviews.html" class="reviews-cta-btn" id="reviews-cta">
-          Read All Patient Reviews <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
     </div>
   </section>
 
-  <!-- ===== APPOINTMENT ===== -->
-  <section class="appointment" id="appointment">
-    <div class="appointment-pattern"></div>
-    <div class="appointment-glow"></div>
-    <div class="container appointment-container">
-      <div class="appointment-header">
-        <span class="section-tag section-tag-dark"><i class="fas fa-calendar-check"></i> Book Your Visit</span>
-        <h2 class="section-title section-title-white">Book Your Appointment</h2>
-        <div class="section-divider"></div>
-        <p class="section-subtitle section-subtitle-muted">Take the first step toward a pain-free life. Reach out directly to our helpdesk and schedule your visit.</p>
+  <!-- ===== FAQ SECTION ===== -->
+  <section class="py-16 lg:py-24 bg-navy-950 border-t border-navy-900/60" id="faqs">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold text-crimson-500 uppercase tracking-widest mb-3">
+          <i class="fa-solid fa-circle-question"></i> Patient Education
+        </span>
+        <h2 class="font-playfair text-white font-extrabold text-3xl sm:text-4xl mb-4">
+          Frequently Asked Questions
+        </h2>
+        <div class="w-16 h-1 bg-crimson-600 rounded-full mx-auto mb-4"></div>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Got questions? We have compiled responses to the most common queries patients have regarding heart procedures, insurance panel approvals, and clinic consultations.
+        </p>
       </div>
 
-      <div class="appointment-card">
-        <div class="appointment-buttons">
-          <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Doctor%2C%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg" id="appt-whatsapp">
-            <i class="fab fa-whatsapp"></i> Book via WhatsApp
-          </a>
-          <a href="tel:+91XXXXXXXXXX" class="btn btn-primary btn-lg" id="appt-call">
-            <i class="fas fa-phone-alt"></i> +91-XXXXXXXXXX
-          </a>
+      <div class="space-y-4">
+        
+        <!-- FAQ 1 -->
+        <div class="bg-navy-900 border border-navy-800 rounded-2xl overflow-hidden transition-all duration-300">
+          <button class="w-full flex items-center justify-between p-5 text-left text-white font-bold text-sm sm:text-base hover:text-crimson-400 faq-btn focus:outline-none">
+            <span>What is an Interventional Cardiologist, and how does it differ from a Heart Surgeon?</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 ml-2"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="p-5 border-t border-navy-800 text-slate-300 text-xs sm:text-sm leading-relaxed">
+              An interventional cardiologist (like Dr. Arjun Mehta) specializes in treating cardiovascular diseases using minimally invasive, catheter-based procedures (like radial angioplasty and stenting) through small punctures in the wrist or leg, avoiding open incisions. A cardiothoracic surgeon, on the other hand, performs open heart surgeries such as coronary artery bypass grafts (CABG) or heart transplants.
+            </div>
+          </div>
         </div>
-        <div class="appointment-info">
-          <span><i class="fas fa-clock"></i> Mon-Sat: 10AM-2PM | 5PM-8PM</span>
-          <span><i class="fas fa-map-marker-alt"></i> Hazratganj, Your City</span>
+
+        <!-- FAQ 2 -->
+        <div class="bg-navy-900 border border-navy-800 rounded-2xl overflow-hidden transition-all duration-300">
+          <button class="w-full flex items-center justify-between p-5 text-left text-white font-bold text-sm sm:text-base hover:text-crimson-400 faq-btn focus:outline-none">
+            <span>When should I consult Dr. Arjun Mehta instead of a general physician?</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 ml-2"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="p-5 border-t border-navy-800 text-slate-300 text-xs sm:text-sm leading-relaxed">
+              You should consult Dr. Mehta directly if you experience symptoms like chest discomfort, pressure, or shortness of breath, unexplained palpitations, dizziness, or fainting spells. Patients with high-risk factors like chronic diabetes, long-standing hypertension, high cholesterol, or a strong family history of heart disease should also undergo regular cardiovascular screenings.
+            </div>
+          </div>
         </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-navy-900 border border-navy-800 rounded-2xl overflow-hidden transition-all duration-300">
+          <button class="w-full flex items-center justify-between p-5 text-left text-white font-bold text-sm sm:text-base hover:text-crimson-400 faq-btn focus:outline-none">
+            <span>What diagnostic tests are performed in-house, and are results immediate?</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 ml-2"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="p-5 border-t border-navy-800 text-slate-300 text-xs sm:text-sm leading-relaxed">
+              We provide full diagnostic screenings in-house including 12-lead ECG, high-resolution 3D Echocardiography, Treadmill Stress Testing (TMT), and 24/48-hour Holter ambulatory rhythm monitoring. In most instances, ECG and Echocardiography results are parsed, written, and handed over to you immediately during your consultation session.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bg-navy-900 border border-navy-800 rounded-2xl overflow-hidden transition-all duration-300">
+          <button class="w-full flex items-center justify-between p-5 text-left text-white font-bold text-sm sm:text-base hover:text-crimson-400 faq-btn focus:outline-none">
+            <span>What is a Radial Angioplasty, and what are its advantages?</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 ml-2"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="p-5 border-t border-navy-800 text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Radial angioplasty is a procedure where catheters are routed to the heart through the radial artery in your wrist rather than the femoral artery in your groin. Key benefits include a significant reduction in bleeding risks, elimination of the need to lie flat on your back for hours after the procedure, immediate post-procedure mobility, and overall faster recovery, enabling discharge within 24 to 48 hours.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="bg-navy-900 border border-navy-800 rounded-2xl overflow-hidden transition-all duration-300">
+          <button class="w-full flex items-center justify-between p-5 text-left text-white font-bold text-sm sm:text-base hover:text-crimson-400 faq-btn focus:outline-none">
+            <span>How long is the recovery period after a coronary stent (angioplasty) procedure?</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 ml-2"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="p-5 border-t border-navy-800 text-slate-300 text-xs sm:text-sm leading-relaxed">
+              For elective radial angioplasty, patients are usually discharged within 48 hours. You can resume light, routine indoor activities within 3 to 5 days. We advise avoiding heavy lifting, strenuous workouts, and driving for approximately 1 to 2 weeks. A structured cardiorespiratory recovery plan and detailed lifestyle guidelines will be customized for you by Dr. Mehta upon discharge.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="bg-navy-900 border border-navy-800 rounded-2xl overflow-hidden transition-all duration-300">
+          <button class="w-full flex items-center justify-between p-5 text-left text-white font-bold text-sm sm:text-base hover:text-crimson-400 faq-btn focus:outline-none">
+            <span>Does HeartCare accept RGHS, CGHS, and private health insurance cashless facilities?</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 ml-2"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="p-5 border-t border-navy-800 text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Yes. We are fully empanelled to accept cashless treatments under the Rajasthan Government Health Scheme (RGHS) for state government employees and pensioners, as well as the Central Government Health Scheme (CGHS). We also coordinate cashless pre-approvals with all leading private corporate TPA providers (Star Health, HDFC Ergo, ICICI Lombard, Max Bupa, etc.).
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="bg-navy-900 border border-navy-800 rounded-2xl overflow-hidden transition-all duration-300">
+          <button class="w-full flex items-center justify-between p-5 text-left text-white font-bold text-sm sm:text-base hover:text-crimson-400 faq-btn focus:outline-none">
+            <span>What should I do in case of a cardiac emergency?</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 ml-2"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="p-5 border-t border-navy-800 text-slate-300 text-xs sm:text-sm leading-relaxed">
+              In a cardiac emergency (chest pain spreading to jaw or left arm, severe sweating, choking sensation), call our 24/7 emergency helpline at <strong class="text-white">+91-9829012345</strong> immediately. While heading to the centre, crush and swallow a 300mg Aspirin tablet if available and advise the medical coordinator on call. Our critical care team operates on a 24/7 basis next to SMS Hospital to initiate golden-hour angioplasties.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 8 -->
+        <div class="bg-navy-900 border border-navy-800 rounded-2xl overflow-hidden transition-all duration-300">
+          <button class="w-full flex items-center justify-between p-5 text-left text-white font-bold text-sm sm:text-base hover:text-crimson-400 faq-btn focus:outline-none">
+            <span>How can I book a second opinion consult for bypass surgery or angioplasty?</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 ml-2"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="p-5 border-t border-navy-800 text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Booking a second opinion is simple. Select the WhatsApp CTA, send a message stating "Second Opinion Request," and upload your latest coronary angiogram video (CD file or drive link) and medical reports. Our front desk will schedule an in-person or telehealth consultation for you with Dr. Arjun Mehta.
+            </div>
+          </div>
+        </div>
+
       </div>
+
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag"><i class="fas fa-map-pin"></i> Visit Us</span>
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="section-divider section-divider-blue"></div>
-        <p class="section-subtitle">Reach out to us for appointments, inquiries, or any orthopedic concerns.</p>
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="py-16 lg:py-24 bg-navy-900/60 border-t border-navy-900/60" id="contact">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold text-crimson-500 uppercase tracking-widest mb-3">
+          <i class="fa-solid fa-location-dot"></i> Find Us
+        </span>
+        <h2 class="font-playfair text-white font-extrabold text-3xl sm:text-4xl mb-4">
+          Visit HeartCare Centre
+        </h2>
+        <div class="w-16 h-1 bg-crimson-600 rounded-full mx-auto mb-4"></div>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Conveniently located near SMS Hospital on Tonk Road, Jaipur. Easy access for patients traveling from Jodhpur, Ajmer, Udaipur, and other parts of Rajasthan.
+        </p>
       </div>
 
-      <div class="contact-grid">
-        <div class="contact-card" id="contact-location">
-          <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <h3 class="contact-card-title">Our Location</h3>
-          <p class="contact-card-text">123, Hazratganj<br>Your City, Uttar Pradesh XXXXXX</p>
-          <a href="https://www.google.com/maps/dir//Hazratganj,+Your+City" target="_blank" rel="noopener" class="contact-card-link"><i class="fas fa-directions"></i> Get Directions</a>
-        </div>
-        <div class="contact-card" id="contact-hours">
-          <div class="contact-card-icon"><i class="fas fa-clock"></i></div>
-          <h3 class="contact-card-title">Clinic Hours</h3>
-          <p class="contact-card-text">Monday - Saturday</p>
-          <p class="contact-card-hours">10:00 AM - 2:00 PM</p>
-          <p class="contact-card-hours">5:00 PM - 8:00 PM</p>
-          <p class="contact-card-closed">Sunday: Closed</p>
-        </div>
-        <div class="contact-card" id="contact-info">
-          <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
-          <h3 class="contact-card-title">Contact Info</h3>
-          <p class="contact-card-text">Phone</p>
-          <a href="tel:+91XXXXXXXXXX" class="contact-card-link-main">+91-XXXXXXXXXX</a>
-          <p class="contact-card-text" style="margin-top: 8px;">Email</p>
-          <a href="mailto:contact@yourclinicname.com" class="contact-card-link-main">contact@yourclinicname.com</a>
-        </div>
-      </div>
-
-      <div class="contact-map-wrap">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.6!2d80.9462!3d26.8467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd5b2b5b2b5b%3A0x5b2b5b2b5b2b5b2b!2sHazratganj%2C%20Lucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Your Clinic Name Location"></iframe>
-        <div class="contact-map-overlay">
-          <div class="contact-map-info">
-            <i class="fas fa-map-marker-alt"></i>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
+        <!-- Location details -->
+        <div class="lg:col-span-4 flex flex-col gap-6 justify-between">
+          
+          <div class="bg-navy-950 border border-navy-800 p-6 rounded-3xl flex items-start gap-4 shadow-lg">
+            <div class="w-10 h-10 rounded-xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-map-location-dot text-lg"></i>
+            </div>
             <div>
-              <div class="contact-map-name">Your Clinic Name</div>
-              <div class="contact-map-address">Hazratganj, Your City, UP XXXXXX</div>
-              <a href="https://www.google.com/maps/dir//Hazratganj,+Your+City" target="_blank" rel="noopener" class="contact-map-link"><i class="fas fa-directions"></i> Get Directions</a>
+              <h4 class="text-white font-bold text-sm uppercase tracking-wide mb-1">Clinic Address</h4>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                102, Tonk Road,<br>
+                Near SMS Hospital Area,<br>
+                Jaipur, Rajasthan 302015
+              </p>
+              <a href="https://maps.google.com/?q=Tonk+Road+SMS+Hospital+Jaipur" target="_blank" rel="noopener" class="inline-block mt-3 text-xs font-bold text-crimson-500 hover:text-crimson-400">
+                <i class="fa-solid fa-directions mr-1"></i> Get Directions via Maps
+              </a>
             </div>
           </div>
+
+          <div class="bg-navy-950 border border-navy-800 p-6 rounded-3xl flex items-start gap-4 shadow-lg">
+            <div class="w-10 h-10 rounded-xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-clock text-lg"></i>
+            </div>
+            <div>
+              <h4 class="text-white font-bold text-sm uppercase tracking-wide mb-1">Consultation Hours</h4>
+              <p class="text-slate-300 text-xs sm:text-sm font-semibold mb-1">Monday - Saturday</p>
+              <p class="text-slate-400 text-xs mb-0.5">Morning: 9:00 AM - 1:00 PM</p>
+              <p class="text-slate-400 text-xs mb-2">Evening: 4:00 PM - 7:00 PM</p>
+              <p class="text-crimson-500 text-xs font-bold"><i class="fa-solid fa-circle-xmark mr-1"></i> Sunday: Closed (Emergencies Only)</p>
+            </div>
+          </div>
+
+          <div class="bg-navy-950 border border-navy-800 p-6 rounded-3xl flex items-start gap-4 shadow-lg">
+            <div class="w-10 h-10 rounded-xl bg-crimson-900/20 text-crimson-500 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-phone-volume text-lg"></i>
+            </div>
+            <div>
+              <h4 class="text-white font-bold text-sm uppercase tracking-wide mb-1">Contact Helplines</h4>
+              <p class="text-slate-500 text-[10px] font-bold uppercase tracking-wider mb-0.5">Clinic Phone</p>
+              <a href="tel:+919829012345" class="block text-white font-extrabold text-sm sm:text-base hover:text-crimson-400 mb-2">+91 98290 12345</a>
+              
+              <p class="text-slate-500 text-[10px] font-bold uppercase tracking-wider mb-0.5">Email Helpline</p>
+              <a href="mailto:contact@heartcarejaipur.com" class="block text-white font-semibold text-xs sm:text-sm hover:text-crimson-400">contact@heartcarejaipur.com</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Google Maps iframe (Using Tonk Road near SMS Hospital area coordination) -->
+        <div class="lg:col-span-8 bg-navy-950 border border-navy-800 rounded-3xl overflow-hidden shadow-lg relative min-h-[350px]">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.1064972239634!2d75.81308381504262!3d26.89278918313337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db681944cd93f%3A0x6b2e0e0176cdbb7b!2sSMS%20Hospital!5e0!3m2!1sen!2sin!4v1689280000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0; min-height: 350px; filter: grayscale(80%) invert(90%) contrast(100%);" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            title="HeartCare Advanced Cardiac Centre Tonk Road Location Map">
+          </iframe>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer-top-line"></div>
-    <div class="container">
-      <!-- Newsletter -->
-      <div class="newsletter-block">
-        <div class="newsletter-inner">
-          <div class="newsletter-text">
-            <h4>Stay Updated</h4>
-            <p>Get health tips &amp; clinic updates</p>
+  <footer class="bg-navy-950 text-slate-500 relative border-t border-navy-900/60 overflow-hidden">
+    <!-- Top red stripe -->
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-crimson-600 to-transparent opacity-60"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+        
+        <!-- Col 1: Clinic Bio -->
+        <div class="md:col-span-5 flex flex-col gap-4 text-center md:text-left">
+          <a href="#hero" class="flex items-center justify-center md:justify-start gap-2 group">
+            <div class="w-8 h-8 rounded-lg bg-crimson-600 flex items-center justify-center text-white">
+              <i class="ph-bold ph-heartbeat text-lg"></i>
+            </div>
+            <span class="font-playfair text-white text-lg font-bold">HeartCare Centre</span>
+          </a>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-[380px] mx-auto md:mx-0">
+            Dedicated to providing world-class diagnostic, interventional, and preventive cardiology care with compassion and precision in Jaipur, Rajasthan.
+          </p>
+          
+          <div class="flex items-center justify-center md:justify-start gap-1 p-2 bg-navy-900 border border-navy-800/80 rounded-xl w-fit mx-auto md:mx-0">
+            <span class="text-amber-500 text-xs">★★★★★</span>
+            <span class="text-[10px] text-slate-400 font-bold ml-1">4.9 | 1,200+ reviews</span>
           </div>
-          <form class="newsletter-form" id="newsletterForm">
-            <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter">
-            <button type="submit" class="newsletter-btn">Subscribe &rarr;</button>
-          </form>
+
+          <!-- Social connections -->
+          <div class="flex items-center justify-center md:justify-start gap-3 mt-2">
+            <a href="https://facebook.com/heartcarejaipur" target="_blank" rel="noopener" aria-label="Facebook Profile" class="w-8 h-8 rounded-lg bg-navy-900 hover:bg-crimson-600 hover:text-white flex items-center justify-center border border-navy-800 transition-all duration-300">
+              <i class="fa-brands fa-facebook-f text-sm"></i>
+            </a>
+            <a href="https://instagram.com/heartcarejaipur" target="_blank" rel="noopener" aria-label="Instagram Profile" class="w-8 h-8 rounded-lg bg-navy-900 hover:bg-crimson-600 hover:text-white flex items-center justify-center border border-navy-800 transition-all duration-300">
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+            <a href="https://linkedin.com/in/dr-arjun-mehta-cardiology" target="_blank" rel="noopener" aria-label="LinkedIn Profile" class="w-8 h-8 rounded-lg bg-navy-900 hover:bg-crimson-600 hover:text-white flex items-center justify-center border border-navy-800 transition-all duration-300">
+              <i class="fa-brands fa-linkedin-in text-sm"></i>
+            </a>
+            <a href="https://youtube.com/@heartcarejaipur" target="_blank" rel="noopener" aria-label="YouTube Channel" class="w-8 h-8 rounded-lg bg-navy-900 hover:bg-crimson-600 hover:text-white flex items-center justify-center border border-navy-800 transition-all duration-300">
+              <i class="fa-brands fa-youtube text-sm"></i>
+            </a>
+          </div>
         </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="md:col-span-3 text-center md:text-left">
+          <h4 class="text-white font-extrabold text-xs uppercase tracking-widest mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-xs sm:text-sm font-semibold">
+            <li><a href="#hero" class="hover:text-crimson-500 transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-crimson-500 transition-colors">About Doctor</a></li>
+            <li><a href="#services" class="hover:text-crimson-500 transition-colors">Specialty Services</a></li>
+            <li><a href="#whychoose" class="hover:text-crimson-500 transition-colors">Why Choose Us</a></li>
+            <li><a href="#testimonials" class="hover:text-crimson-500 transition-colors">Patient Stories</a></li>
+            <li><a href="#faqs" class="hover:text-crimson-500 transition-colors">Common FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Contacts -->
+        <div class="md:col-span-4 text-center md:text-left">
+          <h4 class="text-white font-extrabold text-xs uppercase tracking-widest mb-4">Emergency Contact</h4>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+            For urgent cardiac assistance, chest discomfort, or ambulance coordination, contact our emergency helpline.
+          </p>
+          <a href="tel:+919829012345" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-crimson-600 hover:bg-crimson-700 text-white font-extrabold text-sm shadow-lg shadow-crimson-600/30 transition-all duration-300">
+            <i class="fa-solid fa-phone-volume text-base animate-pulse"></i> Emergency: +91 98290 12345
+          </a>
+        </div>
+
       </div>
 
-      <!-- Brand Center -->
-      <div class="footer-brand">
-        <a href="#hero" class="footer-logo">
-          <div class="footer-logo-icon">Y</div>
-          <span class="footer-logo-text">Your Clinic <span>Name</span></span>
-        </a>
-        <div class="footer-tagline">Healing Hands. Caring Hearts.</div>
-        <p class="footer-desc">Dedicated to providing world-class orthopedic care with compassion, precision, and the highest standards of medical excellence in Your City.</p>
-        <div class="footer-rating">
-          <span class="footer-stars">★★★★★</span>
-          <span><strong>4.9</strong> <span class="footer-rating-sep">|</span> 500+ reviews</span>
-        </div>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-
-      <!-- Footer Links -->
-      <div class="footer-links-grid">
-        <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
-            <span>Quick Links</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="accordion-content">
-            <div class="accordion-body">
-              <a href="#hero"><i class="fas fa-chevron-right"></i> Home</a>
-              <a href="#about"><i class="fas fa-chevron-right"></i> About</a>
-              <a href="#services"><i class="fas fa-chevron-right"></i> Services</a>
-              <a href="#reviews"><i class="fas fa-chevron-right"></i> Reviews</a>
-              <a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
-            <span>Our Services</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="accordion-content">
-            <div class="accordion-body">
-              <a href="#services"><i class="fas fa-chevron-right"></i> Knee Replacement</a>
-              <a href="#services"><i class="fas fa-chevron-right"></i> Spine Surgery</a>
-              <a href="#services"><i class="fas fa-chevron-right"></i> Sports Injury</a>
-              <a href="#services"><i class="fas fa-chevron-right"></i> Fracture Care</a>
-              <a href="#services"><i class="fas fa-chevron-right"></i> Hip Replacement</a>
-              <a href="#services"><i class="fas fa-chevron-right"></i> Arthroscopy</a>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item accordion-item-wide">
-          <button class="accordion-header" aria-expanded="true">
-            <span>Contact Info</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="accordion-content expanded-on-mobile">
-            <div class="accordion-body">
-              <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> Hazratganj, Your City, UP XXXXXX</div>
-              <a href="tel:+91XXXXXXXXXX" class="footer-contact-item"><i class="fas fa-phone-alt"></i> +91-XXXXXXXXXX</a>
-              <a href="mailto:contact@yourclinicname.com" class="footer-contact-item"><i class="fas fa-envelope"></i> contact@yourclinicname.com</a>
-              <div class="footer-contact-item"><i class="fas fa-clock"></i> Mon-Sat: 10AM-2PM, 5PM-8PM</div>
-              <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Doctor%2C%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener" class="footer-whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Copyright -->
-      <div class="footer-bottom">
-        <span>&copy; 2026 Your Clinic Name | Dr. Your Name, Your City</span>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms</a>
-          <a href="#">Disclaimer</a>
+      <!-- Copyright & Disclaimer -->
+      <div class="border-t border-navy-900/60 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] sm:text-xs">
+        <p class="text-center md:text-left leading-relaxed">
+          &copy; 2026 HeartCare Advanced Cardiac Centre. All rights reserved.<br>
+          <span class="text-slate-600">Disclaimer: Medical information on this site is purely educational and should not replace professional clinical evaluation or urgent emergency services.</span>
+        </p>
+        <div class="flex gap-4 font-semibold shrink-0">
+          <a href="#" class="hover:text-crimson-500 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-crimson-500 transition-colors">Terms of Service</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- ===== FLOATING ACTION BUTTONS (Desktop) ===== -->
-  <div class="floating-actions" id="floatingActions">
-    <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Doctor%2C%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat on WhatsApp">
-      <i class="fab fa-whatsapp"></i>
+  <!-- ===== FLOATING ACTIONS (Desktop) ===== -->
+  <div class="fixed bottom-6 right-6 z-[90] hidden md:flex flex-col gap-3">
+    <a href="https://wa.me/919829012345?text=Hi%20Dr.%20Arjun%20Mehta%2C%20I%20want%20to%20book%20a%20cardiac%20consultation%20appointment." target="_blank" rel="noopener" aria-label="Book on WhatsApp" class="w-12 h-12 rounded-full bg-[#25D366] hover:bg-[#20ba56] text-white flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:shadow-[#25D366]/50 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 active:scale-95 text-2xl">
+      <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <a href="tel:+91XXXXXXXXXX" class="floating-call" aria-label="Call Us">
-      <i class="fas fa-phone-alt"></i>
+    <a href="tel:+919829012345" aria-label="Call Helpline" class="w-12 h-12 rounded-full bg-crimson-600 hover:bg-crimson-700 text-white flex items-center justify-center shadow-lg shadow-crimson-600/30 hover:shadow-crimson-600/50 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 active:scale-95 text-lg">
+      <i class="fa-solid fa-phone"></i>
     </a>
+    <button id="backToTop" aria-label="Scroll to top" class="w-12 h-12 rounded-full bg-navy-800 hover:bg-navy-700 text-slate-300 flex items-center justify-center shadow-lg transition-all duration-300 transform hover:-translate-y-1 opacity-0 pointer-events-none text-base">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
   </div>
-
-  <!-- ===== BACK TO TOP ===== -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
 
   <!-- ===== MOBILE STICKY CTA BAR ===== -->
-  <div class="cta-bar" id="ctaBar">
-    <span class="cta-badge"><span class="pulse-dot"></span> 24/7 Available</span>
-    <button class="cta-close" id="ctaClose" aria-label="Close bar">&times;</button>
-    <a href="tel:+91XXXXXXXXXX" class="cta-btn cta-btn-call" aria-label="Call Now">
-      <i class="fas fa-phone-alt"></i>
-      <span>Call Now</span>
+  <div class="fixed bottom-0 left-0 w-full bg-navy-900 border-t border-navy-800 z-[95] grid grid-cols-2 p-2 gap-2 md:hidden">
+    <a href="tel:+919829012345" class="flex items-center justify-center gap-2 py-3 bg-navy-800 text-white font-extrabold rounded-xl border border-navy-700 active:bg-navy-700 transition-colors text-sm">
+      <i class="fa-solid fa-phone"></i> Call Now
     </a>
-    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Dr.%20Your%20Name%2C%20I%20want%20to%20book%20an%20appointment%20at%20Your%20Clinic%20Name." target="_blank" rel="noopener" class="cta-btn cta-btn-whatsapp" aria-label="WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-      <span>WhatsApp</span>
+    <a href="https://wa.me/919829012345?text=Hi%20Dr.%20Arjun%20Mehta%2C%20I%20want%20to%20book%20a%20cardiac%20consultation%20appointment." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 bg-crimson-600 text-white font-extrabold rounded-xl shadow-lg shadow-crimson-600/20 active:bg-crimson-700 transition-colors text-sm">
+      <i class="fa-brands fa-whatsapp text-lg"></i> Book Appointment
     </a>
   </div>
 
 
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Mobile Drawer logic
+      const navToggle = document.getElementById('navToggle');
+      const toggleIcon = document.getElementById('toggleIcon');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      const navOverlay = document.getElementById('navOverlay');
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="../js/script.js"></script>
-  <script src="../js/cta-bar.js"></script>
-  <script src="../js/premium-sections.js"></script>
+      function toggleDrawer(open) {
+        const isOpen = open !== undefined ? open : mobileDrawer.classList.contains('translate-x-full');
+        if (isOpen) {
+          mobileDrawer.classList.remove('translate-x-full');
+          navOverlay.classList.remove('hidden');
+          setTimeout(() => navOverlay.classList.remove('opacity-0'), 10);
+          toggleIcon.className = 'fa-solid fa-xmark text-2xl';
+        } else {
+          mobileDrawer.classList.add('translate-x-full');
+          navOverlay.classList.add('opacity-0');
+          setTimeout(() => navOverlay.classList.add('hidden'), 300);
+          toggleIcon.className = 'fa-solid fa-bars-staggered text-2xl';
+        }
+      }
+
+      navToggle.addEventListener('click', () => toggleDrawer());
+      navOverlay.addEventListener('click', () => toggleDrawer(false));
+      mobileLinks.forEach(link => link.addEventListener('click', () => toggleDrawer(false)));
+
+      // 2. Sticky Navbar & Back to Top logic
+      const navbar = document.getElementById('navbar');
+      const backToTop = document.getElementById('backToTop');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('shadow-xl', 'bg-navy-950/95');
+          navbar.classList.remove('glass-nav');
+        } else {
+          navbar.classList.remove('shadow-xl', 'bg-navy-950/95');
+          navbar.classList.add('glass-nav');
+        }
+
+        if (window.scrollY > 400) {
+          backToTop.classList.remove('opacity-0', 'pointer-events-none');
+        } else {
+          backToTop.classList.add('opacity-0', 'pointer-events-none');
+        }
+      });
+
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 3. Typing Text Animation
+      const words = [
+        "Your Heart's Health, Our Lifelong Commitment.",
+        "Providing Advanced Radial Angioplasty & Stenting.",
+        "AIIMS-Trained Senior Cardiology Excellence.",
+        "Cashless Insurance & RGHS Panel Approved Care."
+      ];
+      let wordIdx = 0;
+      let charIdx = 0;
+      let isDeleting = false;
+      const textSpan = document.getElementById('typingText');
+
+      function typeEffect() {
+        const currentWord = words[wordIdx];
+        if (isDeleting) {
+          textSpan.textContent = currentWord.substring(0, charIdx - 1);
+          charIdx--;
+        } else {
+          textSpan.textContent = currentWord.substring(0, charIdx + 1);
+          charIdx++;
+        }
+
+        let speed = isDeleting ? 30 : 60;
+
+        if (!isDeleting && charIdx === currentWord.length) {
+          isDeleting = true;
+          speed = 2500; // Pause at end of word
+        } else if (isDeleting && charIdx === 0) {
+          isDeleting = false;
+          wordIdx = (wordIdx + 1) % words.length;
+          speed = 400; // Pause before next word
+        }
+
+        setTimeout(typeEffect, speed);
+      }
+      typeEffect();
+
+      // 4. Counter Animation using Intersection Observer
+      const counters = document.querySelectorAll('.counter');
+      const counterSection = document.getElementById('stats-counter');
+
+      const observerOptions = {
+        root: null,
+        threshold: 0.1
+      };
+
+      const startCounters = (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            counters.forEach(counter => {
+              const target = +counter.getAttribute('data-target');
+              const duration = 2000; // ms
+              const stepTime = Math.max(Math.floor(duration / target), 15);
+              let currentVal = 0;
+
+              const timer = setInterval(() => {
+                if (target < 50) {
+                  // Faster increments for small numbers
+                  currentVal += 1;
+                } else if (target < 10000) {
+                  currentVal += Math.ceil(target / 100);
+                } else {
+                  currentVal += Math.ceil(target / 80);
+                }
+
+                if (currentVal >= target) {
+                  counter.textContent = target;
+                  clearInterval(timer);
+                } else {
+                  counter.textContent = currentVal;
+                }
+              }, stepTime);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+
+      const counterObserver = new IntersectionObserver(startCounters, observerOptions);
+      if (counterSection) counterObserver.observe(counterSection);
+
+      // 5. FAQ Accordion Toggle
+      const faqButtons = document.querySelectorAll('.faq-btn');
+
+      faqButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const content = btn.nextElementSibling;
+          const chevron = btn.querySelector('.fa-chevron-down');
+          const parent = btn.parentElement;
+
+          // Close other FAQs
+          faqButtons.forEach(otherBtn => {
+            if (otherBtn !== btn) {
+              otherBtn.nextElementSibling.style.maxHeight = null;
+              otherBtn.querySelector('.fa-chevron-down').classList.remove('rotate-180');
+              otherBtn.parentElement.classList.remove('border-crimson-600/30', 'bg-navy-900/40');
+            }
+          });
+
+          // Toggle current
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            chevron.classList.remove('rotate-180');
+            parent.classList.remove('border-crimson-600/30', 'bg-navy-900/40');
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            chevron.classList.add('rotate-180');
+            parent.classList.add('border-crimson-600/30', 'bg-navy-900/40');
+          }
+        });
+      });
+
+    });
+  </script>
 </body>
 </html>

@@ -1,540 +1,841 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Patient Reviews - Dr. Your Name | Your Clinic Name Your City</title>
-  <meta name="description" content="Read real reviews from 500+ patients of Dr. Your Name at Your Clinic Name, Your City. See why patients trust us for knee replacement, spine surgery, and sports injury treatment.">
-  <meta name="keywords" content="orthopedic surgeon reviews Your City, Dr. Your Name reviews, Your Clinic Name patient reviews, best knee surgeon Your City reviews">
-  <meta name="theme-color" content="#2563EB">
-  <link rel="canonical" href="https://yourclinicname.com/reviews">
+  
+  <!-- SEO Meta Tags -->
+  <title>Patient Reviews &amp; Testimonials - Dr. Arjun Mehta | HeartCare Centre Jaipur</title>
+  <meta name="description" content="Read real reviews from 1200+ cardiac patients of Dr. Arjun Mehta at HeartCare Advanced Cardiac Centre, Jaipur. See why patients trust us for angioplasty, pacemakers, and heart failure care.">
+  <meta name="keywords" content="cardiologist jaipur reviews, Dr. Arjun Mehta patient reviews, HeartCare Jaipur reviews, best angioplasty doctor jaipur reviews">
+  <meta name="theme-color" content="#0a0f18">
+  <link rel="canonical" href="https://heartcarejaipur.com/reviews">
 
-  <meta property="og:title" content="Patient Reviews - Dr. Your Name | Your Clinic Name Your City">
-  <meta property="og:description" content="Real reviews from 500+ patients. See why Your Clinic Name is Your City's most trusted orthopedic care center.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Patient Reviews &amp; Testimonials - Dr. Arjun Mehta | HeartCare Centre Jaipur">
+  <meta property="og:description" content="Verified reviews from 1,200+ patients. See why HeartCare Centre is Jaipur's most trusted cardiology clinic.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourclinicname.com/reviews">
+  <meta property="og:url" content="https://heartcarejaipur.com/reviews">
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brand: {
-              blue: '#2563EB',
-              sky: '#0EA5E9',
-              slate: '#0F172A',
-              light: '#F8FAFC',
-              indigo: '#4F46E5',
-              emerald: '#10B981',
+            navy: {
+              50: '#f4f6fa',
+              100: '#e7ecf4',
+              200: '#c5d2e5',
+              300: '#94adcd',
+              400: '#5c80ae',
+              500: '#3e5f8f',
+              600: '#304b73',
+              700: '#283e5f',
+              800: '#1d2a42',
+              900: '#131c2d',
+              950: '#0a0f18',
+            },
+            crimson: {
+              50: '#fef2f2',
+              100: '#fee2e2',
+              200: '#fecaca',
+              300: '#fca5a5',
+              400: '#f87171',
+              500: '#ef4444',
+              600: '#dc2626',
+              700: '#b91c1c',
+              800: '#991b1b',
+              900: '#7f1d1d',
             }
           },
           fontFamily: {
             playfair: ['Playfair Display', 'serif'],
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
           },
         }
       }
     }
   </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/reviews.css">
-  <link rel="stylesheet" href="../css/cta-bar.css">
 
+  <style>
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      14% { transform: scale(1.1); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.1); }
+      70% { transform: scale(1); }
+    }
+    .animate-heartbeat {
+      animation: heartbeat 1.5s infinite ease-in-out;
+    }
+    .bg-mesh {
+      background-color: #0a0f18; /* Navy 950 */
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(220, 38, 38, 0.12) 0px, transparent 50%), 
+        radial-gradient(at 100% 0%, rgba(30, 58, 138, 0.25) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(220, 38, 38, 0.08) 0px, transparent 50%);
+    }
+    .scrollbar-none::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-none {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .glass-card {
+      background: rgba(19, 28, 45, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .glass-nav {
+      background: rgba(10, 15, 24, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .filter-pill.active {
+      background-color: #dc2626;
+      border-color: #dc2626;
+      color: #ffffff;
+    }
+  </style>
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
-    "name": "Your Clinic Name",
-    "url": "https://yourclinicname.com",
-    "telephone": "+91-XXXXXXXXXX",
+    "name": "HeartCare Advanced Cardiac Centre",
+    "url": "https://heartcarejaipur.com",
+    "telephone": "+91-9829012345",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123, Hazratganj",
-      "addressLocality": "Your City",
-      "addressRegion": "Your State",
-      "postalCode": "XXXXXX",
+      "streetAddress": "102, Tonk Road, Near SMS Hospital",
+      "addressLocality": "Jaipur",
+      "addressRegion": "Rajasthan",
+      "postalCode": "302015",
       "addressCountry": "IN"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "ratingCount": "500",
+      "ratingCount": "1200",
       "bestRating": "5",
       "worstRating": "1"
     },
     "review": [
-      {"@type":"Review","author":{"@type":"Person","name":"Ravi Prakash"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"description":"Dr. Your Name performed my mother's knee replacement surgery last year. From the first consultation to the final follow-up, the care was exceptional.","datePublished":"2026-02-28"},
-      {"@type":"Review","author":{"@type":"Person","name":"Arjun Kapoor"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"description":"I had a severe ACL tear from a football accident. Dr. Your Name performed the reconstruction flawlessly and guided me through rehab.","datePublished":"2026-04-28"},
-      {"@type":"Review","author":{"@type":"Person","name":"Sunita Mehra"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"description":"My father had a complex hip fracture. Dr. Your Name operated urgently and the recovery was remarkable.","datePublished":"2026-05-14"},
-      {"@type":"Review","author":{"@type":"Person","name":"Priya Singh"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"description":"After suffering from chronic back pain for 5 years, Dr. Your Name's microdiscectomy changed my life.","datePublished":"2026-04-28"},
-      {"@type":"Review","author":{"@type":"Person","name":"Mohd. Faizan"},"reviewRating":{"@type":"Rating","ratingValue":"4"},"description":"Very professional doctor. My hip replacement surgery went smoothly.","datePublished":"2026-03-28"},
-      {"@type":"Review","author":{"@type":"Person","name":"Ananya Gupta"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"description":"Had shoulder arthroscopy for a rotator cuff tear. Recovery was faster than expected.","datePublished":"2026-05-07"}
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Rajesh Sharma"},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "description": "Dr. Mehta diagnosed my blocked artery in time and performed an angioplasty immediately. Saved my life during a heart attack.",
+        "datePublished": "2026-04-15"
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Priya Kanwar"},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "description": "After seeing three other doctors, Dr. Arjun Mehta adjusted my father's heart failure medications. He walks without breathlessness now.",
+        "datePublished": "2026-05-10"
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Vijay Singh"},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "description": "Got my pacemaker implanted here. Very smooth process, clean clinic, and Dr. Arjun's calming words made all my fear vanish.",
+        "datePublished": "2026-03-22"
+      }
     ]
   }
   </script>
 </head>
-<body class="font-sans text-slate-700 bg-white antialiased overflow-x-hidden page-reviews">
+<body class="font-sans bg-navy-950 text-slate-300 antialiased overflow-x-hidden">
 
-<!-- Nav Overlay -->
-<div class="nav-overlay fixed inset-0 bg-slate-900/40 z-[998] opacity-0 pointer-events-none transition-opacity duration-300" id="navOverlay"></div>
+  <!-- Mobile Nav Overlay -->
+  <div class="fixed inset-0 bg-black/50 z-[98] hidden backdrop-blur-sm transition-opacity duration-300" id="navOverlay"></div>
 
-<!-- ===== NAVBAR ===== -->
-<nav class="navbar fixed top-0 left-0 w-full z-[1000] h-16 lg:h-20 flex items-center" id="navbar">
-  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3 shrink-0">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-blue to-brand-sky flex items-center justify-center text-white font-bold text-lg shadow-md shadow-brand-blue/20">Y</div>
-      <div class="text-brand-slate font-semibold text-base lg:text-lg leading-tight">
-        Your Clinic Name
-        <span class="block font-sans font-medium text-[10px] lg:text-xs tracking-[1px] text-brand-blue uppercase">Dr. Your Name</span>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="fixed top-0 left-0 w-full z-[99] glass-nav border-b border-navy-800/40" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 group shrink-0">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-crimson-600 to-crimson-800 flex items-center justify-center text-white shadow-lg shadow-crimson-600/20">
+            <i class="ph-bold ph-heartbeat text-2xl animate-heartbeat"></i>
+          </div>
+          <div class="leading-tight">
+            <span class="block text-white font-extrabold text-base lg:text-lg font-playfair tracking-wide">HeartCare</span>
+            <span class="block font-sans font-semibold text-[10px] lg:text-[11px] text-crimson-500 tracking-[0.5px] uppercase">Dr. Arjun Mehta</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center gap-8">
+          <ul class="flex items-center gap-6 text-sm font-medium">
+            <li><a href="index.html" class="text-slate-300 hover:text-crimson-500 transition-colors">Home</a></li>
+            <li><a href="index.html#about" class="text-slate-300 hover:text-crimson-500 transition-colors">About</a></li>
+            <li><a href="index.html#services" class="text-slate-300 hover:text-crimson-500 transition-colors">Services</a></li>
+            <li><a href="index.html#whychoose" class="text-slate-300 hover:text-crimson-500 transition-colors">Why Us</a></li>
+            <li><a href="index.html#testimonials" class="text-white hover:text-crimson-500 transition-colors">Reviews</a></li>
+            <li><a href="index.html#faqs" class="text-slate-300 hover:text-crimson-500 transition-colors">FAQs</a></li>
+            <li><a href="index.html#contact" class="text-slate-300 hover:text-crimson-500 transition-colors">Contact</a></li>
+          </ul>
+          <a href="https://wa.me/919829012345?text=Hi%20Dr.%20Arjun%20Mehta%2C%20I%20want%20to%20book%20a%20cardiac%20consultation%20appointment." target="_blank" rel="noopener" class="bg-crimson-600 hover:bg-crimson-700 text-white font-bold text-sm px-6 py-2.5 rounded-full shadow-lg shadow-crimson-600/30 transition-all duration-300 transform hover:-translate-y-0.5">
+            <i class="fa-regular fa-calendar-check mr-2"></i> Book Appointment
+          </a>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button class="lg:hidden text-white hover:text-crimson-500 focus:outline-none p-2" id="navToggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars-staggered text-2xl" id="toggleIcon"></i>
+        </button>
       </div>
-    </a>
-    <button class="nav-toggle flex flex-col gap-[6px] cursor-pointer bg-transparent border-none p-2 min-w-[44px] min-h-[44px] items-center justify-center lg:hidden z-[1001]" id="navToggle" type="button" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">
-      <span class="block w-6 h-[2px] bg-brand-slate rounded transition-all duration-300"></span>
-      <span class="block w-6 h-[2px] bg-brand-slate rounded transition-all duration-300"></span>
-      <span class="block w-6 h-[2px] bg-brand-slate rounded transition-all duration-300"></span>
-    </button>
-    <ul class="nav-links z-[999] lg:static lg:h-auto lg:flex-row lg:p-0 lg:bg-transparent lg:backdrop-blur-none lg:overflow-visible lg:flex lg:items-center lg:gap-0.25" id="navLinks" aria-label="Primary navigation">
-      <li class="nav-menu-header lg:hidden">
-        <div class="nav-menu-brand">
-          <div class="nav-menu-icon">Y</div>
-          <div class="nav-menu-text">
-            <span class="nav-menu-title">Your Clinic Name</span>
-            <span class="nav-menu-subtitle">Dr. Your Name</span>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="fixed top-16 right-0 w-[280px] h-[calc(100vh-4rem)] bg-navy-900 border-l border-navy-800/80 z-[100] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden" id="mobileDrawer">
+      <div class="flex flex-col p-6 h-full justify-between">
+        <ul class="flex flex-col gap-4 text-base font-semibold">
+          <li><a href="index.html" class="mobile-nav-link block py-2 border-b border-navy-800/60 text-slate-300 hover:text-crimson-500">Home</a></li>
+          <li><a href="index.html#about" class="mobile-nav-link block py-2 border-b border-navy-800/60 text-slate-300 hover:text-crimson-500">About Doctor</a></li>
+          <li><a href="index.html#services" class="mobile-nav-link block py-2 border-b border-navy-800/60 text-slate-300 hover:text-crimson-500">Key Services</a></li>
+          <li><a href="index.html#whychoose" class="mobile-nav-link block py-2 border-b border-navy-800/60 text-slate-300 hover:text-crimson-500">Why Choose Us</a></li>
+          <li><a href="index.html#testimonials" class="mobile-nav-link block py-2 border-b border-navy-800/60 text-white hover:text-crimson-500">Patient Reviews</a></li>
+          <li><a href="index.html#faqs" class="mobile-nav-link block py-2 border-b border-navy-800/60 text-slate-300 hover:text-crimson-500">FAQs</a></li>
+          <li><a href="index.html#contact" class="mobile-nav-link block py-2 text-slate-300 hover:text-crimson-500">Contact Us</a></li>
+        </ul>
+        <div class="flex flex-col gap-3">
+          <a href="tel:+919829012345" class="flex items-center justify-center gap-2 bg-navy-800 border border-navy-700 hover:bg-navy-700 text-white font-bold py-3 rounded-xl transition-all duration-300 text-sm">
+            <i class="fa-solid fa-phone"></i> Call Now
+          </a>
+          <a href="https://wa.me/919829012345?text=Hi%20Dr.%20Arjun%20Mehta%2C%20I%20want%20to%20book%20a%20cardiac%20consultation%20appointment." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-crimson-600 hover:bg-crimson-700 text-white font-bold py-3 rounded-xl transition-all duration-300 text-sm shadow-md shadow-crimson-600/25">
+            <i class="fa-regular fa-calendar-check"></i> Book Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="relative bg-mesh pt-24 pb-12 lg:pt-32 lg:pb-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs sm:text-sm text-slate-500 mb-6 lg:mb-8">
+        <a href="index.html" class="hover:text-crimson-500 transition-colors font-medium">Home</a>
+        <i class="fa-solid fa-chevron-right text-[8px]"></i>
+        <span class="text-slate-300 font-semibold">Patient Reviews</span>
+      </nav>
+      
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+        <!-- Heading -->
+        <div class="text-center lg:text-left">
+          <h1 class="font-playfair font-extrabold text-white text-[clamp(2rem,5vw,3rem)] lg:text-[clamp(2.4rem,4vw,3.4rem)] leading-[1.15] mb-4">
+            What Our <span class="bg-gradient-to-r from-crimson-500 to-red-400 bg-clip-text text-transparent font-sans font-black">Patients</span> Say
+          </h1>
+          <p class="text-slate-400 font-medium max-w-[550px] text-sm sm:text-base lg:text-lg mx-auto lg:mx-0">
+            Real stories from 1,200+ verified patients who regained their cardiovascular health and quality of life at HeartCare Centre.
+          </p>
+        </div>
+
+        <!-- Rating Summary Card -->
+        <div class="w-full lg:w-auto flex justify-center">
+          <div class="glass-card bg-navy-900/60 border border-navy-800 rounded-3xl p-6 sm:p-8 text-center w-full max-w-[340px] shadow-2xl">
+            <div class="font-sans font-black text-white text-5xl sm:text-6xl leading-none mb-2">4.9</div>
+            <div class="flex justify-center gap-0.5 text-amber-500 text-lg sm:text-xl mb-3" aria-label="4.9 out of 5 stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-alt"></i>
+            </div>
+            <p class="text-slate-400 text-xs sm:text-sm font-semibold mb-4">Based on <strong class="text-white">1,200+ verified reviews</strong></p>
+            <div class="flex flex-wrap justify-center gap-1.5">
+              <span class="inline-flex items-center gap-1.5 bg-navy-950 rounded-full px-3.5 py-1.5 text-[10px] sm:text-xs text-slate-300 border border-navy-800 font-bold"><i class="fa-brands fa-google text-red-500 text-xs"></i> Google</span>
+              <span class="inline-flex items-center gap-1.5 bg-navy-950 rounded-full px-3.5 py-1.5 text-[10px] sm:text-xs text-slate-300 border border-navy-800 font-bold"><i class="fa-solid fa-user-md text-crimson-500 text-xs"></i> Practo</span>
+              <span class="inline-flex items-center gap-1.5 bg-navy-950 rounded-full px-3.5 py-1.5 text-[10px] sm:text-xs text-slate-300 border border-navy-800 font-bold"><i class="fa-solid fa-heart-circle-check text-blue-500 text-xs"></i> Lybrate</span>
+            </div>
           </div>
         </div>
-        <button class="nav-menu-close" aria-label="Close menu">
-          <i class="fas fa-xmark"></i>
-        </button>
-      </li>
-      <li class="lg:w-auto"><a href="index.html" class="nav-link block text-center text-slate-600 lg:text-slate-500 font-semibold text-base lg:text-sm py-3 px-4 lg:py-2 lg:px-3 rounded-xl transition-all duration-300"><i class="fas fa-house lg:hidden"></i> Home</a></li>
-      <li class="lg:w-auto"><a href="index.html#about" class="nav-link block text-center text-slate-600 lg:text-slate-500 font-semibold text-base lg:text-sm py-3 px-4 lg:py-2 lg:px-3 rounded-xl transition-all duration-300"><i class="fas fa-user-md lg:hidden"></i> About</a></li>
-      <li class="lg:w-auto"><a href="index.html#services" class="nav-link block text-center text-slate-600 lg:text-slate-500 font-semibold text-base lg:text-sm py-3 px-4 lg:py-2 lg:px-3 rounded-xl transition-all duration-300"><i class="fas fa-bone lg:hidden"></i> Services</a></li>
-      <li class="lg:w-auto"><a href="reviews.html" class="nav-link active block text-center text-slate-600 lg:text-slate-500 font-semibold text-base lg:text-sm py-3 px-4 lg:py-2 lg:px-3 rounded-xl transition-all duration-300"><i class="fas fa-star lg:hidden"></i> Reviews</a></li>
-      <li class="lg:w-auto"><a href="index.html#contact" class="nav-link block text-center text-slate-600 lg:text-slate-500 font-semibold text-base lg:text-sm py-3 px-4 lg:py-2 lg:px-3 rounded-xl transition-all duration-300"><i class="fas fa-envelope lg:hidden"></i> Contact</a></li>
-      <li class="nav-menu-cta-wrap lg:w-auto"><a href="index.html#appointment" class="nav-cta block text-center font-bold text-sm py-3 px-6 rounded-full bg-gradient-to-r from-brand-blue to-brand-indigo text-white shadow-lg shadow-brand-blue/20 w-full lg:w-auto"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
-    </ul>
-  </div>
-</nav>
+      </div>
 
-<!-- ===== 1. HERO ===== -->
-<section class="relative bg-gradient-to-br from-brand-light via-white to-blue-50/40 pt-24 pb-12 lg:pt-32 lg:pb-16 overflow-hidden" id="reviews-hero">
-  <div class="absolute inset-0 opacity-[0.02] pointer-events-none" style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);"></div>
-  <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full hero-gradient-mesh"></div>
-    <div class="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] rounded-full hero-gradient-mesh-2"></div>
-    <div class="absolute -bottom-1/3 -left-1/4 w-[500px] h-[500px] rounded-full hero-gradient-mesh-3"></div>
-  </div>
-  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <!-- Breadcrumb -->
-    <nav class="flex items-center gap-2 text-xs sm:text-sm text-slate-400 mb-6 lg:mb-8" aria-label="Breadcrumb">
-      <a href="index.html" class="hover:text-brand-blue transition-colors font-medium">Home</a>
-      <i class="fas fa-chevron-right text-[8px]"></i>
-      <span class="text-slate-600 font-semibold">Patient Reviews</span>
-    </nav>
-    
-    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-      <!-- Heading -->
-      <div class="text-center lg:text-left">
-        <h1 class="font-playfair font-bold text-brand-slate text-[clamp(2rem,5vw,3rem)] lg:text-[clamp(2.4rem,4vw,3.4rem)] leading-[1.15] mb-4">
-          What Our <span class="bg-gradient-to-r from-brand-blue to-brand-sky bg-clip-text text-transparent font-extrabold font-sans">Patients</span> Say
-        </h1>
-        <p class="text-slate-500 font-medium max-w-[550px] text-sm sm:text-base lg:text-lg mx-auto lg:mx-0">
-          Real stories from 500+ verified patients who regained their quality of life and mobility at Your Clinic Name.
+    </div>
+  </section>
+
+  <!-- ===== STATS BAR ===== -->
+  <section class="bg-navy-900 border-y border-navy-800/80 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8">
+        <div class="text-center">
+          <div class="text-crimson-500/30 text-xl sm:text-2xl mb-1.5"><i class="fa-solid fa-star"></i></div>
+          <div class="font-sans font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl">4.9/5</div>
+          <div class="text-slate-400 text-xs sm:text-sm mt-1">Average Rating</div>
+        </div>
+        <div class="text-center">
+          <div class="text-crimson-500/30 text-xl sm:text-2xl mb-1.5"><i class="fa-solid fa-smile"></i></div>
+          <div class="font-sans font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl">15k+</div>
+          <div class="text-slate-400 text-xs sm:text-sm mt-1">Happy Patients</div>
+        </div>
+        <div class="text-center">
+          <div class="text-crimson-500/30 text-xl sm:text-2xl mb-1.5"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div class="font-sans font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl">99.2%</div>
+          <div class="text-slate-400 text-xs sm:text-sm mt-1">PCI Success Rate</div>
+        </div>
+        <div class="text-center">
+          <div class="text-crimson-500/30 text-xl sm:text-2xl mb-1.5"><i class="fa-solid fa-retweet"></i></div>
+          <div class="font-sans font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl">88%</div>
+          <div class="text-slate-400 text-xs sm:text-sm mt-1">Patient Referrals</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FILTER & SEARCH BAR ===== -->
+  <section class="bg-navy-950 border-b border-navy-900 sticky top-16 lg:top-20 z-50 transition-shadow duration-300" id="filterBar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
+      <div class="flex flex-col lg:flex-row gap-4 items-center justify-between">
+        
+        <!-- Filter pills -->
+        <div class="flex items-center gap-2 overflow-x-auto scrollbar-none pb-2 lg:pb-0 -mx-4 px-4 w-full lg:w-auto" id="filterPills">
+          <button class="filter-pill active text-xs sm:text-sm font-semibold whitespace-nowrap px-4 py-2 rounded-full border border-navy-800 text-slate-300 hover:border-crimson-600 transition-all duration-200" data-filter="all">All Reviews</button>
+          <button class="filter-pill text-xs sm:text-sm font-semibold whitespace-nowrap px-4 py-2 rounded-full border border-navy-800 text-slate-300 hover:border-crimson-600 transition-all duration-200" data-filter="angioplasty">Angioplasty</button>
+          <button class="filter-pill text-xs sm:text-sm font-semibold whitespace-nowrap px-4 py-2 rounded-full border border-navy-800 text-slate-300 hover:border-crimson-600 transition-all duration-200" data-filter="pacemaker">Pacemaker</button>
+          <button class="filter-pill text-xs sm:text-sm font-semibold whitespace-nowrap px-4 py-2 rounded-full border border-navy-800 text-slate-300 hover:border-crimson-600 transition-all duration-200" data-filter="heart-failure">Heart Failure</button>
+          <button class="filter-pill text-xs sm:text-sm font-semibold whitespace-nowrap px-4 py-2 rounded-full border border-navy-800 text-slate-300 hover:border-crimson-600 transition-all duration-200" data-filter="angiography">Angiography</button>
+          <button class="filter-pill text-xs sm:text-sm font-semibold whitespace-nowrap px-4 py-2 rounded-full border border-navy-800 text-slate-300 hover:border-crimson-600 transition-all duration-200" data-filter="preventive">Preventive Care</button>
+        </div>
+
+        <!-- Sort and Search -->
+        <div class="flex items-center gap-3 w-full lg:w-auto shrink-0 justify-between sm:justify-start">
+          <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-500">
+            <span>Sort:</span>
+            <select class="text-xs sm:text-sm bg-navy-900 border border-navy-800 text-slate-200 rounded-xl px-3 py-2 outline-none focus:border-crimson-600" id="sortSelect">
+              <option value="recent">Most Recent</option>
+              <option value="highest">Highest Rated</option>
+            </select>
+          </div>
+          <div class="relative flex-1 max-w-xs">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+            <input type="text" placeholder="Search reviews..." class="w-full text-xs sm:text-sm bg-navy-900 border border-navy-800 text-slate-200 rounded-xl pl-9 pr-4 py-2 outline-none focus:border-crimson-600 placeholder-slate-500" id="searchInput">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS GRID ===== -->
+  <section class="py-12 bg-navy-900/30" id="reviewsSection">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Results counter -->
+      <div class="flex items-center justify-between mb-8">
+        <p class="text-slate-500 text-xs sm:text-sm font-semibold" id="resultsCount">
+          Showing <span class="text-white" id="showingCount">8</span> of <span class="text-white">8</span> reviews
         </p>
       </div>
 
-      <!-- Rating Summary Card (Light modern style) -->
-      <div class="w-full lg:w-auto flex justify-center">
-        <div class="rating-summary-card bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 text-center w-full max-w-[340px]">
-          <div class="font-sans font-black text-brand-slate text-5xl sm:text-6xl leading-none mb-2">4.9</div>
-          <div class="flex justify-center gap-0.5 text-amber-500 text-lg sm:text-xl mb-3" aria-label="4.9 out of 5 stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-          </div>
-          <p class="text-slate-400 text-xs sm:text-sm font-semibold mb-4">Based on <strong class="text-brand-slate">500+ verified reviews</strong></p>
-          <div class="flex flex-wrap justify-center gap-1.5">
-            <span class="inline-flex items-center gap-1 bg-brand-light rounded-full px-3 py-1.5 text-[10px] sm:text-xs text-slate-500 border border-slate-200/50 font-bold"><i class="fab fa-google text-red-500 text-xs"></i> Google</span>
-            <span class="inline-flex items-center gap-1 bg-brand-light rounded-full px-3 py-1.5 text-[10px] sm:text-xs text-slate-500 border border-slate-200/50 font-bold"><i class="fas fa-stethoscope text-brand-blue text-xs"></i> Practo</span>
-            <span class="inline-flex items-center gap-1 bg-brand-light rounded-full px-3 py-1.5 text-[10px] sm:text-xs text-slate-500 border border-slate-200/50 font-bold"><i class="fas fa-list text-amber-500 text-xs"></i> JustDial</span>
-          </div>
-        </div>
+      <!-- Grid container -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="reviewsGrid">
+        <!-- Injected dynamically by JS -->
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===== 2. STATS BAR ===== -->
-<section class="bg-gradient-to-r from-brand-slate via-slate-900 to-brand-slate border-y border-white/5 py-8 lg:py-10">
-  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8">
-      <div class="stat-item text-center text-white">
-        <div class="text-brand-sky/20 text-xl sm:text-2xl mb-1.5"><i class="fas fa-star"></i></div>
-        <div class="font-sans font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl counter" data-target="4.9" data-suffix="/5">0</div>
-        <div class="text-slate-400 text-xs sm:text-sm mt-1">Average Rating</div>
+      <!-- Empty state -->
+      <div class="text-center py-16 hidden" id="noResults">
+        <i class="fa-solid fa-magnifying-glass text-5xl text-navy-800 mb-4 block"></i>
+        <p class="text-slate-400 text-sm font-semibold">No reviews found matching your filters. Try adjusting your search term.</p>
       </div>
-      <div class="stat-item text-center text-white">
-        <div class="text-brand-sky/20 text-xl sm:text-2xl mb-1.5"><i class="fas fa-smile"></i></div>
-        <div class="font-sans font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl counter" data-target="500" data-suffix="+">0</div>
-        <div class="text-slate-400 text-xs sm:text-sm mt-1">Happy Patients</div>
-      </div>
-      <div class="stat-item text-center text-white">
-        <div class="text-brand-sky/20 text-xl sm:text-2xl mb-1.5"><i class="fas fa-trophy"></i></div>
-        <div class="font-sans font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl counter" data-target="98" data-suffix="%">0</div>
-        <div class="text-slate-400 text-xs sm:text-sm mt-1">Success Rate</div>
-      </div>
-      <div class="stat-item text-center text-white">
-        <div class="text-brand-sky/20 text-xl sm:text-2xl mb-1.5"><i class="fas fa-retweet"></i></div>
-        <div class="font-sans font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl counter" data-target="85" data-suffix="%">0</div>
-        <div class="text-slate-400 text-xs sm:text-sm mt-1">Referral Rate</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===== 3. FILTER BAR ===== -->
-<section class="filter-bar bg-white border-b border-slate-100 shadow-sm sticky top-16 lg:top-20 z-[100] transition-shadow duration-300" id="filterBar">
-  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
-    <!-- Mobile Header -->
-    <div class="flex items-center justify-between lg:hidden mb-2">
-      <h2 class="font-bold text-brand-slate text-sm">Filter Reviews</h2>
-      <button class="text-brand-blue text-xs font-semibold" id="clearFiltersBtn">Clear All</button>
     </div>
-    <!-- Filter Pills -->
-    <div class="flex items-center gap-2 overflow-x-auto scrollbar-none pb-2 lg:pb-0 -mx-4 sm:-mx-6 lg:mx-0 px-4 sm:px-6 lg:px-0" id="filterPills">
-      <button class="filter-pill active text-xs sm:text-sm font-semibold whitespace-nowrap px-4 py-2 rounded-full border transition-all duration-200" data-filter="all">All Reviews</button>
-      <button class="filter-pill text-xs sm:text-sm font-semibold whitespace-nowrap px-4 py-2 rounded-full border transition-all duration-200" data-filter="knee-replacement">Knee Replacement</button>
-      <button class="filter-pill text-xs sm:text-sm font-semibold whitespace-nowrap px-4 py-2 rounded-full border transition-all duration-200" data-filter="spine-surgery">Spine Surgery</button>
-      <button class="filter-pill text-xs sm:text-sm font-semibold whitespace-nowrap px-4 py-2 rounded-full border transition-all duration-200" data-filter="sports-injury">Sports Injury</button>
-      <button class="filter-pill text-xs sm:text-sm font-semibold whitespace-nowrap px-4 py-2 rounded-full border transition-all duration-200" data-filter="fracture-care">Fracture Care</button>
-      <button class="filter-pill text-xs sm:text-sm font-semibold whitespace-nowrap px-4 py-2 rounded-full border transition-all duration-200" data-filter="hip-replacement">Hip Replacement</button>
-    </div>
-    <!-- Sort & Search Row -->
-    <div class="flex flex-col sm:flex-row gap-3 mt-3">
-      <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-500">
-        <span class="hidden sm:inline font-medium">Sort:</span>
-        <select class="sort-select text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-brand-slate font-bold outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/30" id="sortSelect">
-          <option value="recent">Most Recent</option>
-          <option value="highest">Highest Rated</option>
-        </select>
-      </div>
-      <div class="relative flex-1 max-w-xs sm:ml-auto">
-        <i class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-        <input type="text" placeholder="Search reviews..." class="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-4 py-2 outline-none transition-all duration-200 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/30 placeholder-slate-400" id="searchInput">
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== 4. REVIEWS GRID ===== -->
-<section class="reviews-section py-8 lg:py-12 bg-brand-light" id="reviewsSection">
-  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Results count -->
-    <div class="flex items-center justify-between mb-6">
-      <p class="text-slate-400 text-xs sm:text-sm font-medium" id="resultsCount">Showing <strong class="text-brand-slate" id="showingCount">6</strong> of <strong class="text-brand-slate">8</strong> reviews</p>
-    </div>
-    <!-- Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="reviewsGrid"></div>
-    <!-- Load More & No Results -->
-    <div class="text-center mt-10" id="loadMoreWrap">
-      <button class="btn-load-more inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-sm bg-brand-blue text-white shadow-lg shadow-brand-blue/20 border border-transparent transition-all duration-300 hover:bg-brand-blue-hover hover:scale-[1.02] hover:-translate-y-0.5" id="loadMoreBtn">
-        Load More Reviews <i class="fas fa-chevron-down text-xs ml-1"></i>
-      </button>
-    </div>
-    <div class="text-center py-16 hidden" id="noResults">
-      <i class="fas fa-search text-5xl text-slate-300 mb-4 block"></i>
-      <p class="text-slate-400 text-sm font-semibold">No reviews match your filter. Try a different search term or category.</p>
-    </div>
-  </div>
-</section>
+  <!-- ===== SUBMIT A REVIEW FORM ===== -->
+  <section class="py-16 lg:py-24 bg-navy-950 border-t border-navy-900">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="font-playfair font-extrabold text-white text-3xl mb-3">Share Your Experience</h2>
+        <div class="w-12 h-1 bg-crimson-600 rounded-full mx-auto mb-4"></div>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Your feedback helps other patients in Rajasthan find the right cardiological care.
+        </p>
+      </div>
 
-<!-- ===== 5. FEATURED VIDEO TESTIMONIALS ===== -->
-<section class="py-16 lg:py-24 bg-white">
-  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="font-playfair font-bold text-brand-slate text-center text-[clamp(1.6rem,4vw,2.4rem)] mb-3">Hear From Our Patients</h2>
-    <div class="w-[60px] h-[3px] bg-brand-blue mx-auto rounded-full mb-4"></div>
-    <p class="text-center text-slate-400 font-medium max-w-[600px] mx-auto text-sm sm:text-base mb-12">Watch real patients share their journey to recovery at Your Clinic Name.</p>
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-      <div class="video-card group relative rounded-3xl overflow-hidden bg-brand-slate shadow-md cursor-pointer border border-slate-100">
-        <div class="aspect-video bg-gradient-to-br from-slate-800 to-slate-950 flex items-center justify-center relative">
-          <div class="w-16 h-16 rounded-full bg-brand-blue/20 flex items-center justify-center transition-all duration-300 group-hover:bg-brand-blue group-hover:scale-110 z-10">
-            <i class="fas fa-play text-brand-sky group-hover:text-white text-xl ml-1"></i>
+      <div class="glass-card rounded-[2rem] p-6 sm:p-10 border border-navy-800/80 shadow-2xl">
+        <form id="reviewForm" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Your Name *</label>
+              <input type="text" id="reviewerName" required placeholder="e.g. Rajesh Sharma" class="w-full text-sm bg-navy-900 border border-navy-800 text-slate-200 rounded-xl px-4 py-3.5 outline-none focus:border-crimson-600 placeholder-slate-600">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Your City/State *</label>
+              <input type="text" id="reviewerLocation" required placeholder="e.g. Jaipur, Rajasthan" class="w-full text-sm bg-navy-900 border border-navy-800 text-slate-200 rounded-xl px-4 py-3.5 outline-none focus:border-crimson-600 placeholder-slate-600">
+            </div>
           </div>
-        </div>
-        <div class="p-5 bg-white">
-          <p class="font-bold text-brand-slate text-sm">"My knee replacement journey"</p>
-          <p class="text-slate-400 text-xs mt-1">Ravi Prakash &bull; Knee Replacement</p>
-        </div>
-      </div>
-      <div class="video-card group relative rounded-3xl overflow-hidden bg-brand-slate shadow-md cursor-pointer border border-slate-100">
-        <div class="aspect-video bg-gradient-to-br from-slate-800 to-slate-950 flex items-center justify-center relative">
-          <div class="w-16 h-16 rounded-full bg-brand-blue/20 flex items-center justify-center transition-all duration-300 group-hover:bg-brand-blue group-hover:scale-110 z-10">
-            <i class="fas fa-play text-brand-sky group-hover:text-white text-xl ml-1"></i>
-          </div>
-        </div>
-        <div class="p-5 bg-white">
-          <p class="font-bold text-brand-slate text-sm">"Back on the field after ACL"</p>
-          <p class="text-slate-400 text-xs mt-1">Arjun Kapoor &bull; Sports Injury</p>
-        </div>
-      </div>
-      <div class="video-card group relative rounded-3xl overflow-hidden bg-brand-slate shadow-md cursor-pointer border border-slate-100 sm:col-span-2 lg:col-span-1">
-        <div class="aspect-video bg-gradient-to-br from-slate-800 to-slate-950 flex items-center justify-center relative">
-          <div class="w-16 h-16 rounded-full bg-brand-blue/20 flex items-center justify-center transition-all duration-300 group-hover:bg-brand-blue group-hover:scale-110 z-10">
-            <i class="fas fa-play text-brand-sky group-hover:text-white text-xl ml-1"></i>
-          </div>
-        </div>
-        <div class="p-5 bg-white">
-          <p class="font-bold text-brand-slate text-sm">"Pain-free after spine surgery"</p>
-          <p class="text-slate-400 text-xs mt-1">Priya Singh &bull; Spine Surgery</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===== 6. BEFORE / AFTER ===== -->
-<section class="py-16 lg:py-24 bg-brand-light">
-  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="font-playfair font-bold text-brand-slate text-center text-[clamp(1.6rem,4vw,2.4rem)] mb-3">Real Results</h2>
-    <div class="w-[60px] h-[3px] bg-brand-blue mx-auto rounded-full mb-4"></div>
-    <p class="text-center text-slate-400 font-medium max-w-[600px] mx-auto text-sm sm:text-base mb-12">Every surgery is a story of transformation. Here are some of our proudest outcomes.</p>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-      <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 before-after-card">
-        <div class="grid grid-cols-2 divide-x divide-slate-100">
-          <div class="p-4 text-center">
-            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Before</span>
-            <div class="mt-3 aspect-square bg-slate-50 rounded-2xl flex items-center justify-center text-slate-300 border border-slate-100"><i class="fas fa-x-ray text-4xl"></i></div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Age *</label>
+              <input type="number" id="reviewerAge" required placeholder="e.g. 54" class="w-full text-sm bg-navy-900 border border-navy-800 text-slate-200 rounded-xl px-4 py-3.5 outline-none focus:border-crimson-600 placeholder-slate-600">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Treatment Received *</label>
+              <select id="reviewCategory" required class="w-full text-sm bg-navy-900 border border-navy-800 text-slate-400 rounded-xl px-4 py-3.5 outline-none focus:border-crimson-600">
+                <option value="">Select Treatment</option>
+                <option value="angioplasty">Angioplasty &amp; Stenting</option>
+                <option value="pacemaker">Pacemaker &amp; ICD</option>
+                <option value="heart-failure">Heart Failure</option>
+                <option value="angiography">Coronary Angiography</option>
+                <option value="preventive">Preventive Diagnostics</option>
+              </select>
+            </div>
           </div>
-          <div class="p-4 text-center">
-            <span class="text-[10px] uppercase tracking-wider text-brand-emerald font-bold">After</span>
-            <div class="mt-3 aspect-square bg-brand-light rounded-2xl flex items-center justify-center text-slate-300 border border-slate-100"><i class="fas fa-x-ray text-4xl"></i></div>
-          </div>
-        </div>
-        <div class="p-5 border-t border-slate-100">
-          <p class="font-bold text-brand-slate text-sm">Ravi P., 58 yrs</p>
-          <p class="text-slate-400 text-xs mt-0.5">Severe Knee Arthritis &rarr; Total Knee Replacement</p>
-          <div class="mt-3 inline-flex items-center gap-1.5 text-brand-emerald text-xs font-bold bg-brand-emerald/10 px-3 py-1.5 rounded-full"><i class="fas fa-check-circle"></i> Walking pain-free in 3 weeks</div>
-        </div>
-      </div>
-      <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 before-after-card">
-        <div class="grid grid-cols-2 divide-x divide-slate-100">
-          <div class="p-4 text-center">
-            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Before</span>
-            <div class="mt-3 aspect-square bg-slate-50 rounded-2xl flex items-center justify-center text-slate-300 border border-slate-100"><i class="fas fa-bone text-4xl"></i></div>
-          </div>
-          <div class="p-4 text-center">
-            <span class="text-[10px] uppercase tracking-wider text-brand-emerald font-bold">After</span>
-            <div class="mt-3 aspect-square bg-brand-light rounded-2xl flex items-center justify-center text-slate-300 border border-slate-100"><i class="fas fa-bone text-4xl"></i></div>
-          </div>
-        </div>
-        <div class="p-5 border-t border-slate-100">
-          <p class="font-bold text-brand-slate text-sm">Meena D., 62 yrs</p>
-          <p class="text-slate-400 text-xs mt-0.5">Hip Fracture &rarr; Total Hip Replacement</p>
-          <div class="mt-3 inline-flex items-center gap-1.5 text-brand-emerald text-xs font-bold bg-brand-emerald/10 px-3 py-1.5 rounded-full"><i class="fas fa-check-circle"></i> Walking independently in 4 weeks</div>
-        </div>
-      </div>
-      <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 before-after-card">
-        <div class="grid grid-cols-2 divide-x divide-slate-100">
-          <div class="p-4 text-center">
-            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Before</span>
-            <div class="mt-3 aspect-square bg-slate-50 rounded-2xl flex items-center justify-center text-slate-300 border border-slate-100"><i class="fas fa-running text-4xl"></i></div>
-          </div>
-          <div class="p-4 text-center">
-            <span class="text-[10px] uppercase tracking-wider text-brand-emerald font-bold">After</span>
-            <div class="mt-3 aspect-square bg-brand-light rounded-2xl flex items-center justify-center text-slate-300 border border-slate-100"><i class="fas fa-running text-4xl"></i></div>
-          </div>
-        </div>
-        <div class="p-5 border-t border-slate-100">
-          <p class="font-bold text-brand-slate text-sm">Arjun K., 24 yrs</p>
-          <p class="text-slate-400 text-xs mt-0.5">ACL Tear &rarr; ACL Reconstruction</p>
-          <div class="mt-3 inline-flex items-center gap-1.5 text-brand-emerald text-xs font-bold bg-brand-emerald/10 px-3 py-1.5 rounded-full"><i class="fas fa-check-circle"></i> Back to sports in 7 months</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===== 7. WRITE A REVIEW CTA (Redesigned Form Layout) ===== -->
-<section class="py-16 lg:py-24 bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30">
-  <div class="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="font-playfair font-bold text-brand-slate text-[clamp(1.6rem,4vw,2.4rem)] mb-2">Share Your Experience</h2>
-    <p class="text-slate-500 font-medium text-sm sm:text-base mb-8">Your feedback helps others find the quality orthopedic care they deserve.</p>
-    
-    <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-100 text-left">
-      <form id="reviewForm" class="space-y-5">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-2">Your Name *</label>
-            <input type="text" required placeholder="e.g. Ravi Prakash" class="w-full text-sm border border-slate-200 rounded-xl px-4 py-3.5 outline-none transition-all duration-200 placeholder-slate-300">
+            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Your Rating *</label>
+            <div class="flex gap-2 text-2xl text-slate-600" id="starRatingSelector">
+              <i class="fa-regular fa-star cursor-pointer hover:text-amber-500" data-star="1"></i>
+              <i class="fa-regular fa-star cursor-pointer hover:text-amber-500" data-star="2"></i>
+              <i class="fa-regular fa-star cursor-pointer hover:text-amber-500" data-star="3"></i>
+              <i class="fa-regular fa-star cursor-pointer hover:text-amber-500" data-star="4"></i>
+              <i class="fa-regular fa-star cursor-pointer hover:text-amber-500" data-star="5"></i>
+            </div>
+            <input type="hidden" id="selectedStars" value="0" required>
           </div>
+
           <div>
-            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-2">Email *</label>
-            <input type="email" required placeholder="your@email.com" class="w-full text-sm border border-slate-200 rounded-xl px-4 py-3.5 outline-none transition-all duration-200 placeholder-slate-300">
+            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Your Review *</label>
+            <textarea id="reviewText" required rows="4" placeholder="Tell us about your diagnostic experience, Cath Lab process, and how Dr. Arjun Mehta helped you..." class="w-full text-sm bg-navy-900 border border-navy-800 text-slate-200 rounded-xl px-4 py-3.5 outline-none focus:border-crimson-600 placeholder-slate-600 resize-none"></textarea>
+          </div>
+
+          <div class="flex items-start gap-2.5">
+            <input type="checkbox" id="consentCheck" required class="rounded border-navy-800 text-crimson-600 focus:ring-crimson-600/30 mt-1">
+            <label for="consentCheck" class="text-xs text-slate-500 font-medium leading-relaxed">
+              I consent to display my review, first name, and age details on the HeartCare Centre portal.
+            </label>
+          </div>
+
+          <button type="submit" class="px-8 py-4 bg-crimson-600 hover:bg-crimson-700 text-white font-extrabold text-sm rounded-full shadow-lg shadow-crimson-600/20 transition-all duration-300 w-full sm:w-auto transform hover:-translate-y-0.5">
+            Submit Review
+          </button>
+        </form>
+
+        <div class="mt-8 pt-6 border-t border-navy-800/80 text-center">
+          <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-3">Or leave a review directly on</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            <a href="https://g.page/r/heartcare-jaipur/review" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-navy-950 text-slate-300 border border-navy-800 hover:bg-navy-900 transition-all"><i class="fa-brands fa-google text-red-500"></i> Google Maps</a>
+            <a href="https://practo.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-navy-950 text-slate-300 border border-navy-800 hover:bg-navy-900 transition-all"><i class="fa-solid fa-stethoscope text-crimson-500"></i> Practo portal</a>
           </div>
         </div>
-        <div>
-          <label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-2">Treatment Received</label>
-          <select class="w-full text-sm border border-slate-200 rounded-xl px-4 py-3.5 outline-none transition-all duration-200 text-slate-500 bg-white">
-            <option value="">Select treatment</option>
-            <option>Knee Replacement</option>
-            <option>Spine Surgery</option>
-            <option>Sports Injury</option>
-            <option>Fracture Care</option>
-            <option>Hip Replacement</option>
-            <option>Arthroscopy</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-2">Your Rating *</label>
-          <div class="flex gap-1.5 text-2xl sm:text-3xl" id="starRating">
-            <i class="far fa-star text-slate-300 cursor-pointer transition-all duration-150 hover:text-amber-500" data-star="1"></i>
-            <i class="far fa-star text-slate-300 cursor-pointer transition-all duration-150 hover:text-amber-500" data-star="2"></i>
-            <i class="far fa-star text-slate-300 cursor-pointer transition-all duration-150 hover:text-amber-500" data-star="3"></i>
-            <i class="far fa-star text-slate-300 cursor-pointer transition-all duration-150 hover:text-amber-500" data-star="4"></i>
-            <i class="far fa-star text-slate-300 cursor-pointer transition-all duration-150 hover:text-amber-500" data-star="5"></i>
-          </div>
-        </div>
-        <div>
-          <label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-2">Your Review *</label>
-          <textarea rows="4" required placeholder="Share your experience with Dr. Your Name and Your Clinic Name..." class="w-full text-sm border border-slate-200 rounded-xl px-4 py-3.5 outline-none transition-all duration-200 placeholder-slate-300 resize-none"></textarea>
-        </div>
-        <div class="flex items-start gap-2.5">
-          <input type="checkbox" id="consentCheck" class="rounded border-slate-300 text-brand-blue focus:ring-brand-blue/30 mt-1">
-          <label for="consentCheck" class="text-xs text-slate-400 font-medium leading-relaxed">I consent to display my review on Your Clinic Name's website and marketing materials.</label>
-        </div>
-        <button type="submit" class="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm bg-brand-blue text-white shadow-lg shadow-brand-blue/20 transition-all duration-300 hover:bg-brand-blue-hover hover:scale-[1.02] hover:-translate-y-0.5">Submit Your Review</button>
-      </form>
-      <p class="text-center text-xs text-slate-400 mt-4">Your email will not be published. Required fields are marked *</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-navy-950 text-slate-500 relative border-t border-navy-900/60 overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-crimson-600 to-transparent opacity-60"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
       
-      <div class="mt-6 pt-5 border-t border-slate-100 text-center">
-        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-3">Or leave a review directly on</p>
-        <div class="flex justify-center gap-3">
-          <a href="#" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-slate-50 text-slate-600 border border-slate-100 hover:bg-slate-100 transition-all"><i class="fab fa-google text-red-500"></i> Google</a>
-          <a href="#" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-slate-50 text-slate-600 border border-slate-100 hover:bg-slate-100 transition-all"><i class="fas fa-stethoscope text-brand-blue"></i> Practo</a>
-          <a href="#" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-slate-50 text-slate-600 border border-slate-100 hover:bg-slate-100 transition-all"><i class="fas fa-list text-amber-500"></i> JustDial</a>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+        <div class="md:col-span-5 flex flex-col gap-4 text-center md:text-left">
+          <a href="index.html" class="flex items-center justify-center md:justify-start gap-2 group">
+            <div class="w-8 h-8 rounded-lg bg-crimson-600 flex items-center justify-center text-white">
+              <i class="ph-bold ph-heartbeat text-lg"></i>
+            </div>
+            <span class="font-playfair text-white text-lg font-bold">HeartCare Centre</span>
+          </a>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-[380px] mx-auto md:mx-0">
+            Dedicated to providing world-class diagnostic, interventional, and preventive cardiology care with compassion and precision in Jaipur, Rajasthan.
+          </p>
+          <div class="flex items-center justify-center md:justify-start gap-1 p-2 bg-navy-900 border border-navy-800/80 rounded-xl w-fit mx-auto md:mx-0">
+            <span class="text-amber-500 text-xs">★★★★★</span>
+            <span class="text-[10px] text-slate-400 font-bold ml-1">4.9 | 1,200+ reviews</span>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 text-center md:text-left">
+          <h4 class="text-white font-extrabold text-xs uppercase tracking-widest mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-xs sm:text-sm font-semibold">
+            <li><a href="index.html" class="hover:text-crimson-500 transition-colors">Home</a></li>
+            <li><a href="index.html#about" class="hover:text-crimson-500 transition-colors">About Doctor</a></li>
+            <li><a href="index.html#services" class="hover:text-crimson-500 transition-colors">Specialty Services</a></li>
+            <li><a href="index.html#whychoose" class="hover:text-crimson-500 transition-colors">Why Choose Us</a></li>
+            <li><a href="index.html#testimonials" class="hover:text-crimson-500 transition-colors">Patient Stories</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4 text-center md:text-left">
+          <h4 class="text-white font-extrabold text-xs uppercase tracking-widest mb-4">Emergency Contact</h4>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+            For urgent cardiac assistance, chest discomfort, or ambulance coordination, contact our emergency helpline.
+          </p>
+          <a href="tel:+919829012345" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-crimson-600 hover:bg-crimson-700 text-white font-extrabold text-sm shadow-lg shadow-crimson-600/30 transition-all duration-300">
+            <i class="fa-solid fa-phone-volume text-base animate-pulse"></i> Emergency: +91 98290 12345
+          </a>
         </div>
       </div>
+
+      <div class="border-t border-navy-900/60 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] sm:text-xs">
+        <p class="text-center md:text-left leading-relaxed">
+          &copy; 2026 HeartCare Advanced Cardiac Centre. All rights reserved.<br>
+          <span class="text-slate-600">Disclaimer: Medical information on this site is purely educational and should not replace professional clinical evaluation or urgent emergency services.</span>
+        </p>
+        <div class="flex gap-4 font-semibold shrink-0">
+          <a href="#" class="hover:text-crimson-500 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-crimson-500 transition-colors">Terms of Service</a>
+        </div>
+      </div>
+
     </div>
+  </footer>
+
+  <!-- Floating CTAs -->
+  <div class="fixed bottom-6 right-6 z-[90] hidden md:flex flex-col gap-3">
+    <a href="https://wa.me/919829012345?text=Hi%20Dr.%20Arjun%20Mehta%2C%20I%20want%20to%20book%20a%20cardiac%20consultation%20appointment." target="_blank" rel="noopener" aria-label="Book on WhatsApp" class="w-12 h-12 rounded-full bg-[#25D366] hover:bg-[#20ba56] text-white flex items-center justify-center shadow-lg shadow-[#25D366]/30 text-2xl">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="tel:+919829012345" aria-label="Call Helpline" class="w-12 h-12 rounded-full bg-crimson-600 hover:bg-crimson-700 text-white flex items-center justify-center shadow-lg shadow-crimson-600/30 text-lg">
+      <i class="fa-solid fa-phone"></i>
+    </a>
   </div>
-</section>
 
-<!-- ===== 8. TRUST BADGES ===== -->
-<section class="py-12 bg-white border-y border-slate-100">
-  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <p class="text-center text-slate-400 text-xs uppercase tracking-[3px] font-bold mb-6">Certifications &amp; Affiliations</p>
-    <div class="flex flex-wrap justify-center items-center gap-6 lg:gap-8">
-      <div class="flex items-center gap-3 bg-slate-50 rounded-2xl px-5 py-3.5 border border-slate-100">
-        <div class="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center text-white text-sm shadow-sm shadow-brand-blue/15"><i class="fas fa-shield-alt"></i></div>
-        <div><p class="font-bold text-brand-slate text-xs">NABH Certified</p><p class="text-slate-400 text-[10px] font-semibold mt-0.5">Quality Healthcare</p></div>
-      </div>
-      <div class="flex items-center gap-3 bg-slate-50 rounded-2xl px-5 py-3.5 border border-slate-100">
-        <div class="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center text-white text-sm shadow-sm shadow-brand-blue/15"><i class="fas fa-graduation-cap"></i></div>
-        <div><p class="font-bold text-brand-slate text-xs">AIIMS Delhi</p><p class="text-slate-400 text-[10px] font-semibold mt-0.5">Alumni</p></div>
-      </div>
-      <div class="flex items-center gap-3 bg-slate-50 rounded-2xl px-5 py-3.5 border border-slate-100">
-        <div class="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center text-white text-sm shadow-sm shadow-brand-blue/15"><i class="fas fa-user-md"></i></div>
-        <div><p class="font-bold text-brand-slate text-xs">Indian Orthopedic</p><p class="text-slate-400 text-[10px] font-semibold mt-0.5">Association</p></div>
-      </div>
-      <div class="flex items-center gap-3 bg-slate-50 rounded-2xl px-5 py-3.5 border border-slate-100">
-        <div class="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center text-white text-sm shadow-sm shadow-brand-blue/15"><i class="fas fa-certificate"></i></div>
-        <div><p class="font-bold text-brand-slate text-xs">ISO Certified</p><p class="text-slate-400 text-[10px] font-semibold mt-0.5">Processes</p></div>
-      </div>
-    </div>
+  <!-- Mobile sticky CTA bar -->
+  <div class="fixed bottom-0 left-0 w-full bg-navy-900 border-t border-navy-800 z-[95] grid grid-cols-2 p-2 gap-2 md:hidden">
+    <a href="tel:+919829012345" class="flex items-center justify-center gap-2 py-3 bg-navy-800 text-white font-extrabold rounded-xl border border-navy-700 active:bg-navy-700 text-sm">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/919829012345?text=Hi%20Dr.%20Arjun%20Mehta%2C%20I%20want%20to%20book%20a%20cardiac%20consultation%20appointment." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 bg-crimson-600 text-white font-extrabold rounded-xl shadow-lg active:bg-crimson-755 text-sm">
+      <i class="fa-brands fa-whatsapp text-lg"></i> Book Appointment
+    </a>
   </div>
-</section>
 
-<!-- ===== 9. BOOKING CTA ===== -->
-<section class="py-16 bg-gradient-to-br from-brand-slate via-slate-900 to-[#020617] text-center text-white">
-  <div class="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="font-playfair font-bold text-white text-[clamp(1.6rem,4vw,2.4rem)] mb-3">Join Our Satisfied Patients</h2>
-    <div class="w-[60px] h-[3px] bg-brand-sky mx-auto rounded-full mb-4"></div>
-    <p class="text-slate-400 font-medium max-w-[500px] mx-auto text-sm sm:text-base mb-8">Book your consultation with Dr. Your Name and take the first step toward a pain-free life.</p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-      <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Doctor%2C%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-sm bg-[#25D366] text-white shadow-lg shadow-[#25D366]/20 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 min-h-[52px]"><i class="fab fa-whatsapp text-xl"></i> Book via WhatsApp</a>
-      <a href="tel:+91XXXXXXXXXX" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-sm bg-gradient-to-r from-brand-blue to-brand-sky text-white shadow-lg shadow-brand-blue/20 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 min-h-[52px]"><i class="fas fa-phone-alt"></i> +91-XXXXXXXXXX</a>
-    </div>
-    <p class="text-slate-400 text-xs font-semibold"><i class="fas fa-clock text-brand-sky mr-1"></i> Mon-Sat: 10AM-2PM | 5PM-8PM</p>
-  </div>
-</section>
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Mobile Drawer
+      const navToggle = document.getElementById('navToggle');
+      const toggleIcon = document.getElementById('toggleIcon');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      const navOverlay = document.getElementById('navOverlay');
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-<!-- ===== FOOTER ===== -->
-<footer class="bg-brand-slate text-slate-400 relative overflow-hidden">
-  <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent opacity-60"></div>
-  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Brand -->
-    <div class="text-center py-8 lg:py-10 border-b border-white/5">
-      <a href="index.html" class="inline-flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-blue to-brand-sky flex items-center justify-center font-bold text-lg text-white shadow-md shadow-brand-blue/25">Y</div>
-        <span class="font-playfair text-white text-xl sm:text-2xl font-bold">Your Clinic <span class="text-brand-sky">Name</span></span>
-      </a>
-      <div class="text-brand-sky text-[10px] sm:text-[11px] tracking-[4px] uppercase font-semibold mb-3">Healing Hands. Caring Hearts.</div>
-      <div class="inline-flex items-center gap-2 bg-white/5 rounded-full px-5 py-2">
-        <span class="text-amber-500 text-xs tracking-[2px]">★★★★★</span>
-        <span class="text-sm"><strong class="text-white">4.9</strong> <span class="text-slate-500 mx-1">|</span> 500+ reviews</span>
-      </div>
-    </div>
-    <!-- Links -->
-    <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 py-6 text-sm font-semibold">
-      <a href="index.html" class="text-slate-400 hover:text-brand-sky transition-colors">Home</a>
-      <a href="index.html#about" class="text-slate-400 hover:text-brand-sky transition-colors">About</a>
-      <a href="index.html#services" class="text-slate-400 hover:text-brand-sky transition-colors">Services</a>
-      <a href="reviews.html" class="text-brand-sky transition-colors">Reviews</a>
-      <a href="index.html#appointment" class="text-slate-400 hover:text-brand-sky transition-colors">Contact</a>
-    </div>
-    <!-- Bottom -->
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-2 py-5 text-xs text-slate-600 border-t border-white/5">
-      <span>&copy; 2026 Your Clinic Name | Dr. Your Name, Your City</span>
-      <div class="flex gap-4">
-        <a href="#" class="text-slate-600 hover:text-brand-sky transition-colors">Privacy Policy</a>
-        <a href="#" class="text-slate-600 hover:text-brand-sky transition-colors">Terms</a>
-      </div>
-    </div>
-  </div>
-</footer>
+      function toggleDrawer(open) {
+        const isOpen = open !== undefined ? open : mobileDrawer.classList.contains('translate-x-full');
+        if (isOpen) {
+          mobileDrawer.classList.remove('translate-x-full');
+          navOverlay.classList.remove('hidden');
+          setTimeout(() => navOverlay.classList.remove('opacity-0'), 10);
+          toggleIcon.className = 'fa-solid fa-xmark text-2xl';
+        } else {
+          mobileDrawer.classList.add('translate-x-full');
+          navOverlay.classList.add('opacity-0');
+          setTimeout(() => navOverlay.classList.add('hidden'), 300);
+          toggleIcon.className = 'fa-solid fa-bars-staggered text-2xl';
+        }
+      }
 
-<!-- ===== MOBILE STICKY CTA BAR ===== -->
-<div class="cta-bar" id="ctaBar">
-  <span class="cta-badge"><span class="pulse-dot"></span> 24/7 Available</span>
-  <button class="cta-close" id="ctaClose" aria-label="Close bar">&times;</button>
-  <a href="tel:+91XXXXXXXXXX" class="cta-btn cta-btn-call" aria-label="Call Now">
-    <i class="fas fa-phone-alt"></i>
-    <span>Call Now</span>
-  </a>
-  <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Dr.%20Your%20Name%2C%20I%20want%20to%20book%20an%20appointment%20at%20Your%20Clinic%20Name." target="_blank" rel="noopener" class="cta-btn cta-btn-whatsapp" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-    <span>WhatsApp</span>
-  </a>
-</div>
+      navToggle.addEventListener('click', () => toggleDrawer());
+      navOverlay.addEventListener('click', () => toggleDrawer(false));
+      mobileLinks.forEach(link => link.addEventListener('click', () => toggleDrawer(false)));
 
+      // 2. Reviews data
+      const reviews = [
+        {
+          id: 1,
+          name: "Rajesh Sharma",
+          age: 54,
+          location: "Jaipur, Rajasthan",
+          rating: 5,
+          treatment: "angioplasty",
+          treatmentName: "Angioplasty & Stenting (PCI)",
+          text: "Dr. Mehta diagnosed my blocked artery in time and performed an angioplasty immediately. He literally saved my life during a sudden heart attack. The wrist-approach surgery made it very easy, and I walked out of the hospital in 2 days. We are forever grateful to him and his caring staff.",
+          date: "April 2026",
+          avatar: "RS"
+        },
+        {
+          id: 2,
+          name: "Priya Kanwar",
+          age: 32,
+          location: "Jodhpur, Rajasthan",
+          rating: 5,
+          treatment: "heart-failure",
+          treatmentName: "Heart Failure Management",
+          text: "After consulting multiple doctors across three cities, Dr. Arjun Mehta adjusted my father's complex heart failure medications. Within 2 weeks, my father was able to walk in the garden without breathlessness. His detailed explanations and humble approach gave us immense confidence.",
+          date: "May 2026",
+          avatar: "PK"
+        },
+        {
+          id: 3,
+          name: "Vijay Singh",
+          age: 67,
+          location: "Ajmer, Rajasthan",
+          rating: 5,
+          treatment: "pacemaker",
+          treatmentName: "Pacemaker & ICD Implantation",
+          text: "Got my single-chamber pacemaker implanted by Dr. Arjun Mehta. The entire procedure at HeartCare Centre was extremely smooth and painless. Dr. Arjun's calming words right inside the Cath Lab dissolved all my fear. Post-op follow-ups have been equally reassuring. Highly recommended!",
+          date: "March 2026",
+          avatar: "VS"
+        },
+        {
+          id: 4,
+          name: "Amit Meena",
+          age: 41,
+          location: "Jaipur, Rajasthan",
+          rating: 5,
+          treatment: "angiography",
+          treatmentName: "Coronary Angiography",
+          text: "Excellent radial angiography experience. Dr. Arjun Mehta did the wrist puncture, it took less than 15 minutes, and I was discharged on the same day. There was zero pain and zero discomfort. The clinic environment is clean and safe.",
+          date: "May 2026",
+          avatar: "AM"
+        },
+        {
+          id: 5,
+          name: "Sarita Devi",
+          age: 60,
+          location: "Sikar, Rajasthan",
+          rating: 5,
+          treatment: "angioplasty",
+          treatmentName: "Angioplasty & Stenting (PCI)",
+          text: "We went to Dr. Mehta for a second opinion as my mother was advised open-heart bypass surgery by another clinic. Dr. Mehta reviewed the angiogram CD and assured us that she could be safely treated via stenting. He performed a multi-vessel stenting smoothly. She is active and happy now.",
+          date: "February 2026",
+          avatar: "SD"
+        },
+        {
+          id: 6,
+          name: "Dr. R. K. Vyas",
+          age: 72,
+          location: "Jaipur, Rajasthan",
+          rating: 5,
+          treatment: "preventive",
+          treatmentName: "Preventive Cardiac Screening",
+          text: "As a retired medical professional, I am highly impressed by the diagnostic precision and clinical standards of Dr. Arjun Mehta. Had my preventive Echocardiography and TMT stress test here. The equipment is next-generation, and his clinical guidance is gold-standard.",
+          date: "April 2026",
+          avatar: "RV"
+        },
+        {
+          id: 7,
+          name: "Manoj Yadav",
+          age: 45,
+          location: "Alwar, Rajasthan",
+          rating: 5,
+          treatment: "preventive",
+          treatmentName: "Preventive Care",
+          text: "A routine health package at HeartCare Centre detected a silent ischemic issue. Dr. Mehta's early warning and medications saved me from a major upcoming event. He is very patient-first and never over-prescribes tests.",
+          date: "January 2026",
+          avatar: "MY"
+        },
+        {
+          id: 8,
+          name: "Sunita Choudhary",
+          age: 50,
+          location: "Kota, Rajasthan",
+          rating: 5,
+          treatment: "pacemaker",
+          treatmentName: "Pacemaker & ICD Implantation",
+          text: "My mother suffered from severe blackouts and extreme fatigue. Dr. Mehta diagnosed a complete heart block and fitted a dual-chamber pacemaker. She is back to her active self. HeartCare centre coordinates TPA approval very efficiently.",
+          date: "March 2026",
+          avatar: "SC"
+        }
+      ];
 
+      // 3. Render Reviews
+      const reviewsGrid = document.getElementById('reviewsGrid');
+      const showingCount = document.getElementById('showingCount');
+      const resultsCount = document.getElementById('resultsCount');
+      const noResults = document.getElementById('noResults');
 
-<!-- ===== BACK TO TOP ===== -->
-<button class="back-to-top fixed bottom-24 lg:bottom-28 right-5 lg:right-8 z-[999] w-11 h-11 rounded-full bg-brand-blue text-white flex items-center justify-center text-lg shadow-lg shadow-brand-blue/30 opacity-0 pointer-events-none translate-y-5 transition-all duration-400 hover:-translate-y-1 hover:scale-105 active:scale-95" id="backToTop" aria-label="Back to top">
-  <i class="fas fa-chevron-up"></i>
-</button>
+      let currentFilter = 'all';
+      let currentSearch = '';
+      let currentSort = 'recent';
 
-<!-- ===== ASK CHAT PROMPT ===== -->
-<div class="ask-doctor fixed bottom-20 lg:bottom-24 right-5 lg:right-8 z-[998] hidden lg:block opacity-0 translate-y-3 transition-all duration-300" id="askDoctor">
-  <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Dr.%20Your%20Name%2C%20I%20have%20a%20question%20about" target="_blank" rel="noopener" class="flex items-center gap-2.5 bg-white rounded-full px-4.5 py-3 shadow-lg border border-slate-100 text-sm text-brand-slate font-bold hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
-    <div class="w-8 h-8 rounded-xl bg-brand-light flex items-center justify-center text-brand-blue text-xs"><i class="fas fa-comment-medical"></i></div>
-    <span>Ask Dr. Your Name <span class="text-slate-400 font-medium text-xs ml-1">Chat on WhatsApp</span></span>
-  </a>
-</div>
+      function renderReviews() {
+        // Filter
+        let filtered = reviews.filter(r => {
+          const matchFilter = currentFilter === 'all' || r.treatment === currentFilter;
+          const matchSearch = r.name.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                              r.text.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                              r.treatmentName.toLowerCase().includes(currentSearch.toLowerCase());
+          return matchFilter && matchSearch;
+        });
 
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="../js/script.js"></script>
-<script src="../js/reviews.js"></script>
-<script src="../js/cta-bar.js"></script>
+        // Sort
+        if (currentSort === 'highest') {
+          filtered.sort((a, b) => b.rating - a.rating);
+        } else {
+          // default: recent by ID (larger id is newer in our list)
+          filtered.sort((a, b) => b.id - a.id);
+        }
 
+        // Render
+        reviewsGrid.innerHTML = '';
+        if (filtered.length === 0) {
+          noResults.classList.remove('hidden');
+          resultsCount.classList.add('invisible');
+        } else {
+          noResults.classList.add('hidden');
+          resultsCount.classList.remove('invisible');
+          
+          filtered.forEach(r => {
+            const card = document.createElement('div');
+            card.className = 'bg-navy-950 border border-navy-800 rounded-3xl p-6 relative hover:border-navy-700 transition-all duration-300 shadow-xl flex flex-col justify-between';
+            
+            // Build stars
+            let starsHtml = '';
+            for(let i = 1; i<=5; i++) {
+              if (i <= r.rating) {
+                starsHtml += '<i class="fa-solid fa-star text-amber-500"></i>';
+              } else {
+                starsHtml += '<i class="fa-regular fa-star text-slate-700"></i>';
+              }
+            }
+
+            card.innerHTML = `
+              <div>
+                <i class="fa-solid fa-quote-right absolute top-6 right-6 text-navy-800 text-4xl pointer-events-none"></i>
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-10 h-10 rounded-xl bg-crimson-900/20 text-crimson-400 flex items-center justify-center font-black text-sm shrink-0">
+                    ${r.avatar}
+                  </div>
+                  <div>
+                    <h4 class="text-white font-bold text-sm">${r.name}</h4>
+                    <p class="text-slate-500 text-xs font-semibold">${r.age} Yrs · ${r.location}</p>
+                  </div>
+                </div>
+                <div class="mb-2">
+                  <span class="text-[10px] font-bold text-crimson-500 bg-crimson-900/10 px-2 py-0.5 rounded-md uppercase tracking-wider">${r.treatmentName}</span>
+                </div>
+                <div class="flex gap-0.5 text-xs mb-4">
+                  ${starsHtml}
+                </div>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic mb-6">
+                  "${r.text}"
+                </p>
+              </div>
+              <div class="flex items-center justify-between border-t border-navy-800/80 pt-4 mt-2">
+                <span class="inline-flex items-center gap-1 text-[10px] font-bold text-[#25D366] bg-[#25D366]/10 px-2.5 py-1 rounded-full"><i class="fa-brands fa-google text-red-500 text-[8px]"></i> Verified Review</span>
+                <span class="text-slate-500 text-[10px] font-medium">${r.date}</span>
+              </div>
+            `;
+            reviewsGrid.appendChild(card);
+          });
+        }
+
+        showingCount.textContent = filtered.length;
+      }
+
+      // Initialize
+      renderReviews();
+
+      // 4. Filtering logic
+      const pills = document.querySelectorAll('.filter-pill');
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          currentFilter = pill.getAttribute('data-filter');
+          renderReviews();
+        });
+      });
+
+      // 5. Search logic
+      const searchInput = document.getElementById('searchInput');
+      searchInput.addEventListener('input', (e) => {
+        currentSearch = e.target.value;
+        renderReviews();
+      });
+
+      // 6. Sort logic
+      const sortSelect = document.getElementById('sortSelect');
+      sortSelect.addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        renderReviews();
+      });
+
+      // 7. Write a review rating selector
+      const stars = document.querySelectorAll('#starRatingSelector i');
+      const selectedStarsInput = document.getElementById('selectedStars');
+
+      stars.forEach(star => {
+        star.addEventListener('click', () => {
+          const rating = parseInt(star.getAttribute('data-star'));
+          selectedStarsInput.value = rating;
+
+          stars.forEach((s, idx) => {
+            if (idx < rating) {
+              s.className = 'fa-solid fa-star text-amber-500 cursor-pointer';
+            } else {
+              s.className = 'fa-regular fa-star text-slate-600 cursor-pointer';
+            }
+          });
+        });
+      });
+
+      // 8. Form Submission logic
+      const reviewForm = document.getElementById('reviewForm');
+      reviewForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const rating = parseInt(selectedStarsInput.value);
+        if (rating === 0) {
+          alert('Please select a star rating!');
+          return;
+        }
+
+        const name = document.getElementById('reviewerName').value;
+        const location = document.getElementById('reviewerLocation').value;
+        const age = document.getElementById('reviewerAge').value;
+        const categorySelect = document.getElementById('reviewCategory');
+        const treatment = categorySelect.value;
+        const treatmentName = categorySelect.options[categorySelect.selectedIndex].text;
+        const text = document.getElementById('reviewText').value;
+
+        // Generate Initials Avatar
+        const avatar = name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+
+        const newReview = {
+          id: reviews.length + 1,
+          name: name,
+          age: parseInt(age),
+          location: location,
+          rating: rating,
+          treatment: treatment,
+          treatmentName: treatmentName,
+          text: text,
+          date: 'Just Now',
+          avatar: avatar
+        };
+
+        // Add to array
+        reviews.unshift(newReview);
+        
+        // Reset form
+        reviewForm.reset();
+        selectedStarsInput.value = '0';
+        stars.forEach(s => s.className = 'fa-regular fa-star text-slate-600 cursor-pointer');
+
+        // Re-render
+        currentFilter = 'all';
+        pills.forEach(p => {
+          if (p.getAttribute('data-filter') === 'all') p.classList.add('active');
+          else p.classList.remove('active');
+        });
+        currentSearch = '';
+        searchInput.value = '';
+        renderReviews();
+
+        alert('Thank you for sharing your experience! Your review is submitted for approval.');
+      });
+
+    });
+  </script>
 </body>
 </html>
