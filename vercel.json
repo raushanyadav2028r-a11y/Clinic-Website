@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/(.*)\\.(css|js|json|png|jpg|svg|ico|webp|woff2?|ttf|eot|pdf)", "destination": "/$1.$2" },
+    { "source": "/reviews", "destination": "/html/reviews.html" },
+    { "source": "/reviews.html", "destination": "/html/reviews.html" },
+    { "source": "/", "destination": "/html/index.html" },
+    { "source": "/(.*)", "destination": "/html/$1.html" }
+  ]
+}
