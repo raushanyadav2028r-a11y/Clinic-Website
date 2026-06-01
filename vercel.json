@@ -1,9 +1,17 @@
 {
-  "rewrites": [
-    { "source": "/(.*)\\.(css|js|json|png|jpg|svg|ico|webp|woff2?|ttf|eot|pdf)", "destination": "/$1.$2" },
-    { "source": "/reviews", "destination": "/html/reviews.html" },
-    { "source": "/reviews.html", "destination": "/html/reviews.html" },
-    { "source": "/", "destination": "/html/index.html" },
-    { "source": "/(.*)", "destination": "/html/$1.html" }
+  "version": 2,
+  "builds": [
+    { "src": "html/*.html", "use": "@vercel/static" },
+    { "src": "css/**", "use": "@vercel/static" },
+    { "src": "js/**", "use": "@vercel/static" },
+    { "src": "img/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/html/index.html" },
+    { "src": "/img/(.*)", "dest": "/img/$1" },
+    { "src": "/privacy.html", "dest": "/html/privacy-policy.html" },
+    { "src": "/terms.html", "dest": "/html/terms-of-service.html" },
+    { "src": "/privacy-policy.html", "dest": "/html/privacy-policy.html" },
+    { "src": "/terms-of-service.html", "dest": "/html/terms-of-service.html" }
   ]
 }

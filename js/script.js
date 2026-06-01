@@ -1,517 +1,373 @@
-/* =========================================================================
-   script.js — Main Orthopedic Clinic Website Controller
-   =========================================================================
-   Orchestrates: GSAP scroll animations, mobile navigation, typing effect,
-   stat counters, footer accordion, back-to-top, newsletter, and more.
-   ========================================================================= */
 
-(function () {
-  'use strict';
-
-  /* -----------------------------------------------------------------------
-     initClinicSite — Master initialiser
-     ----------------------------------------------------------------------- */
-  function initClinicSite() {
-
-    /* — Cache DOM refs --------------------------------------------------- */
-    const body          = document.body;
-    const navbar        = document.querySelector('.navbar');
-    const navToggle     = document.querySelector('.nav-toggle');
-    const navLinks      = document.querySelector('.nav-links');
-    const navOverlay    = document.querySelector('.nav-overlay');
-    const backToTopBtn  = document.querySelector('.back-to-top');
-    const typingTarget  = document.getElementById('typingText');
-
-    /* =====================================================================
-       1. GSAP SETUP
-       ===================================================================== */
-    const gsapReady = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
-
-    if (gsapReady) {
-      gsap.registerPlugin(ScrollTrigger);
-
-      /* Refresh triggers after images / fonts settle */
-      window.addEventListener('load', function () {
-        ScrollTrigger.refresh();
-      });
-      setTimeout(function () {
-        ScrollTrigger.refresh();
-      }, 2000);
-    }
-
-    /* =====================================================================
-       2. MOBILE NAVIGATION
-       ===================================================================== */
-    function openMobileNav() {
-      if (navToggle)  navToggle.classList.add('active');
-      if (navLinks)   navLinks.classList.add('open');
-      if (navOverlay) navOverlay.classList.add('open');
-      body.style.overflow = 'hidden';
-    }
-
-    function closeMobileNav() {
-      if (navToggle)  navToggle.classList.remove('active');
-      if (navLinks)   navLinks.classList.remove('open');
-      if (navOverlay) navOverlay.classList.remove('open');
-      body.style.overflow = '';
-    }
-
-    if (navToggle) {
-      navToggle.addEventListener('click', function () {
-        var isOpen = navLinks && navLinks.classList.contains('open');
-        isOpen ? closeMobileNav() : openMobileNav();
-      });
-    }
-
-    /* Close on overlay click */
-    if (navOverlay) {
-      navOverlay.addEventListener('click', closeMobileNav);
-    }
-
-    /* Close on menu close button click */
-    document.querySelectorAll('.nav-menu-close').forEach(function (btn) {
-      btn.addEventListener('click', closeMobileNav);
-    });
-
-    /* Close on nav-link click */
-    if (navLinks) {
-      navLinks.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', closeMobileNav);
-      });
-    }
-
-    /* Close on Escape */
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeMobileNav();
-    });
-
-    /* Close when resizing to desktop */
-    window.addEventListener('resize', function () {
-      if (window.innerWidth >= 992) closeMobileNav();
-    });
-
-    /* =====================================================================
-       3. NAVBAR SCROLL STATE
-       ===================================================================== */
-    var scrollTicking = false;
-
-    function updateNavbar() {
-      if (!navbar) return;
-      if (window.scrollY > 12) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-      scrollTicking = false;
-    }
-
-    window.addEventListener('scroll', function () {
-      if (!scrollTicking) {
-        requestAnimationFrame(updateNavbar);
-        scrollTicking = true;
-      }
-    }, { passive: true });
-
-    /* Fire once on load */
-    updateNavbar();
-
-    /* =====================================================================
-       4. ACTIVE SECTION TRACKING
-       ===================================================================== */
-    var sections = document.querySelectorAll('section[id]');
-    var navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
-
-    function highlightActiveSection() {
-      var scrollPos = window.scrollY + window.innerHeight * 0.35;
-
-      sections.forEach(function (section) {
-        var top    = section.offsetTop;
-        var height = section.offsetHeight;
-        var id     = section.getAttribute('id');
-
-        if (scrollPos >= top && scrollPos < top + height) {
-          navAnchors.forEach(function (a) {
-            a.classList.remove('active');
-            if (a.getAttribute('href') === '#' + id) {
-              a.classList.add('active');
-            }
-          });
-        }
-      });
-    }
-
-    window.addEventListener('scroll', highlightActiveSection, { passive: true });
-    highlightActiveSection();
-
-    /* =====================================================================
-       5. TYPING ANIMATION
-       ===================================================================== */
-    if (typingTarget) {
-      var phrases = [
-        'Your Journey to Pain-Free Movement Starts Here',
-        'Expert Orthopedic Care You Can Trust',
-        'Regain Your Mobility, Reclaim Your Life'
-      ];
-
-      var phraseIdx   = 0;
-      var charIdx     = 0;
-      var isDeleting  = false;
-      var typeSpeed   = 60;   // ms per character (typing)
-      var deleteSpeed = 30;   // ms per character (deleting)
-      var pauseTime   = 2000; // ms pause between phrases
-
-      function typeLoop() {
-        var current = phrases[phraseIdx];
-
-        if (!isDeleting) {
-          /* Typing forward */
-          charIdx++;
-          typingTarget.textContent = current.substring(0, charIdx);
-
-          if (charIdx === current.length) {
-            /* Finished typing — pause then start deleting */
-            isDeleting = true;
-            setTimeout(typeLoop, pauseTime);
-            return;
-          }
-          setTimeout(typeLoop, typeSpeed);
+    document.addEventListener("DOMContentLoaded", function () {
+      // 1. Fixed Header & Scrolled Class
+      var header = document.getElementById("siteHeader");
+      
+      function checkScroll() {
+        if (window.scrollY > 60) {
+          header.classList.add("scrolled");
         } else {
-          /* Deleting */
-          charIdx--;
-          typingTarget.textContent = current.substring(0, charIdx);
-
-          if (charIdx === 0) {
-            isDeleting = false;
-            phraseIdx = (phraseIdx + 1) % phrases.length;
-            setTimeout(typeLoop, 400); // brief pause before next phrase
-            return;
-          }
-          setTimeout(typeLoop, deleteSpeed);
+          header.classList.remove("scrolled");
         }
       }
+      window.addEventListener("scroll", checkScroll, { passive: true });
+      checkScroll(); // Initial check
 
-      /* Kick off after a short delay so the hero is visible first */
-      setTimeout(typeLoop, 800);
-    }
+      // 2. Mobile Right-Side Drawer Navigation
+      var navToggle   = document.getElementById("navToggle");
+      var drawer      = document.getElementById("mobileDrawer");
+      var backdrop    = document.getElementById("menuBackdrop");
+      var drawerClose = document.getElementById("drawerClose");
+      var drawerLinks = Array.from(drawer.querySelectorAll("a"));
+      // Also keep desktop nav-menu links for active-state tracking
+      var navMenu     = document.getElementById("navMenu");
+      var navLinks    = Array.from(document.querySelectorAll(".nav-menu a, .drawer-nav a"));
 
-    /* =====================================================================
-       6. GSAP SCROLL ANIMATIONS
-       ===================================================================== */
-    if (gsapReady) {
-      initGSAPAnimations();
-    } else {
-      /* Fallback — make everything visible immediately */
-      document.querySelectorAll(
-        '.hero-content, .hero-image, .stat-item, .about-image, ' +
-        '.about-content, .why-card, .appointment, ' +
-        '.contact-card, .contact-map-wrap iframe, footer'
-      ).forEach(function (el) {
-        el.style.opacity = '1';
-        el.style.transform = 'none';
-      });
-    }
-
-    function initGSAPAnimations() {
-
-      /* — Helper: default ScrollTrigger settings ----------------------- */
-      function stDefaults(trigger, start) {
-        return {
-          trigger: trigger,
-          start: start || 'top 88%',
-          toggleActions: 'play none none none'
-        };
+      function openDrawer() {
+        drawer.style.display   = "flex";
+        backdrop.style.display = "block";
+        // Force reflow so transitions fire
+        drawer.getBoundingClientRect();
+        backdrop.getBoundingClientRect();
+        drawer.classList.add("open");
+        backdrop.classList.add("active");
+        navToggle.setAttribute("aria-expanded", "true");
+        navToggle.setAttribute("aria-label", "Close navigation menu");
+        document.body.style.overflow = "hidden";
+        document.getElementById("floatCall").classList.add("hide-float");
+        document.getElementById("floatWA").classList.add("hide-float");
+        setTimeout(function () {
+          var firstLink = drawer.querySelector("a");
+          if (firstLink) firstLink.focus();
+        }, 100);
       }
 
-      /* — Hero content ------------------------------------------------- */
-      var heroContent = document.querySelector('.hero-content');
-      if (heroContent) {
-        gsap.from(heroContent, {
-          y: 40,
-          opacity: 0,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: stDefaults(heroContent, 'top 95%')
-        });
-      }
-
-      /* — Hero image --------------------------------------------------- */
-      var heroImage = document.querySelector('.hero-image');
-      if (heroImage) {
-        gsap.from(heroImage, {
-          x: 60,
-          opacity: 0,
-          duration: 1.1,
-          delay: 0.2,
-          ease: 'power3.out',
-          scrollTrigger: stDefaults(heroImage, 'top 95%')
-        });
-      }
-
-      /* — Stats counter ------------------------------------------------ */
-      var statsBar = document.querySelector('.stats-bar');
-      if (statsBar) {
-        var statNumbers = statsBar.querySelectorAll('.stat-number');
-
-        ScrollTrigger.create({
-          trigger: statsBar,
-          start: 'top 90%',
-          once: true,
-          onEnter: function () {
-            statNumbers.forEach(function (el) {
-              animateCounter(el);
-            });
+      function closeDrawer() {
+        drawer.classList.remove("open");
+        backdrop.classList.remove("active");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open navigation menu");
+        document.body.style.overflow = "";
+        document.getElementById("floatCall").classList.remove("hide-float");
+        document.getElementById("floatWA").classList.remove("hide-float");
+        navToggle.focus();
+        // Hide after transition
+        setTimeout(function () {
+          if (!drawer.classList.contains("open")) {
+            drawer.style.display   = "none";
+            backdrop.style.display = "none";
           }
-        });
+        }, 460);
       }
 
-      /* — About image -------------------------------------------------- */
-      var aboutImage = document.querySelector('.about-image');
-      if (aboutImage) {
-        gsap.from(aboutImage, {
-          x: -36,
-          opacity: 0,
-          duration: 0.9,
-          ease: 'power2.out',
-          scrollTrigger: stDefaults(aboutImage)
-        });
+      function toggleDrawer(event) {
+        event.stopPropagation();
+        drawer.classList.contains("open") ? closeDrawer() : openDrawer();
       }
 
-      /* — About content children --------------------------------------- */
-      var aboutContent = document.querySelector('.about-content');
-      if (aboutContent) {
-        gsap.from(aboutContent.children, {
-          y: 28,
-          opacity: 0,
-          duration: 0.7,
-          stagger: 0.12,
-          ease: 'power2.out',
-          scrollTrigger: stDefaults(aboutContent)
-        });
-      }
+      navToggle.addEventListener("click", toggleDrawer);
+      drawerClose.addEventListener("click", closeDrawer);
 
-      /* — Why Choose cards --------------------------------------------- */
-      var whyCards = document.querySelectorAll('.why-card');
-      if (whyCards.length) {
-        gsap.from(whyCards, {
-          y: 30,
-          opacity: 0,
-          duration: 0.7,
-          stagger: 0.1,
-          ease: 'power2.out',
-          scrollTrigger: stDefaults(whyCards[0])
-        });
-      }
-
-      /* — Appointment section ------------------------------------------ */
-      var appointmentSection = document.querySelector('.appointment');
-      if (appointmentSection) {
-        gsap.from(appointmentSection.children, {
-          y: 30,
-          opacity: 0,
-          duration: 0.7,
-          stagger: 0.12,
-          ease: 'power2.out',
-          scrollTrigger: stDefaults(appointmentSection)
-        });
-      }
-
-      /* — Contact cards ------------------------------------------------ */
-      var contactCards = document.querySelectorAll('.contact-card');
-      if (contactCards.length) {
-        gsap.from(contactCards, {
-          y: 30,
-          opacity: 0,
-          duration: 0.7,
-          stagger: 0.1,
-          ease: 'power2.out',
-          scrollTrigger: stDefaults(contactCards[0])
-        });
-      }
-
-      /* — Map iframe --------------------------------------------------- */
-      var mapIframe = document.querySelector('.contact-map-wrap iframe');
-      if (mapIframe) {
-        gsap.from(mapIframe, {
-          scale: 0.98,
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: stDefaults(mapIframe)
-        });
-      }
-
-      /* — Footer ------------------------------------------------------- */
-      var footer = document.querySelector('footer');
-      if (footer) {
-        gsap.from(footer, {
-          y: 24,
-          opacity: 0,
-          duration: 0.7,
-          ease: 'power2.out',
-          scrollTrigger: stDefaults(footer, 'top 98%')
-        });
-      }
-    }
-
-    /* — Counter animation helper --------------------------------------- */
-    function animateCounter(el) {
-      var target = parseInt(el.getAttribute('data-target'), 10) || 0;
-      var suffix = el.getAttribute('data-suffix') || '';
-      var duration = 2000; // ms
-      var startTime = null;
-
-      function easeOutCubic(t) {
-        return 1 - Math.pow(1 - t, 3);
-      }
-
-      function step(timestamp) {
-        if (!startTime) startTime = timestamp;
-        var progress = Math.min((timestamp - startTime) / duration, 1);
-        var easedProgress = easeOutCubic(progress);
-        var current = Math.floor(easedProgress * target);
-
-        el.textContent = current.toLocaleString() + suffix;
-
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        } else {
-          el.textContent = target.toLocaleString() + suffix;
-        }
-      }
-
-      requestAnimationFrame(step);
-    }
-
-    /* =====================================================================
-       7. VISIBILITY SAFETY NET
-       ===================================================================== */
-    var animatedSelectors = [
-      '.hero-content', '.hero-image', '.stat-item', '.about-image',
-      '.about-content', '.service-card-premium', '.why-card',
-      '.appointment', '.contact-card', '.contact-map-wrap iframe',
-      'footer', '.review-card-premium', '.services-cta-banner'
-    ];
-
-    function ensureVisibility() {
-      animatedSelectors.forEach(function (sel) {
-        document.querySelectorAll(sel).forEach(function (el) {
-          var opacity = window.getComputedStyle(el).opacity;
-          if (parseFloat(opacity) < 0.1) {
-            el.style.opacity = '1';
-            el.style.transform = 'none';
-          }
-        });
+      // Close on drawer link click
+      drawerLinks.forEach(function (link) {
+        link.addEventListener("click", closeDrawer);
       });
-    }
 
-    /* Two-pass safety: at load + 700ms, and after 2.2s absolute */
-    setTimeout(ensureVisibility, 2200);
-    window.addEventListener('load', function () {
-      setTimeout(ensureVisibility, 700);
-    });
+      // Close on backdrop click
+      backdrop.addEventListener("click", closeDrawer);
 
-    /* =====================================================================
-       8. FOOTER ACCORDION (Mobile)
-       ===================================================================== */
-    var footerItems = document.querySelectorAll('.accordion-item');
-
-    footerItems.forEach(function (item) {
-      var header = item.querySelector('.accordion-header');
-      if (!header) return;
-
-      header.addEventListener('click', function () {
-        var isActive = item.classList.contains('active');
-
-        /* Close all others */
-        footerItems.forEach(function (other) {
-          other.classList.remove('active');
-          var content = other.querySelector('.accordion-content');
-          if (content) content.style.maxHeight = null;
-        });
-
-        /* Toggle current */
-        if (!isActive) {
-          item.classList.add('active');
-          var content = item.querySelector('.accordion-content');
-          if (content) content.style.maxHeight = content.scrollHeight + 'px';
+      // Escape key closes
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && drawer.classList.contains("open")) {
+          closeDrawer();
         }
       });
-    });
 
-    /* On desktop resize → expand all */
-    function handleFooterResize() {
-      if (window.innerWidth >= 768) {
-        footerItems.forEach(function (item) {
-          item.classList.add('active');
-          var content = item.querySelector('.accordion-content');
-          if (content) content.style.maxHeight = 'none';
-        });
-      }
-    }
+      // Swipe gestures: left-edge swipe right = open, swipe left = close
+      var touchStartX = 0;
+      var touchStartY = 0;
 
-    window.addEventListener('resize', handleFooterResize);
-    handleFooterResize();
+      document.addEventListener("touchstart", function (e) {
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+      }, { passive: true });
 
-    /* =====================================================================
-       9. BACK TO TOP BUTTON
-       ===================================================================== */
-    if (backToTopBtn) {
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 300) {
-          backToTopBtn.classList.add('visible');
-        } else {
-          backToTopBtn.classList.remove('visible');
+      document.addEventListener("touchend", function (e) {
+        var diffX = e.changedTouches[0].clientX - touchStartX;
+        var diffY = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 60) {
+          // Swipe right on left edge → open
+          if (diffX > 60 && touchStartX < 40 && !drawer.classList.contains("open")) {
+            openDrawer();
+          }
+          // Swipe left anywhere when open → close
+          if (diffX < -60 && drawer.classList.contains("open")) {
+            closeDrawer();
+          }
         }
       }, { passive: true });
 
-      backToTopBtn.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Focus trap inside drawer
+      var focusableSelectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+      drawer.addEventListener("keydown", function (e) {
+        if (e.key !== "Tab") return;
+        var focusable = Array.from(drawer.querySelectorAll(focusableSelectors));
+        var first = focusable[0];
+        var last  = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) { last.focus(); e.preventDefault(); }
+        } else {
+          if (document.activeElement === last) { first.focus(); e.preventDefault(); }
+        }
       });
-    }
 
-    /* =====================================================================
-       10. NEWSLETTER FORM
-       ===================================================================== */
-    var newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-      newsletterForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+      // 3. Smooth Reveals & Link Active Tracking using IntersectionObserver
+      if ("IntersectionObserver" in window) {
+        // Section Reveal Observer
+        var revealObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
 
-        var btn = newsletterForm.querySelector('button');
-        if (!btn) return;
+        document.querySelectorAll(".reveal").forEach(function (el) {
+          revealObserver.observe(el);
+        });
 
-        var originalText = btn.textContent;
-        var originalBg   = btn.style.backgroundColor;
+        // Navigation Active Links Observer
+        var navObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var sectionId = entry.target.id;
+              navLinks.forEach(function (link) {
+                var hrefId = link.getAttribute("href").substring(1);
+                link.classList.toggle("active", hrefId === sectionId);
+              });
+            }
+          });
+        }, { rootMargin: "-45% 0px -48% 0px", threshold: 0 });
 
-        btn.textContent = 'Subscribed! ✓';
-        btn.style.backgroundColor = '#28a745';
-        btn.disabled = true;
+        document.querySelectorAll("main section[id]").forEach(function (section) {
+          navObserver.observe(section);
+        });
+      } else {
+        // Fallback for browsers lacking observer support
+        document.querySelectorAll(".reveal").forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
 
+      // 4. Accordion Toggle Logic with scrollHeight adjustment
+      var faqItems = Array.from(document.querySelectorAll(".faq-item"));
+
+      function adjustFaqHeight(item) {
+        var answer = item.querySelector(".faq-answer");
+        if (item.classList.contains("open")) {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        } else {
+          answer.style.maxHeight = "0px";
+        }
+      }
+
+      faqItems.forEach(function (item) {
+        var button = item.querySelector(".faq-question");
+        // Initialize height states
+        adjustFaqHeight(item);
+
+        button.addEventListener("click", function () {
+          var isCurrentOpen = item.classList.contains("open");
+
+          // Close all accordion panels
+          faqItems.forEach(function (other) {
+            other.classList.remove("open");
+            other.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+            adjustFaqHeight(other);
+          });
+
+          // Toggle current panel
+          if (!isCurrentOpen) {
+            item.classList.add("open");
+            button.setAttribute("aria-expanded", "true");
+            adjustFaqHeight(item);
+          }
+        });
+      });
+
+      // Re-calculate open panel scroll heights on window resizing
+      window.addEventListener("resize", function () {
+        faqItems.forEach(adjustFaqHeight);
+      }, { passive: true });
+
+      // 5. Contact Form Submit Validation & WhatsApp Link Generator
+      var appointmentForm = document.getElementById("appointmentForm");
+      var patientName = document.getElementById("patientName");
+      var patientPhone = document.getElementById("patientPhone");
+      var nameError = document.getElementById("nameError");
+      var phoneError = document.getElementById("phoneError");
+      var appointmentStatus = document.getElementById("appointmentStatus");
+      var appointmentSubmitBtn = document.getElementById("appointmentSubmitBtn");
+
+      // Restrict name to letters/spaces and phone to digits only
+      if (patientName) {
+        patientName.addEventListener("input", function () {
+          this.value = this.value.replace(/[^A-Za-z\s]/g, "");
+        });
+      }
+
+      if (patientPhone) {
+        patientPhone.addEventListener("input", function () {
+          this.value = this.value.replace(/[^0-9]/g, "");
+        });
+      }
+
+      appointmentForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Clear error flags
+        nameError.classList.remove("show");
+        phoneError.classList.remove("show");
+        appointmentStatus.classList.remove("show");
+
+        var nameVal = patientName.value.trim();
+        var phoneVal = patientPhone.value.trim();
+        var cleanDigits = phoneVal.replace(/\D/g, "");
+        var nameIsValid = /^[A-Za-z\s]+$/.test(nameVal);
+
+        var hasError = false;
+
+        // Perform validations
+        if (!nameVal || !nameIsValid) {
+          nameError.classList.add("show");
+          patientName.focus();
+          hasError = true;
+        }
+
+        if (cleanDigits.length < 10) {
+          phoneError.classList.add("show");
+          if (!hasError) {
+            patientPhone.focus();
+          }
+          hasError = true;
+        }
+
+        if (hasError) {
+          return;
+        }
+
+        // Fetch selected reason value from custom radio card inputs
+        var checkedRadio = appointmentForm.querySelector("input[name='reason']:checked");
+        var reasonVal = checkedRadio ? checkedRadio.value : "Routine Checkup";
+
+        // Generate pre-filled WhatsApp text block
+        var textPayload = 
+          "Hi Dr. Arjun Mehta,\n" +
+          "I want to book an appointment.\n\n" +
+          "Name: " + nameVal + "\n" +
+          "Phone: " + phoneVal + "\n" +
+          "Reason: " + reasonVal + "\n\n" +
+          "Please confirm availability.";
+
+        var waUrl = "https://wa.me/919576689637?text=" + encodeURIComponent(textPayload);
+
+        // Show loading status and trigger URL launch
+        appointmentSubmitBtn.disabled = true;
+        appointmentSubmitBtn.textContent = "Opening WhatsApp...";
+        appointmentStatus.classList.add("show");
+
+        window.open(waUrl, "_blank");
+
+        // Re-enable trigger after a short window
         setTimeout(function () {
-          btn.textContent = originalText;
-          btn.style.backgroundColor = originalBg;
-          btn.disabled = false;
-          newsletterForm.reset();
-        }, 2500);
-      });
-    }
+          appointmentSubmitBtn.disabled = false;
+          appointmentSubmitBtn.textContent = "Send Appointment Request via WhatsApp →";
+        }, 3000);
+      }); // ← closes appointmentForm submit handler
 
-    /* =====================================================================
-       11. TOUCH DEVICE DETECTION
-       ===================================================================== */
-    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-      body.classList.add('touch-device');
-    }
+      // Highlight the contact form after hero button scroll
+      var heroBookBtn = document.querySelector('.hero-book-btn');
+      if (heroBookBtn) {
+        heroBookBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          var contactSection = document.getElementById('contact');
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+          }
 
-  } /* end initClinicSite */
+          setTimeout(function () {
+            var highlightTarget = document.querySelector('.appointment-form-card') || document.querySelector('#appointmentForm') || document.querySelector('form');
+            if (highlightTarget) {
+              highlightTarget.style.transition = 'box-shadow 0.4s ease';
+              highlightTarget.style.boxShadow  = '0 0 0 2px #DC1E32, 0 0 30px rgba(220,30,50,0.30)';
+              setTimeout(function () {
+                highlightTarget.style.boxShadow = '';
+              }, 2000);
+            }
+          }, 900);
+        });
+      }
 
-  /* -----------------------------------------------------------------------
-     Bootstrap
-     ----------------------------------------------------------------------- */
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initClinicSite);
-  } else {
-    initClinicSite();
-  }
+      // 6. Typewriter autotype effect on H1 heading
+      (function () {
+        var typedEl = document.getElementById('typed-word');
+        if (!typedEl) {
+          console.error('typed-word element not found');
+          return;
+        }
 
-})();
+        var words = [
+          'Radial Angioplasty',
+          'Pacemaker Implants',
+          'Heart Failure Care',
+          'Coronary Stenting',
+          'Cardiac Diagnosis',
+          '3D Echo & TMT',
+          'ICD Implantation',
+          'Preventive Cardiology'
+        ];
+
+        var wordIndex  = 0;
+        var charIndex  = 0;
+        var isDeleting = false;
+        var isPaused   = false;
+
+        function type() {
+          var currentWord = words[wordIndex];
+
+          if (isPaused) {
+            isPaused   = false;
+            isDeleting = true;
+            setTimeout(type, 1400);
+            return;
+          }
+
+          if (!isDeleting) {
+            typedEl.textContent = currentWord.slice(0, charIndex + 1);
+            charIndex++;
+            if (charIndex === currentWord.length) {
+              isPaused  = true;
+              charIndex = currentWord.length;
+              setTimeout(type, 1400);
+              return;
+            }
+            setTimeout(type, 80);
+          } else {
+            typedEl.textContent = currentWord.slice(0, charIndex - 1);
+            charIndex--;
+            if (charIndex === 0) {
+              isDeleting = false;
+              wordIndex  = (wordIndex + 1) % words.length;
+              setTimeout(type, 350);
+              return;
+            }
+            setTimeout(type, 45);
+          }
+        }
+
+        setTimeout(type, 800);
+      })();
+
+    }); // ← closes DOMContentLoaded
+  
